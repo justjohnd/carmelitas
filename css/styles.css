@@ -1,0 +1,259 @@
+
+
+
+body {
+    font-size: 16px;
+    /* Bootstrap uses rem which are relative to the root (html) size, therefore should be responsive */
+}
+
+p {
+    font-size: 1rem;
+    letter-spacing: 1px;
+    font-weight: 400;
+    padding: 1rem 0;
+}
+
+h1 {
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #90caf1;
+
+}
+
+/* Containers */
+.container-jumbo {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+}
+
+.container-story {
+    padding: 7rem 0;
+    text-align: center;
+}
+
+.container-footer {
+    text-align: left;
+}
+
+.container-footer .navbar-nav li {
+    line-height: 1;
+    font-size: 1rem;
+    margin-right: 3rem;
+    padding-left: 0;
+}
+
+.container-footer .navbar-nav .active .nav-link {
+    color: #eb0f00;
+}
+
+.container-footer .navbar-nav.hover-color>li>a:hover {
+    color: #eb0f00;
+}
+
+
+/* Navbar */
+.navbar-brand {
+    margin-right: 0;
+    /* Remove the margin after carmelita's logo */
+}
+
+.navbar {
+    padding: 1.5rem 3rem;
+    background-color: #ebd5b4;
+}
+
+
+.navbar-expand-md .navbar-nav .nav-link {
+    padding: 0 1.75rem;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding-left: 0;
+}
+
+
+.navbar-light .navbar-nav .active .nav-link {
+    color: #eb0f00;
+}
+
+.navbar-light .navbar-nav.hover-color>li>a:hover {
+    color: #eb0f00;
+}
+
+.navbar-nav {
+    width: 80%;
+    display: block;
+    /* Use display: block to override bootstrap display: flex and be able to control the width */
+    text-align: center;
+    letter-spacing: 3px;
+}
+
+.navbar-nav li {
+    display: inline-block;
+    /* Note: posiition: relative is default, so no need to state it */
+    line-height: 4;
+}
+
+
+
+.logo {
+    width: 200px;
+    object-fit: cover;
+}
+
+
+.fab {
+    padding: 0 .5rem 0 0;
+    font-size: 1.5rem;
+}
+
+.fa-facebook-f,
+.fa-facebook-square {
+    color: #3b5998;
+}
+
+.fa-twitter,
+.fa-twitter-square {
+    color: #00acee;
+}
+
+.fa-instagram,
+.fa-instagram-square {
+    color: transparent;
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    background: -webkit-radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+
+/* Home */
+.jumbotron {
+    background-image: url("../images/stockJumbo1.jpg");
+    background-size: cover;
+    height: 85vh;
+    margin: 130px 0 0 0; padding: 0;
+    position: relative;
+}
+
+.takeout {
+    font-family: 'Lobster Two',
+        cursive;
+    padding: 0.27em .8em;
+    border-radius: 3px;
+    background-color: #5ab200;
+    display: block;
+    color: #fff;
+    margin-bottom: 3rem;
+}
+
+.order-online {
+    border: 1px solid #fff;
+    color: #eb0f00;
+    font-size: 1rem;
+    letter-spacing: 3px;
+    display: block;
+    padding: 1rem;
+    margin: 0 auto;
+    width: 60%;
+}
+
+.btn-body {
+    background-color: #f5a02b;
+}
+
+
+/* Menus */
+.menu {
+    position: relative;
+}
+
+.container-row {
+    height: 600px;
+}
+
+.col {
+    margin: 0;
+    padding: 0;
+}
+
+.col-red {
+    background-color: #eb0f00;
+}
+
+.col-top {
+    height: 40%;
+}
+
+.col-btm {
+    height: 60%;
+}
+
+.menu-image {
+    position: absolute;
+    top: 50%;
+    left: 130%;
+    transform: translate(-50%, -50%);
+    z-index: 99;
+    width: 750px;
+    height: 425px;
+    object-fit: cover;
+}
+
+@media screen and (max-width: 992px) {
+    .menu-image {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+        object-fit: cover;
+        height: 600px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .menu-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: none;
+        object-fit: cover;
+        height: 300px;
+    }
+}
+
+.menu-text {
+    z-index: 100;
+    position: absolute;
+    top: 40%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+}
+
+.menu-text h1 {
+    font-size: 8rem;
+}
+
+.menu-text p {
+    padding: 0;
+    max-width: 55%;
+}
+
+/* Footer */
+.container-footer ul {
+    margin-top: -.5rem;
+}
+
+.my-company {
+    background-color: #58b200;
+    font-size: 1rem;
+    text-align: center;
+    padding: 1rem 0;
+}
+
