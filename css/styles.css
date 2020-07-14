@@ -23,9 +23,9 @@ button:hover {
 }
 
 /* Containers */
-.container-jumbo {
+.container-car {
     position: absolute;
-    top: 45%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: #fff;
@@ -133,12 +133,19 @@ button:hover {
 
 
 /* Home */
-.jumbotron {
-    background-image: url("../images/stockJumbo1.jpg");
+.hero-logo {
+    background-image: url("../images/Carmelitas\ LOGO-03.png");
     background-size: cover;
     height: 85vh;
-    margin: 130px 0 0 0; padding: 0;
+    margin: 130px 0 0 0; 
+    padding: 0;
     position: relative;
+}
+
+.car-image {
+    max-height: 80vh;
+    object-fit: cover;
+    margin: 130px 0 0 0;
 }
 
 .takeout {
@@ -166,7 +173,6 @@ button:hover {
 .btn-body {
     background-color: #f5a02b;
 }
-
 
 /* Menus */
 .menu {
