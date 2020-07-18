@@ -1,8 +1,7 @@
-
-
-
 body {
     font-size: 16px;
+    margin: 0;
+    padding: 0;
     /* Bootstrap uses rem which are relative to the root (html) size, therefore should be responsive */
 }
 
@@ -17,95 +16,13 @@ h1 {
     font-weight: bold;
 }
 
+.btn-body {
+    background-color: #f5a02b;
+}
+
 button:hover {
     background-color: #90caf1;
-
 }
-
-/* Containers */
-.container-jumbo {
-    position: absolute;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #fff;
-}
-
-.container-story {
-    padding: 7rem 0;
-    text-align: center;
-}
-
-.container-footer {
-    text-align: left;
-}
-
-.container-footer .navbar-nav li {
-    line-height: 1;
-    font-size: 1rem;
-    margin-right: 3rem;
-    padding-left: 0;
-}
-
-.container-footer .navbar-nav .active .nav-link {
-    color: #eb0f00;
-}
-
-.container-footer .navbar-nav.hover-color>li>a:hover {
-    color: #eb0f00;
-}
-
-
-/* Navbar */
-.navbar-brand {
-    margin-right: 0;
-    /* Remove the margin after carmelita's logo */
-}
-
-.navbar {
-    padding: 1.5rem 3rem;
-    background-color: #ebd5b4;
-}
-
-
-.navbar-expand-md .navbar-nav .nav-link {
-    padding: 0 1.75rem;
-}
-
-.navbar-expand-lg .navbar-nav .nav-link {
-    padding-left: 0;
-}
-
-
-.navbar-light .navbar-nav .active .nav-link {
-    color: #eb0f00;
-}
-
-.navbar-light .navbar-nav.hover-color>li>a:hover {
-    color: #eb0f00;
-}
-
-.navbar-nav {
-    width: 80%;
-    display: block;
-    /* Use display: block to override bootstrap display: flex and be able to control the width */
-    text-align: center;
-    letter-spacing: 3px;
-}
-
-.navbar-nav li {
-    display: inline-block;
-    /* Note: posiition: relative is default, so no need to state it */
-    line-height: 4;
-}
-
-
-
-.logo {
-    width: 200px;
-    object-fit: cover;
-}
-
 
 .fab {
     padding: 0 .5rem 0 0;
@@ -131,14 +48,101 @@ button:hover {
     -webkit-background-clip: text;
 }
 
+/* Navbar */
+.navbar-brand {
+    margin-right: 0;
+    /* Remove the margin after carmelita's logo */
+}
 
-/* Home */
-.jumbotron {
-    background-image: url("../images/stockJumbo1.jpg");
+.navbar {
+    background-color: #ebd5b4;
+}
+
+@media screen and (min-width: 768px) {
+    .navbar {
+        padding: 1.5rem 3rem;
+    }
+}
+
+
+.navbar-expand-md .navbar-nav .nav-link {
+    padding: 0 1.75rem;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding-left: 0;
+}
+
+.navbar-light .navbar-nav .active .nav-link {
+    color: #eb0f00;
+}
+
+.navbar-light .navbar-nav.hover-color>li>a:hover {
+    color: #eb0f00;
+}
+
+.navbar-nav {
+    width: 80%;
+    display: block;
+    /* Use display: block to override bootstrap display: flex and be able to control the width */
+    text-align: center;
+    letter-spacing: 3px;
+}
+
+.navbar-nav li {
+    display: inline-block;
+    /* Note: posiition: relative is default, so no need to state it */
+    line-height: 2;
+    padding: 0 1rem;
+}
+
+.logo {
+    width: 200px;
+    object-fit: cover;
+}
+
+#socials-top {
+    display: none;
+}
+
+@media screen and (min-width: 992px) {
+    #socials-top {
+        display: block;
+    }
+}
+
+
+/* Home Carousel*/
+.hero-logo {
+    background-image: url("../images/Carmelitas\ LOGO-03.png");
     background-size: cover;
     height: 85vh;
-    margin: 130px 0 0 0; padding: 0;
+
+    padding: 0;
     position: relative;
+}
+
+.container-car {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url("../images/Carmelitas\ LOGO-01.png");
+    background-size: cover;
+    margin: 130px 0 0 0;
+    width: 100%;
+    height: 80vh;
+}
+
+.car-image {
+    max-height: 80vh;
+    object-fit: cover;
+    margin: 98px 0 0 0;
+}
+
+@media screen and (min-width: 992px) {
+    .car-image {
+        margin: 130px 0 0 0;
+    }
 }
 
 .takeout {
@@ -150,6 +154,7 @@ button:hover {
     display: block;
     color: #fff;
     margin-bottom: 3rem;
+    text-align: center;
 }
 
 .order-online {
@@ -163,97 +168,160 @@ button:hover {
     width: 60%;
 }
 
-.btn-body {
-    background-color: #f5a02b;
+/* Story */
+.container-story {
+    padding: 7rem 0;
+    text-align: center;
 }
 
 
 /* Menus */
-.menu {
+.con-row {
     position: relative;
+    height: 500px;
+    background-color: #eb0f00;
 }
 
-.container-row {
-    height: 600px;
-}
-
-.col {
+.col,
+.col-md {
     margin: 0;
     padding: 0;
 }
 
-.col-red {
-    background-color: #eb0f00;
-}
-
-.col-top {
-    height: 40%;
-}
-
-.col-btm {
-    height: 60%;
-}
-
-.menu-image {
-    position: absolute;
-    top: 50%;
-    left: 130%;
-    transform: translate(-50%, -50%);
-    z-index: 99;
-    width: 750px;
-    height: 425px;
-    object-fit: cover;
-}
-
-@media screen and (max-width: 992px) {
-    .menu-image {
-        position: relative;
-        top: 0;
-        left: 0;
-        transform: none;
-        object-fit: cover;
+@media screen and (min-width: 768px) {
+    .con-row {
         height: 600px;
+        margin: 0;
     }
 }
 
-@media screen and (max-width: 768px) {
+.rt-top {
+    background-color: #fff;
+    height: 40%;
+}
+
+.rt-btm {
+    height: 100%;
+}
+
+@media screen and (min-width: 992px) {
+    .rt-btm {
+        height: 60%;
+    }
+}
+
+.menu-image {
+    object-fit: cover;
+    height: 250px;
+    width: 100%;
+}
+
+@media screen and (min-width: 768px) {
     .menu-image {
         position: absolute;
         top: 0;
-        left: 0;
-        transform: none;
+        left: 50%;
         object-fit: cover;
-        height: 300px;
+        height: 600px;
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .menu-image {
+        position: absolute;
+        top: 50%;
+        left: 65%;
+        transform: translate(-50%, -50%);
+        z-index: 99;
+        width: 750px;
+        height: 425px;
+        object-fit: cover;
     }
 }
 
 .menu-text {
     z-index: 100;
     position: absolute;
-    top: 40%;
+    top: 295px;
     left: 45%;
     transform: translate(-50%, -50%);
     color: #fff;
 }
 
+
+@media screen and (min-width: 768px) {
+    .menu-text {
+        top: 50%;
+    }
+}
+
 .menu-text h1 {
-    font-size: 8rem;
+    font-size: 4rem;
+}
+
+@media screen and (min-width: 992px) {
+    .menu-text h1 {
+        font-size: 8rem;
+    }
 }
 
 .menu-text p {
     padding: 0;
-    max-width: 55%;
 }
 
+@media screen and (min-width: 768px) {
+    .menu-text p {
+        max-width: 55%;
+    }
+}
+
+
 /* Footer */
-.container-footer ul {
-    margin-top: -.5rem;
+#footer .btn {
+    border-radius: 0;
+    padding: .25rem;
+}
+
+.footer-container {
+    padding: 1.5rem 3rem;
+    background-color: #ebd5b4;
+    text-align: left;
+}
+
+.footer-nav {
+    text-decoration: none;
+    list-style-type: none;
+    line-height: 1;
+    font-size: 1rem;
+    padding-left: 0;
+    letter-spacing: 3px;
+    font-weight: bold;
+    display: flex;
+    margin-bottom: 0;
+}
+
+.footer-container li>a {
+    color: rgba(0, 0, 0, .5);
+    padding-right: 2rem;
+}
+
+.footer-container li>a:hover {
+    color: #eb0f00;
+    text-decoration: none;
 }
 
 .my-company {
     background-color: #58b200;
     font-size: 1rem;
     text-align: center;
-    padding: 1rem 0;
 }
 
+@media screen and (min-width: 992px) {
+    .my-company {
+        background-color: #58b200;
+        font-size: 1rem;
+        text-align: center;
+        padding: 1rem 0;
+    }
+}
