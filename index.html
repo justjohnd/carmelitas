@@ -18,7 +18,7 @@
 
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-md navbar-light fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <a class="navbar-brand" href="#">
             <img class="logo" src="/images/Carmelitas LOGO-03.png" alt="" loading="lazy"> </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -29,7 +29,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="nav-center navbar-nav mr-auto ml-auto font-weight-bold hover-color">
                 <li class="nav-item active">
-                    <a class="nav-link  pr-50" href="#">HOME <span class="sr-only">(current)</span></a>
+                    <a class="nav-link pr-50" href="#">HOME <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -60,14 +60,18 @@
                 </li>
             </ul>
         </div>
-        <div class="navbar-brand d-none d-lg-block">
+        <div id="socials-top" class="navbar-brand">
             <i class="fab fa-facebook-f"></i>
             <i class="fab fa-twitter"></i>
             <i class="fab fa-instagram"></i>
         </div>
     </nav>
 
-    <div id="slider1" class="carousel slide mb-5" data-ride="carousel" data-pause="hover" data-interval="2000">
+
+    <!-- carousel -->
+    <div id="slider1" class="carousel slide mb-md-5" data-ride="carousel" data-pause="hover" data-interval="3000">
+        <div class="overpic d-none d-md-block"><img class="car-image car-logo" src="/images/Carmelitas LOGO-01.png"></img>
+        </div>
         <ol class="carousel-indicators">
             <li class="active" data-target="#slider1" data-slide-to="0"></li>
             <li data-target="#slider1" data-slide-to="1"></li>
@@ -75,13 +79,17 @@
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="d-flex align-items-center justify-content-center min-vw-100 car-image" src="/images/stockJumbo1.jpg" alt="First Slide">
+                <img class="d-flex align-items-center justify-content-center min-vw-100 car-image"
+                    src="/images/stockJumbo1.jpg" alt="First Slide">
+            </img>
+        </div>
+            <div class="carousel-item">
+                <img class="d-flex align-items-center justify-content-center min-vw-100 car-image"
+                    src="/images/stockJumbo1.jpg" alt="Second Slide">
             </div>
             <div class="carousel-item">
-                <img class="d-flex align-items-center justify-content-center min-vw-100 car-image" src="/images/stockJumbo1.jpg" alt="Second Slide">
-            </div>
-            <div class="carousel-item">
-                <img class="d-flex align-items-center justify-content-center min-vw-100 car-image" src="/images/stockJumbo1.jpg" alt="Third Slide">
+                <img class="d-flex align-items-center justify-content-center min-vw-100 car-image"
+                    src="/images/stockJumbo1.jpg" alt="Third Slide">
             </div>
         </div>
         <!-- Controls, Text, Logo, etc. -->
@@ -89,10 +97,6 @@
                 class="carousel-control-prev-icon"></span></a>
         <a href="#slider1" class="carousel-control-next" data-slide="next"><span
                 class="carousel-control-next-icon"></span></a>
-        <div class="container-car">
-            <h1 class="takeout">Feel like staying in?</h1>
-            <button class="btn order-online" href="#">ORDER ONLINE</button>
-        </div>
 
     </div>
 
@@ -110,51 +114,41 @@
     </div>
 
     <!-- Menues -->
-    <div class="menu">
+    <div class="con-row row">
         <div class="menu-text">
             <h1>MENUS</h1>
             <p>orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
                 dolore magna</p>
             <button class="btn btn-body" href="#">SEE FULL MENU</button>
         </div>
-        <div class="container-row">
-            <div class="row h-100 no-gutters">
-                <div class="col-md-6 col-red">
-                    <img class="menu-image img-fluid d-none d-lg-inline-block" src="images/stockJumbo1.jpg"></img>
-                </div>
-                <div class="col-md-6">
-                    <div class="col-top d-none d-lg-block"></div>
-                    <div class="col-red col-btm">
-                        <img class="menu-image img-fluid d-inline-block d-lg-none" src="images/stockJumbo1.jpg"></img>
-                    </div>
-                </div>
-            </div>
+        <img class="menu-image img-fluid" src="images/stockJumbo1.jpg"></img>
+        <div class=" no-padding col-md">
+        </div>
+        <div class="no-padding col-md">
+            <div class="rt-top col d-none d-lg-block"></div>
+            <div class="rt-btm col"></div>
         </div>
     </div>
 
     <!-- Footer -->
-    <div class="navbar navbar-expand-lg navbar-light container-footer">
-        <div class="navbar-brand">
-            <i class="fab fa-facebook-square"></i>
-            <i class="fab fa-twitter-square"></i>
-            <i class="fab fa-instagram-square"></i>
-            <ul class="navbar-nav navbar-light font-weight-bold hover-color">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">TERMS OF USE</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">PRIVACY POLICY</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">CONTACT</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">MAILING LIST</a>
-                </li>
+    <div id="footer">
+        <button class="d-sm-block d-md-none btn btn-body btn-block" href="#">RESERVATIONS</button>
+        <div class="footer-container d-none d-md-block">
+            <div class="footer-socials">
+                <i class="fab fa-facebook-square"></i>
+                <i class="fab fa-twitter-square"></i>
+                <i class="fab fa-instagram-square"></i>
+            </div>
+            <ul class="footer-nav">
+                <li><a href="#">TERMS OF USE</a></li>
+                <li><a href="#">PRIVACY POLICY</a></li>
+                <li><a href="#">CONTACT</a></li>
+                <li><a href="#">MAILING LIST</a></li>
             </ul>
         </div>
     </div>
-    <div class="my-company">MADE WITH <span><i class="fas fa-hand-peace"></i></span> BY MECHANICAL ELVES </div>
+    <div class="my-company d-none d-md-block">MADE WITH <span><i class="fas fa-hand-peace"></i></span> BY MECHANICAL
+        ELVES </div>
     </div>
 
     <script src="http://code.jquery.com/jquery-3.5.1.min.js"
