@@ -1,3 +1,25 @@
+/* Colors
+#5ab200;
+#eb0f00;
+button: #f5a02b;
+button:hover:#f9c47c;
+navbar: #ebd5b4;
+
+Other colors:
+#D7D52A;
+#ffd439;
+#F28A17;
+#faa405;
+#07A499;
+#1cb0d4;
+#FF7EA0;
+#872E8C;
+
+
+*/
+
+
+
 body {
     font-size: 16px;
     margin: 0;
@@ -16,12 +38,27 @@ h1 {
     font-weight: bold;
 }
 
+.green-h1 {
+    font-size: 4rem;
+    text-shadow: -1px -1px #5ab200,
+        1px -1px 0 #5ab200,
+        -1px 1px 0 #5ab200,
+        1px 1px 0 #5ab200;
+}
+
+ul {
+    padding-left: 0;
+    list-style: none;
+}
+
 .btn-body {
     background-color: #f5a02b;
+    font-weight: 600;
+    border: 1px solid #872E8C;
 }
 
 button:hover {
-    background-color: #90caf1;
+    background-color: #f9c47c;
 }
 
 .fab {
@@ -116,11 +153,11 @@ button:hover {
 /* Home Carousel*/
 
 .overpic {
-        opacity: .8;
-        position: absolute;
-        top: 0;
-        left: 0;  
-        z-index: 2;
+    opacity: .8;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
 }
 
 .car-logo {
@@ -142,6 +179,7 @@ button:hover {
     }
 }
 
+/* 
 .takeout {
     font-family: 'Lobster Two',
         cursive;
@@ -163,26 +201,28 @@ button:hover {
     padding: 1rem;
     margin: 0 auto;
     width: 60%;
-}
+} 
+
+These styles were used for an alternative cta*/
 
 /* Story */
 .container-story {
     text-align: center;
-        padding: 5rem 1rem;
+    padding: 5rem 1rem;
 }
 
 @media screen and (min-width: 576px) {
-.container-story {
-padding: 7rem 1rem;
+    .container-story {
+        padding: 7rem 1rem;
 
-}
+    }
 }
 
 
 /* Menus */
 .con-row {
     position: relative;
-    height: 500px;
+    height: 600px;
     background-color: #eb0f00;
 }
 
@@ -237,7 +277,7 @@ padding: 7rem 1rem;
         top: 50%;
         left: 65%;
         transform: translate(-50%, -50%);
-        z-index: 99;
+        z-index: 2;
         width: 750px;
         height: 425px;
         object-fit: cover;
@@ -245,9 +285,9 @@ padding: 7rem 1rem;
 }
 
 .menu-text {
-    z-index: 100;
+    z-index: 3;
     position: absolute;
-    top: 295px;
+    top: 310px;
     left: 45%;
     transform: translate(-50%, -50%);
     color: #fff;
@@ -258,14 +298,6 @@ padding: 7rem 1rem;
     .menu-text {
         top: 50%;
     }
-}
-
-.menu-text h1 {
-    font-size: 4rem;
-            text-shadow: -1px -1px #5ab200,
-            1px -1px 0 #5ab200,
-            -1px 1px 0 #5ab200,
-            1px 1px 0 #5ab200;
 }
 
 @media screen and (min-width: 992px) {
@@ -286,9 +318,30 @@ padding: 7rem 1rem;
 
 
 /* Footer */
+#footer {
+    position: relative;
+}
+
+#footer-mobile {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 4;
+}
+
 #footer .btn {
     border-radius: 0;
     padding: .25rem;
+}
+
+#btn-loc {
+    background-color: #5ab200;
+    margin-top: .1rem;
+}
+
+#btn-loc:hover {
+    background-color: #b0d887;
 }
 
 .footer-container {
@@ -332,4 +385,112 @@ padding: 7rem 1rem;
         text-align: center;
         padding: 1rem 0;
     }
+}
+
+/* Template */
+#hero {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 90vh;
+}
+
+#hero.car-image {
+    max-height: 90vh;
+}
+
+.hero-h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.template-container {
+    padding: 25px 40px;
+}
+
+.template-container .car-image {
+    opacity: 1;
+}
+
+@media screen and (min-width: 768px) {
+    .template-container {
+        padding: 30px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .template-container {
+        padding: 50px;
+    }
+}
+
+.avocado-background {
+    position: relative;
+    background: url(/images/test-brightness-400.png) no-repeat center fixed;
+    background-size: 50% auto;
+    background-position-x: 75px;
+}
+
+@media screen and (min-width: 768px) {
+    .avocado-background {
+        background-size: 40% auto;
+        background-position-y: 150px;
+        background-position-x: 50%;
+    }
+}
+
+ul.list-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, auto);
+    grid-column-gap: 1em;
+    grid-auto-flow: column;
+}
+
+.menu-section-header {
+    margin-bottom: 2.5rem;
+}
+
+.menu-section h2 {
+    font-size: 2.1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.menu-item-heading {
+    font-size: 1.25rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    margin-top: 0;
+}
+
+.menu-section p {
+    margin: 0;
+    padding: 0;
+    letter-spacing: inherit;
+}
+
+.menu-section .price {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.menu-section .veg {
+    font-size: 80%;
+    font-weight: normal;
+}
+
+.menu-item {
+    margin-bottom: 2.5rem;
+}
+
+.just-button {
+    padding: 39px;
+    text-align: center;
 }
