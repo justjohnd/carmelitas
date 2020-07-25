@@ -1,3 +1,25 @@
+/* Colors
+#5ab200;
+#eb0f00;
+button: #f5a02b;
+button:hover:#f9c47c;
+navbar: #ebd5b4;
+
+Other colors:
+#D7D52A;
+#ffd439;
+#F28A17;
+#faa405;
+#07A499;
+#1cb0d4;
+#FF7EA0;
+#872E8C;
+
+
+*/
+
+
+
 body {
     font-size: 16px;
     margin: 0;
@@ -31,6 +53,8 @@ ul {
 
 .btn-body {
     background-color: #f5a02b;
+    font-weight: 600;
+    border: 1px solid #872E8C;
 }
 
 button:hover {
@@ -364,14 +388,6 @@ These styles were used for an alternative cta*/
 }
 
 /* Template */
-.template-background {
-    background: url(/images/paperResized.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-
 #hero {
     display: block;
     margin-left: auto;
@@ -392,17 +408,46 @@ These styles were used for an alternative cta*/
 }
 
 .template-container {
-    margin: 15px;
+    padding: 25px 40px;
 }
 
-#menus {
-        position: relative;
-    margin-bottom: 5rem;
-        padding: 5%;
-        background: url(/images/illustrations-avocado.png) no-repeat center fixed;
-        background-size: 50% auto;
-        background-color: #f8f9faa1;
-        background-blend-mode: lighten;
+.template-container .car-image {
+    opacity: 1;
+}
+
+@media screen and (min-width: 768px) {
+    .template-container {
+        padding: 30px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .template-container {
+        padding: 50px;
+    }
+}
+
+.avocado-background {
+    position: relative;
+    background: url(/images/test-brightness-400.png) no-repeat center fixed;
+    background-size: 50% auto;
+    background-position-x: 75px;
+}
+
+@media screen and (min-width: 768px) {
+    .avocado-background {
+        background-size: 40% auto;
+        background-position-y: 150px;
+        background-position-x: 50%;
+    }
+}
+
+ul.list-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, auto);
+    grid-column-gap: 1em;
+    grid-auto-flow: column;
 }
 
 .menu-section-header {
@@ -414,33 +459,38 @@ These styles were used for an alternative cta*/
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1px;
-    }
+}
 
- .menu-item-heading {
-     font-size: 1.25rem;
-     font-weight: 500;
-     text-transform: uppercase;
-     letter-spacing: 1px;
-     line-height: 1.5;
-     margin-top: 0;
- }
+.menu-item-heading {
+    font-size: 1.25rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    margin-top: 0;
+}
 
-  .menu-section p {
-      margin: 0;
-      padding: 0;
-      letter-spacing: inherit;
-  }
+.menu-section p {
+    margin: 0;
+    padding: 0;
+    letter-spacing: inherit;
+}
 
-  .menu-section .price {
-      font-size: 1.1rem;
-      font-weight: 500;
-  }
+.menu-section .price {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
 
-  .menu-section .veg {
-      font-size: 80%;
-      font-weight: normal;
-  }
+.menu-section .veg {
+    font-size: 80%;
+    font-weight: normal;
+}
 
-  .menu-item {
-      margin-bottom: 2.5rem;
-  }
+.menu-item {
+    margin-bottom: 2.5rem;
+}
+
+.just-button {
+    padding: 39px;
+    text-align: center;
+}
