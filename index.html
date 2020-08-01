@@ -10,56 +10,62 @@
         integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@1,700&display=swap" rel="stylesheet"> 
-    This font was used for alternative CTA-->
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@500;700&display=swap" rel="stylesheet">
 
 
-    <title>Carmelita's Authentic Mexican Restaurant</title>
+    <title>Carmelita's Authentic Mexican Restaurant | St. Petersburg</title>
 </head>
 
 <body data-spy="scroll" data-target="#main-nav" id="home">
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="main-nav">
-        <a class="navbar-brand" href="#">
-            <img class="logo" src="images/Carmelitas LOGO-03.png" alt="" loading="lazy"> </a>
+    <nav class="navbar con-nav navbar-expand-lg navbar-light sticky-top" id="main-nav">
+        <a class="navbar-brand mr-0 ml-n3" href="#">
+            <img class="logo" src="images/Carmelitas LOGO-03.png" href="#home" alt="" loading="lazy"> </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="nav-center navbar-nav mr-auto ml-auto font-weight-bold hover-color">
-                <li class="nav-item active">
-                    <a class="nav-link pr-50" href="#home">HOME <span class="sr-only">(current)</span></a>
+            <div class="offcanvas-header mt-3">
+                <button class="btn btn-danger btn-close"> &times CLOSE</button>
+            </div>
+            <ul class="ul-default navbar-nav text-center d-block mb-0 mr-auto ml-auto font-weight-bold hover-color">
+                <li class="nav-item list-nav active">
+                    <a class="nav-link a-default pr-50" href="index.html">HOME <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                <li class="nav-item list-nav">
+                    <a class="nav-link a-default" href="menus.html">MENUS</a>
+                </li>
+                <li class="nav-item list-nav dropdown">
+                    <a class="nav-link a-default dropdown-toggle" href="#" id="navbarDropdown" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        MENU
+                        LOCATIONS
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Appetizers</a>
-                        <a class="dropdown-item" href="#">Sides</a>
-                        <a class="dropdown-item" href="#">Main Courses</a>
-                        <a class="dropdown-item" href="#">Desserts</a>
-                        <a class="dropdown-item" href="#">Drinks</a>
+                        <a class="dropdown-item" href="locations-stpete.html">ST. PETERSBURG</a>
+                        <a class="dropdown-item" href="locations-largo.html">LARGO</a>
+                        <a class="dropdown-item" href="locations-new-port-richey.html">NEW PORT RICHEY</a>
+                        <a class="dropdown-item" href="locations-pinellas-park.html">PINELLAS PARK</a>
                     </div>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">LOCATIONS</a>
+                <li class="nav-item list-nav">
+                    <a class="nav-link a-default" href="reservations.html">RESERVATIONS</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">RESERVATIONS</a>
+                <li class="nav-item list-nav">
+                    <a class="nav-link a-default" href="our-story.html">OUR STORY</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">CATERING</a>
+                <li class="nav-item list-nav">
+                    <a class="nav-link a-default" href="catering.html">CATERING</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">ABOUT</a>
+                <li class="nav-item list-nav">
+                    <button class="btn btn-default" href="https://direct.chownow.com/order/10588/locations">ORDER
+                        TAKEOUT</button>
                 </li>
             </ul>
         </div>
-        <div id="socials-top" class="navbar-brand">
+
+
+        <div class="navbar-brand d-none d-lg-block">
             <i class="fab fa-facebook-f"></i>
             <i class="fab fa-twitter"></i>
             <i class="fab fa-instagram"></i>
@@ -67,60 +73,62 @@
     </nav>
 
 
-    <!-- carousel -->
-    <div id="slider1" class="carousel slide mb-md-5" data-ride="carousel" data-pause="hover" data-interval="3000">
-        <div class="overpic d-none d-md-block"><img class="car-image car-logo" src="images/Carmelitas LOGO-01.png"></img>
-        </div>
-        <ol class="carousel-indicators">
-            <li class="active" data-target="#slider1" data-slide-to="0"></li>
-            <li data-target="#slider1" data-slide-to="1"></li>
-            <li data-target="#slider1" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img class="d-flex align-items-center justify-content-center min-vw-100 car-image"
-                    src="images/stockJumbo1.jpg" alt="First Slide">
-            </img>
-        </div>
-            <div class="carousel-item">
-                <img class="d-flex align-items-center justify-content-center min-vw-100 car-image"
-                    src="images/stockJumbo1.jpg" alt="Second Slide">
-            </div>
-            <div class="carousel-item">
-                <img class="d-flex align-items-center justify-content-center min-vw-100 car-image"
-                    src="images/stockJumbo1.jpg" alt="Third Slide">
-            </div>
-        </div>
-        <!-- Controls, Text, Logo, etc. -->
-        <a href="#slider1" class="carousel-control-prev" data-slide="prev"><span
-                class="carousel-control-prev-icon"></span></a>
-        <a href="#slider1" class="carousel-control-next" data-slide="next"><span
-                class="carousel-control-next-icon"></span></a>
+     <!-- carousel -->
+     <div id="slider1" class="carousel slide" data-ride="carousel" data-pause="hover" data-interval="3000">
+         <div class="overpic d-none d-md-block"><img class="car-image car-logo"
+                 src="images/Carmelitas LOGO-01.png"></img>
+         </div>
+         <ol class="carousel-indicators">
+             <li class="active" data-target="#slider1" data-slide-to="0"></li>
+             <li data-target="#slider1" data-slide-to="1"></li>
+             <li data-target="#slider1" data-slide-to="2"></li>
+         </ol>
+         <div class="carousel-inner">
+             <div class="carousel-item active">
+                 <img class="d-flex align-items-center justify-content-center min-vw-100 car-image"
+                     src="images/stockJumbo1.jpg" alt="First Slide">
+                 </img>
+             </div>
+             <div class="carousel-item">
+                 <img class="d-flex align-items-center justify-content-center min-vw-100 car-image"
+                     src="images/stockJumbo1.jpg" alt="Second Slide">
+             </div>
+             <div class="carousel-item">
+                 <img class="d-flex align-items-center justify-content-center min-vw-100 car-image"
+                     src="images/stockJumbo1.jpg" alt="Third Slide">
+             </div>
+         </div>
+         <!-- Controls, Text, Logo, etc. -->
+         <a href="#slider1" class="carousel-control-prev" data-slide="prev"><span
+                 class="carousel-control-prev-icon"></span></a>
+         <a href="#slider1" class="carousel-control-next" data-slide="next"><span
+                 class="carousel-control-next-icon"></span></a>
 
-    </div>
+     </div>
+
 
 
     <!-- Story -->
     <div>
-        <div class="container container-story">
-            <h1>OUR STORY LEAD LINE</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+        <div class="container text-center con-default">
+            <h2 class="header-default h2-default">OUR STORY LEAD LINE</h2>
+            <p class="p-default">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
                 dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation Lorem ipsum dolor sit amet,
                 consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
                 dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
-            <button class="btn btn-body" href="#">READ OUR STORY</button>
+            <button class="btn btn-default btn-col1" href="#">READ OUR STORY</button>
         </div>
     </div>
 
     <!-- Menues -->
     <div class="con-row row">
-        <div class="menu-text">
-            <h1 class="green-h1">MENUS</h1>
-            <p>orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+        <div class="con-home-menus text-white">
+            <p class="header-default header-menu">MENUS</p>
+            <p class="p-default p-0">orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
                 dolore magna</p>
-            <button class="btn btn-body" href="#">SEE FULL MENU</button>
+            <button class="btn btn-default btn-col1" href="#">SEE FULL MENU</button>
         </div>
-        <img class="menu-image img-fluid" src="images/stockJumbo1.jpg"></img>
+        <img class="img-home-menus img-fluid" src="images/stockJumbo1.jpg"></img>
         <div class=" no-padding col-md">
         </div>
         <div class="no-padding col-md">
@@ -130,32 +138,43 @@
     </div>
 
     <!-- Footer -->
-            <div id="footer-mobile" class="d-sm-block d-md-none">
-                <button class="btn btn-body btn-block" href="#">RESERVATIONS</button>
-                <button id="btn-loc" class="btn btn-body btn-block" href="#">FIND A LOCATION</button>
-            </div>
-    <div id="footer">
-        <div class="footer-container d-none d-md-block">
-            <div class="footer-socials">
-                <i class="fab fa-facebook-square"></i>
-                <i class="fab fa-twitter-square"></i>
-                <i class="fab fa-instagram-square"></i>
-            </div>
-            <ul class="footer-nav">
-                <li><a href="#">TERMS OF USE</a></li>
-                <li><a href="#">PRIVACY POLICY</a></li>
-                <li><a href="#">CONTACT</a></li>
-                <li><a href="#">MAILING LIST</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="my-company d-none d-md-block">MADE WITH <span><i class="fas fa-hand-peace"></i></span> BY MECHANICAL
-        ELVES </div>
+    <div class="footer-mobile d-sm-block d-md-none">
+        <button class="btn btn-default btn-full-width btn-col1 btn-block" href="#">RESERVATIONS</button>
+        <button id="bs-margin-override" class="btn btn-default btn-full-width btn-col2 btn-block" href="#">FIND A
+            LOCATION</button>
     </div>
 
+    <div class="footer">
+        <div class="con-nav text-left d-none d-md-block">
+            <div class="con-footer d-flex align-items-center justify-content-between">
+                <div class="footer-socials">
+                    <i class="fab fa-facebook-square"></i>
+                    <i class="fab fa-twitter-square"></i>
+                    <i class="fab fa-instagram-square"></i>
+                </div>
+                <div>
+                    <p class="m-0 text-center">Copyright <span id="year"></span></p>
+                </div>
+            </div>
+            <div class="con-footer d-flex align-items-center justify-content-between">
+                <ul class="ul-default font-weight-bold mb-0 d-flex">
+                    <li class="list-footer"><a class="a-default" href="#">TERMS OF USE</a></li>
+                    <li class="list-footer"><a class="a-default" href="#">PRIVACY POLICY</a></li>
+                    <li class="list-footer"><a class="a-default" href="#">CONTACT</a></li>
+                    <li class="list-footer"><a class="a-default" href="#">MAILING LIST</a></li>
+                </ul>
+                <div>
+                    <p class="m-0 text-center"><strong>ARCANA</strong> Media
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
     </script>
@@ -164,6 +183,6 @@
     </script>
 
     <script src="index.js"></script>
-</body>
+    </body>
 
-</html>
+    </html>
