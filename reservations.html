@@ -13,19 +13,64 @@
     <!-- <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@1,700&display=swap" rel="stylesheet"> 
     This font was used for alternative CTA-->
 
+    <!--  Flatpicker Styles  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/themes/dark.css">
+
 
     <title>Carmelita's Authentic Mexican Restaurant | Reservations</title>
 </head>
 
 <body>
-    <div class="container con-res">
+    <div class="con-res">
         <div class="row">
-            <div class="col-md-3"><img class="img-res" src="/images/CARMELITAS menu illustrations textured-01.png">
+            <div class="col-md-3 my-auto"><img class="img-res" src="/images/CARMELITAS menu illustrations textured-01.png">
             </div>
             <div class="col-md-6 form-res">
                 <h1 class="h2-default text-white">RESERVATIONS</h1>
+                <form>
+                    <!-- TEXT FIELD GROUPS -->
+                    <div class="form-group">
+                        <label for="name"></label>
+                        <input class="form-control form-control-lg" type="text" id="name" placeholder="Your Name" required="true">
+                    </div>
+                    <div class="form-group">
+                        <label for="email"></label>
+                        <input class="form-control form-control-lg" type="email" id="email" placeholder="Your Email (Optional, for contact purposes only.)">
+                        <small class="form-text text-muted">Your personal information will never be shared</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone-number"></label>
+                        <input class="form-control form-control-lg" type="email" id="phone-number"
+                            placeholder="Your Phone Number" required="true">
+                        <small class="form-text text-muted">Your personal information will never be shared</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="number-people"></label>
+                        <input class="form-control form-control-lg" type="email" id="number-people"
+                            placeholder="Number of People" required="true">
+                    </div>
+                    <div class="form-group">
+                        <label for="choose-location"></label>
+                        <select class="form-control form-control-lg placeholder-color" id="choose-location" required="true">
+                            <option selected disabled>Choose a Location</option>
+                            <option>St. Petersburg</option>
+                            <option>Largo</option>
+                            <option>New Port Richey</option>
+                            <option>Pinellas Park</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="date-time"></label>
+                        <input class="form-control form-control-lg" type="text" id="basicDate" placeholder="Select Date & Time" data-input
+                            placeholder="Select Time & Date" required="true">
+                    </div>
+
+                    <button class="btn btn-block btn-light mt-5" type="submit">Submit</button>
+                </form>
+
             </div>
-            <div class="col-md-3"><img class="img-res" src="/images/CARMELITAS menu illustrations textured-08.png">
+            <div class="col-md-3 my-auto"><img class="img-res" src="/images/CARMELITAS menu illustrations textured-08.png">
             </div>
         </div>
     </div>
@@ -42,6 +87,9 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
     </script>
+
+    <!-- Flatpickr  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.js"></script>
 
     <script src="index.js"></script>
 </body>

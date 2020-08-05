@@ -76,3 +76,9 @@ function initMap() {
             marker.setAnimation(google.maps.Animation.BOUNCE);
         }
     }
+
+// Flatpickr
+$("#basicDate").flatpickr({
+    enableTime: true,
+    dateFormat: "F, d Y H:i"
+});
