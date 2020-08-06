@@ -10,46 +10,66 @@
         integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@1,700&display=swap" rel="stylesheet"> 
-    This font was used for alternative CTA-->
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@500;700&display=swap" rel="stylesheet">
+
+    <!--  Flatpicker Styles  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/themes/dark.css">
 
 
-    <title>Carmelita's Authentic Mexican Restaurant</title>
+    <title>Carmelita's Authentic Mexican Restaurant | St. Petersburg</title>
 </head>
 
-<body data-spy="scroll" data-target="#main-nav" id="home">
+<body>
     <!-- Navbar -->
-    <nav class="navbar con-nav navbar-expand-lg navbar-light fixed-top" id="main-nav">
-        <a class="navbar-brand mr-0 ml-n3" href="#">
+    <nav class="navbar con-nav navbar-expand-lg navbar-light sticky-top" id="main-nav">
+        <a class="navbar-brand mr-0 ml-n3" href="index.html">
             <img class="logo" src="images/Carmelitas LOGO-03.png" alt="" loading="lazy"> </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul
-                class="ul-default nav-center navbar-nav d-block text-center mb-0 mr-auto ml-auto font-weight-bold hover-color">
+            <div class="offcanvas-header mt-3">
+                <button class="btn btn-danger btn-close"> &times CLOSE</button>
+            </div>
+            <ul class="ul-default navbar-nav text-center d-block mb-0 mr-auto ml-auto font-weight-bold hover-color">
                 <li class="nav-item list-nav active">
-                    <a class="nav-link a-default pr-50" href="#home">HOME <span class="sr-only">(current)</span></a>
+                    <a class="nav-link a-default pr-50" href="index.html">HOME <span
+                            class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item list-nav">
-                    <a class="nav-link a-default" href="#">MENU</a>
+                    <a class="nav-link a-default" href="menus.html">MENUS</a>
+                </li>
+                <li class="nav-item list-nav dropdown">
+                    <a class="nav-link a-default dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        LOCATIONS
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="locations-stpete.html">ST. PETERSBURG</a>
+                        <a class="dropdown-item" href="locations-largo.html">LARGO</a>
+                        <a class="dropdown-item" href="locations-new-port-richey.html">NEW PORT RICHEY</a>
+                        <a class="dropdown-item" href="locations-pinellas-park.html">PINELLAS PARK</a>
+                    </div>
                 </li>
                 <li class="nav-item list-nav">
-                    <a class="nav-link a-default" href="#">LOCATIONS</a>
+                    <a class="nav-link a-default" data-toggle="modal" data-target="#reservations">RESERVATIONS</a>
                 </li>
                 <li class="nav-item list-nav">
-                    <a class="nav-link a-default" href="#">RESERVATIONS</a>
+                    <a class="nav-link a-default" href="our-story.html">OUR STORY</a>
                 </li>
                 <li class="nav-item list-nav">
-                    <a class="nav-link a-default" href="#">CATERING</a>
+                    <a class="nav-link a-default" href="catering.html">CATERING</a>
                 </li>
                 <li class="nav-item list-nav">
-                    <a class="nav-link a-default" href="#">ABOUT</a>
+                    <a class="nav-link btn btn-default" target="_blank" rel="noopener noreferrer"
+                        href="https://www.chowhound.com/">ORDER TAKEOUT </a>
                 </li>
             </ul>
         </div>
+
+
         <div class="navbar-brand d-none d-lg-block">
             <i class="fab fa-facebook-f"></i>
             <i class="fab fa-twitter"></i>
@@ -58,26 +78,29 @@
     </nav>
 
 
-    <div class="background-avocado">
-        <!-- hero image -->
+
+    <div class="background-guac background-img">
         <div class="con-hero">
-            <img class="img-fluid con-img-splash" src="/images/stockJumbo1.jpg" alt="template-image">
-            </img>
-        </div>
-
-        <!-- Optional Text and buttons -->
-        <div class="container text-center p-5 mb-5">
-            <div class="row">
-                <div class="col-md-6 text-md-right mb-3"><button class="btn btn-default btn-col1" href="#">ORDER
-                        TAKEOUT</button></div>
-                <div class="col-md-6 text-md-left"><button class="btn btn-default btn-col1" href="#">CATERING</button>
+            <div class="background-hero">
+                <div class="overlay-darker"></div>
+                <div class="overlay-text">
+                    <h1 class="header-default h1-default">CATERING</h1>
                 </div>
             </div>
         </div>
 
-        <!-- Menu -->
-        <h1 class="h1-default text-center text-black mb-5 h1-lg">MENUS</h1>
-        <div class="container pb-5 mb-5">
+            <!-- intro -->
+            <div class="container text-center con-default">
+                <p class="p-default">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod rerum fugiat nihil
+                    quaerat veritatis alias ipsam nemo aperiam error corporis recusandae illo, porro harum? Nobis
+                    doloribus architecto velit autem ut.</p>
+            </div>
+
+
+<!-- Catering Menu -->
+<div class="container text-center con-default">
+    <h2 class="h2-default mb-5">CATERING MENU</h2>
+        <div id="menu-container" class="container pb-5 mb-5">
             <div class="row">
                 <div class="col-md-6">
                     <div class="col-content">
@@ -218,6 +241,7 @@
                     </div>
                 </div>
             </div>
+        </div>
         </div>
 
         <!-- Carmelita's image -->
@@ -237,38 +261,39 @@
     </div>
     <!-- This div is for background--don't delete! -->
 
-    <!-- Footer -->
-    <div class="footer-mobile d-sm-block d-md-none">
-        <button class="btn btn-default btn-full-width btn-col1 btn-block" href="#">RESERVATIONS</button>
-        <button id="bs-margin-override" class="btn btn-default btn-full-width btn-col2 btn-block" href="#">FIND A
-            LOCATION</button>
-    </div>
-    <div class="footer">
-        <div class="con-nav text-left d-none d-md-block">
-            <div class="con-footer d-flex align-items-center justify-content-between">
-            <div class="footer-socials">
-                <i class="fab fa-facebook-square"></i>
-                <i class="fab fa-twitter-square"></i>
-                <i class="fab fa-instagram-square"></i>
-            </div>
-            <div>
-                <p class="m-0 text-center">Copyright <span id="year"></span></p>
-            </div>
-            </div>
-            <div class="con-footer d-flex align-items-center justify-content-between">
-                <ul class="ul-default font-weight-bold mb-0 d-flex">
-                    <li class="list-footer"><a class="a-default" href="#">TERMS OF USE</a></li>
-                    <li class="list-footer"><a class="a-default" href="#">PRIVACY POLICY</a></li>
-                    <li class="list-footer"><a class="a-default" href="#">CONTACT</a></li>
-                    <li class="list-footer"><a class="a-default" href="#">MAILING LIST</a></li>
-                </ul>
-                <div>
-                    <p class="m-0 text-center"><strong>ARCANA</strong> Media
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
+   <!-- Footer -->
+   <div class="footer-mobile d-sm-block d-md-none">
+       <button class="btn btn-default btn-full-width btn-col1 btn-block" href="#">RESERVATIONS</button>
+       <button id="bs-margin-override" class="btn btn-default btn-full-width btn-col2 btn-block" href="#">FIND A
+           LOCATION</button>
+   </div>
+
+   <div class="footer">
+       <div class="con-nav text-left d-none d-md-block">
+           <div class="con-footer d-flex align-items-center justify-content-between">
+               <div class="footer-socials">
+                   <i class="fab fa-facebook-square"></i>
+                   <i class="fab fa-twitter-square"></i>
+                   <i class="fab fa-instagram-square"></i>
+               </div>
+               <div>
+                   <p class="m-0 text-center">Copyright <span id="year"></span></p>
+               </div>
+           </div>
+           <div class="con-footer d-flex align-items-center justify-content-between">
+               <ul class="ul-default font-weight-bold mb-0 d-flex">
+                   <li class="list-footer"><a class="a-default" href="#">TERMS OF USE</a></li>
+                   <li class="list-footer"><a class="a-default" href="#">PRIVACY POLICY</a></li>
+                   <li class="list-footer"><a class="a-default" href="#">CONTACT</a></li>
+                   <li class="list-footer"><a class="a-default" href="#">MAILING LIST</a></li>
+               </ul>
+               <div>
+                   <p class="m-0 text-center"><strong>ARCANA</strong> Media
+                   </p>
+               </div>
+           </div>
+       </div>
+   </div>
 
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -280,6 +305,9 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
     </script>
+
+        <!-- Flatpickr  -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.js"></script>
 
     <script src="index.js"></script>
 </body>

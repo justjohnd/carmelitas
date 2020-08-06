@@ -53,9 +53,9 @@ body {
 .header-menu {
     font-size: 4rem;
     text-shadow: -1px -1px #5ab200,
-    1px -1px 0 #5ab200,
-    -1px 1px 0 #5ab200,
-    1px 1px 0 #5ab200;
+        1px -1px 0 #5ab200,
+        -1px 1px 0 #5ab200,
+        1px 1px 0 #5ab200;
 }
 
 .header-default.header-menu {
@@ -181,7 +181,7 @@ body {
         padding-right: 1rem;
         text-align: center;
     }
-  }
+}
 
 .list-footer {
     line-height: 1;
@@ -226,9 +226,9 @@ body {
 }
 
 @media screen and (min-width: 992px) {
-.navbar {
-    height: 143px;
-}
+    .navbar {
+        height: 143px;
+    }
 }
 
 .navbar-light .navbar-nav.hover-color>li>a:hover {
@@ -284,8 +284,8 @@ body {
 
 @media screen and (min-width: 768px) {
     .navbar-light .navbar-nav .nav-link.a-default {
-    color: rgba(0, 0, 0, .5);
-}
+        color: rgba(0, 0, 0, .5);
+    }
 }
 
 .navbar-light .navbar-nav .nav-link.btn-default {
@@ -297,8 +297,8 @@ body {
 }
 
 .btn-default:focus {
-   background-color: #872E8C;
-   ;
+    background-color: #872E8C;
+    ;
 }
 
 .btn-full-width {
@@ -341,8 +341,8 @@ body {
 }
 
 .con-default.con-locations {
-padding-left: 3rem;
-padding-right: 3rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
 }
 
 .con-locations .col-md-6 {
@@ -401,8 +401,8 @@ padding-right: 3rem;
 
 @media screen and (min-width: 768px) {
     #map {
-    height: 80vh;
-}
+        height: 80vh;
+    }
 }
 
 /* Media */
@@ -657,23 +657,31 @@ padding-right: 3rem;
 }
 
 /* Template */
+.background-guac {
+            background: url(/images/img-guac-500.png) no-repeat center fixed;
+}
+
+
 .background-avocado {
-    position: relative;
     background: url(/images/test-brightness-500.png) no-repeat center fixed;
+}
+
+.background-img {
+    position: relative;
     background-size: 60%;
     background-position-x: 50%;
     background-position-y: 60%;
 }
 
 @media screen and (min-width: 768px) {
-    .background-avocado {
+    .background-img {
         background-position-y: 60%;
         background-size: 30%;
     }
 }
 
 @media screen and (min-width: 992px) {
-    .background-avocado {
+    .background-img {
         background-position-y: 70%;
     }
 }
@@ -693,26 +701,35 @@ padding-right: 3rem;
 .img-res {
     height: 500px;
     object-fit: cover;
-
 }
 
 .form-res {
     background-color: rgba(16, 24, 32, 0.8);
     margin: 3rem 0;
     padding: 3rem 2rem;
+    text-align: start;
 }
 
 
 .placeholder-color {
-   color: #636c72;
+    color: #636c72;
 }
 
 @media screen and (min-width: 576px) {
-.modal-dialog {
-    max-width: 100%;
-}
+    .modal-dialog {
+        max-width: 100%;
+    }
 }
 
 .fp-block .flatpickr-wrapper {
     display: block;
+}
+
+
+label {
+    color: #fff;
+}
+
+.modal {
+    padding-left: 18.9984px;
 }
