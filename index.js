@@ -22,11 +22,10 @@ $(".carousel").carousel({
     keyboard: true
 });
 
-//Init Scrollspy
-$('body').scrollspy({
-    target: '#main-nav'
-});
+// Init Scrollspy
+$('body').scrollspy({ target: '#main-nav' });
 
+// Smooth Scrolling
 $("#main-nav a").on('click', function (event) {
     if (this.hash !== "") {
         event.preventDefault();
@@ -36,6 +35,7 @@ $("#main-nav a").on('click', function (event) {
         $('html, body').animate({
             scrollTop: $(hash).offset().top
         }, 800, function () {
+
             window.location.hash = hash;
         });
     }
@@ -78,7 +78,30 @@ function initMap() {
     }
 
 // Flatpickr
-$("#basicDate").flatpickr({
+// $("#basicDate").flatpickr({
+//     enableTime: true,
+//     dateFormat: "F, d Y H:i",
+// });
+//The above code does not work for modals
+
+const fp = flatpickr("#basicDate", {
     enableTime: true,
-    dateFormat: "F, d Y H:i"
+    dateFormat: "F, d Y H:i",
+    static: true
 });
+
+
+
+
+// // Change menu on click
+
+// var menuContents = '<p class="menu-item-heading">NACHOS CON CARNE</p>'
+// '<p class="menu-item-heading">NACHOS CON CARNE</p>';
+
+
+// document.getElementById("menu-daily").addEventListener("click", function() {
+//     console.log("test");
+//     document.getElementById("menu-container").innerHTML = menuContents;
+
+      
+// });
