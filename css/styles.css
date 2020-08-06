@@ -710,6 +710,12 @@ body {
     text-align: start;
 }
 
+.mailing-list {
+    background-color: rgba(16, 24, 32, 0.8);
+    margin: 3rem 0;
+    padding: 3rem 2rem;
+}
+
 
 .placeholder-color {
     color: #636c72;
@@ -733,3 +739,4 @@ label {
 .modal {
     padding-left: 18.9984px;
 }
+
