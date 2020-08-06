@@ -11,15 +11,19 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@500;700&display=swap" rel="stylesheet">
-<!-- Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a> -->
+
+    <!--  Flatpicker Styles  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/themes/dark.css">
+
 
     <title>Carmelita's Authentic Mexican Restaurant | Our Story</title>
 </head>
 
-<body data-spy="scroll" data-target="#main-nav" id="home">
+<body>
     <!-- Navbar -->
     <nav class="navbar con-nav navbar-expand-lg navbar-light sticky-top" id="main-nav">
-        <a class="navbar-brand mr-0 ml-n3" href="#">
+        <a class="navbar-brand mr-0 ml-n3" href="index.html">
             <img class="logo" src="images/Carmelitas LOGO-03.png" alt="" loading="lazy"> </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,7 +35,8 @@
             </div>
             <ul class="ul-default navbar-nav text-center d-block mb-0 mr-auto ml-auto font-weight-bold hover-color">
                 <li class="nav-item list-nav active">
-                    <a class="nav-link a-default pr-50" href="#home">HOME <span class="sr-only">(current)</span></a>
+                    <a class="nav-link a-default pr-50" href="index.html">HOME <span
+                            class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item list-nav">
                     <a class="nav-link a-default" href="menus.html">MENUS</a>
@@ -42,14 +47,14 @@
                         LOCATIONS
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="locations-stpete">ST. PETERSBURG</a>
-                        <a class="dropdown-item" href="locations-largo">LARGO</a>
-                        <a class="dropdown-item" href="locations-new-port-richey">NEW PORT RICHEY</a>
-                        <a class="dropdown-item" href="locations-pinellas-park">PINELLAS PARK</a>
+                        <a class="dropdown-item" href="locations-stpete.html">ST. PETERSBURG</a>
+                        <a class="dropdown-item" href="locations-largo.html">LARGO</a>
+                        <a class="dropdown-item" href="locations-new-port-richey.html">NEW PORT RICHEY</a>
+                        <a class="dropdown-item" href="locations-pinellas-park.html">PINELLAS PARK</a>
                     </div>
                 </li>
                 <li class="nav-item list-nav">
-                    <a class="nav-link a-default" href="reservations.html">RESERVATIONS</a>
+                    <a class="nav-link a-default" data-toggle="modal" data-target="#reservations">RESERVATIONS</a>
                 </li>
                 <li class="nav-item list-nav">
                     <a class="nav-link a-default" href="our-story.html">OUR STORY</a>
@@ -58,8 +63,8 @@
                     <a class="nav-link a-default" href="catering.html">CATERING</a>
                 </li>
                 <li class="nav-item list-nav">
-                    <button class="btn btn-default" href="https://direct.chownow.com/order/10588/locations">ORDER
-                        TAKEOUT</button>
+                    <a class="nav-link btn btn-default" target="_blank" rel="noopener noreferrer"
+                        href="https://www.chowhound.com/">ORDER TAKEOUT </a>
                 </li>
             </ul>
         </div>
@@ -71,6 +76,7 @@
             <i class="fab fa-instagram"></i>
         </div>
     </nav>
+
 
     <!-- hero image -->
     <div class="con-hero">

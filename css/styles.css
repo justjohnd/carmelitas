@@ -191,6 +191,7 @@ body {
 
 .a-default {
     text-decoration: none;
+    color: rgba(0, 0, 0, .5);
 }
 
 .a-default:hover {
@@ -293,6 +294,11 @@ body {
 
 .btn-default:hover {
     background-color: #f9c47c;
+}
+
+.btn-default:focus {
+   background-color: #872E8C;
+   ;
 }
 
 .btn-full-width {

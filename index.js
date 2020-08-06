@@ -11,34 +11,12 @@ $(".btn-close").click(function (e) {
     $("body").removeClass("offcanvas-active");
 }); 
 
-
-
-
 // Get current year for copyright
 $('#year').text(new Date().getFullYear());
 
 //Use keyboard to pause carousel
 $(".carousel").carousel({
     keyboard: true
-});
-
-// Init Scrollspy
-$('body').scrollspy({ target: '#main-nav' });
-
-// Smooth Scrolling
-$("#main-nav a").on('click', function (event) {
-    if (this.hash !== "") {
-        event.preventDefault();
-
-        const hash = this.hash;
-
-        $('html, body').animate({
-            scrollTop: $(hash).offset().top
-        }, 800, function () {
-
-            window.location.hash = hash;
-        });
-    }
 });
 
 
@@ -93,15 +71,12 @@ const fp = flatpickr("#basicDate", {
 
 
 
-// // Change menu on click
+// Change menu on click
+document.getElementById("menu-daily").addEventListener("click", function () {
+    document.getElementById("menu-container").innerHTML = '<div class="row"> <div class = "col-md-6"><div class = "col-content"><h2 class = "menu-sec-header"> DAILY MENU </h2> </div> <div class = "col-content"><p class = "menu-item-heading" > NACHOS CON CARNE </p> <p class = "menu-sec" > Lorem ipsum dolor sit amet consectetur adipisicing elitAspernatur consequatursint </p> <p class = "menu-sec-price" > $11 .49 </p> <p class = "menu-sec-veg" > vegetarian / vegan options available </p> </div></div></div>';
+                
+});
 
-// var menuContents = '<p class="menu-item-heading">NACHOS CON CARNE</p>'
-// '<p class="menu-item-heading">NACHOS CON CARNE</p>';
-
-
-// document.getElementById("menu-daily").addEventListener("click", function() {
-//     console.log("test");
-//     document.getElementById("menu-container").innerHTML = menuContents;
-
-      
-// });
+document.getElementById("menu-catering").addEventListener("click", function () {
+    document.getElementById("menu-container").innerHTML = '<div class="row"> <div class = "col-md-6"><div class = "col-content"><h2 class = "menu-sec-header"> APPETIZERS </h2> </div> <div class = "col-content"><p class = "menu-item-heading" > NACHOS CON CARNE </p> <p class = "menu-sec" > Lorem ipsum dolor sit amet consectetur adipisicing elitAspernatur consequatursint </p> <p class = "menu-sec-price" > $11 .49 </p> <p class = "menu-sec-veg" > vegetarian / vegan options available </p> </div></div></div>';;
+});
