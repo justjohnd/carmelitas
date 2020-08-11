@@ -56,19 +56,18 @@ function toggleBounce() {
 
 
 // Flatpickr
-// $("#basicDate").flatpickr({
-//     enableTime: true,
-//     dateFormat: "F, d Y H:i",
-// });
-//The above code does not work for modals
-
 const fp = flatpickr("#basicDate", {
     enableTime: true,
     dateFormat: "F, d Y H:i",
     static: true
 });
 
+//Scrollout
+import ScrollOut from "scroll-out";
 
+ScrollOut({
+  targets: 'h2, p'
+});
 
 
 // // Change menu on click--Currently menus are on separate pages

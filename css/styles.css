@@ -371,6 +371,14 @@ body {
 }
 
 /* Containers */
+section {
+ position: relative;
+ width: 100%;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
 .con-default {
     text-align: center;
     padding: 0 1rem 5rem 1rem;
@@ -381,6 +389,31 @@ body {
         padding: 0 1rem 6rem 1rem;
         text-align: center;
     }
+}
+
+section .con-default {
+    max-width: 80%;
+}
+
+section .con-default h2 {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    font-size: 2rem;
+    transition: 0.5s;
+    transform-origin: bottom;
+    transform: scaleX(0);
+}
+
+section .con-default h2[data-scroll="in"] {
+    transform: scaleX(1);
+}
+
+@media screen and (min-width: 768px) {
+section .con-default h2 {
+    font-size: 3rem;
+}
 }
 
 .con-default.con-locations {
@@ -810,11 +843,28 @@ body {
     display: block;
 }
 
-
 label {
     color: #fff;
 }
 
 .modal {
     padding-left: 18.9984px;
+}
+
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        transform: translate(0);
+        opacity: 1;
+    }
+}
+
+.con-animated {
+    animation: moveInBottom .5s ease-out .75s;
+    animation-fill-mode: backwards;
+    /* Starts animation from keyframes 0% time*/
 }
