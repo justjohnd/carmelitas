@@ -19,7 +19,6 @@ $(".carousel").carousel({
     keyboard: true
 });
 
-
 // Initialize and add the map
 function initMap() {
     // The location of Uluru
@@ -45,15 +44,16 @@ function initMap() {
         icon: image
     });
     marker.addListener('click', toggleBounce);
-    }
+}
 
-    function toggleBounce() {
-        if (marker.getAnimation() !== null) {
-            marker.setAnimation(null);
-        } else {
-            marker.setAnimation(google.maps.Animation.BOUNCE);
-        }
+function toggleBounce() {
+    if (marker.getAnimation() !== null) {
+        marker.setAnimation(null);
+    } else {
+        marker.setAnimation(google.maps.Animation.BOUNCE);
     }
+}
+
 
 // Flatpickr
 // $("#basicDate").flatpickr({
@@ -71,7 +71,7 @@ const fp = flatpickr("#basicDate", {
 
 
 
-// Change menu on click
+// // Change menu on click
 document.getElementById("menu-daily").addEventListener("click", function () {
     document.getElementById("menu-container").innerHTML = '<div class="row"> <div class = "col-md-6"><div class = "col-content"><h2 class = "menu-sec-header"> DAILY MENU </h2> </div> <div class = "col-content"><p class = "menu-item-heading" > NACHOS CON CARNE </p> <p class = "menu-sec" > Lorem ipsum dolor sit amet consectetur adipisicing elitAspernatur consequatursint </p> <p class = "menu-sec-price" > $11 .49 </p> <p class = "menu-sec-veg" > vegetarian / vegan options available </p> </div></div></div>';
                 
