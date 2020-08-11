@@ -161,6 +161,42 @@ body {
     }
 }
 
+
+@media screen and (min-width: 992px) {
+.ul-animation li {
+    display: inline-block;
+    position: relative;
+}
+}
+
+@media screen and (min-width: 992px) {
+.ul-animation a:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    display: block;
+    margin-top: 5px;
+    right: 0;
+    background: #5ab200;
+    transition: width .4s ease;
+}
+}
+
+@media screen and (min-width: 992px) {
+.ul-animation a.btn:after {
+    height: 0px;
+}
+}
+
+@media screen and (min-width: 992px) {
+.ul-animation a:hover:after {
+    width: 100%;
+    left: 0;
+    background: #5ab200;
+}
+}
+
 .ul-grid-2col {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -179,7 +215,7 @@ body {
     .list-nav {
         display: inline-block;
         line-height: 2;
-        padding-right: 1rem;
+        margin-right: 1rem;
         text-align: center;
     }
 }
@@ -283,7 +319,7 @@ body {
     color: #fff;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 992px) {
     .navbar-light .navbar-nav .nav-link.a-default {
         color: rgba(0, 0, 0, .5);
     }
@@ -291,6 +327,12 @@ body {
 
 .navbar-light .navbar-nav .nav-link.btn-default {
     color: #212529;
+}
+
+.nav-link.btn {
+    display: inline;
+    padding: 10px;
+    line-height: 4;
 }
 
 .btn-default:hover {
