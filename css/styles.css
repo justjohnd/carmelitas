@@ -97,6 +97,7 @@ body {
 }
 
 
+
 /* Content */
 .col-content {
     min-height: 60px;
@@ -335,7 +336,7 @@ body {
 
 @media screen and (min-width: 768px) {
     .con-default {
-        padding: 0 1rem 7rem 1rem;
+        padding: 0 1rem 6rem 1rem;
         text-align: center;
     }
 }
@@ -354,6 +355,12 @@ body {
         padding: 0 30px;
     }
 }
+
+.con-img {
+    padding: 3rem 0;
+    text-align: center;
+}
+
 
 .con-nav {
     background-color: #ebd5b4;
@@ -387,11 +394,6 @@ body {
     .con-img-splash {
         margin: 143px 0 0 0;
     }
-}
-
-.con-img {
-    padding: 3rem 0;
-    text-align: center;
 }
 
 #map {
