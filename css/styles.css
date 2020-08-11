@@ -525,7 +525,7 @@ body {
 .background-hero {
     position: relative;
     height: 80vh;
-    background-image: url("/images/stockJumbo1.jpg");
+    background-image: url("images/stockJumbo1.jpg");
     background-size: cover;
     background-position-y: center;
     width: 100%;
@@ -658,12 +658,12 @@ body {
 
 /* Template */
 .background-guac {
-            background: url(/images/img-guac-500.png) no-repeat center fixed;
+            background: url(images/img-guac-500.png) no-repeat center fixed;
 }
 
 
 .background-avocado {
-    background: url(/images/test-brightness-500.png) no-repeat center fixed;
+    background: url(images/test-brightness-500.png) no-repeat center fixed;
 }
 
 .background-img {
