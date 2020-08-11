@@ -403,6 +403,10 @@ section .con-default h2 {
     font-size: 2rem;
     transition: 0.5s;
     transform-origin: bottom;
+    transform: scaleX(0);
+}
+
+section .con-default h2[data-scroll="in"] {
     transform: scaleX(1);
 }
 

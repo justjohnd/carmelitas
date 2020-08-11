@@ -62,30 +62,12 @@ const fp = flatpickr("#basicDate", {
     static: true
 });
 
-//Add scroll event for page animation
-// window.addEventListener('scroll', () => {
-//     const scrollable = document.documentElement.scrollHeight - window.innerHeight;
-// const scrolled = window.scrollY;
-// console.log(scrolled);
-// if (Math.ceil(scrolled) === scrollable) {
-//     alert('you\'ve reached the bottom');
-// }
-// });
+//Scrollout
+import ScrollOut from "scroll-out";
 
-// window.addEventListener('scroll', () => {
-// const sec1 = document.getElementById('js-sec-1').offsetTop;
-// const scrolled = window.scrollY; 
-
-// if (scrolled > sec1) {
-//     console.log(scrolled);
-//     console.log(sec1);
-//     document.getElementById('js-sec-1').classList.add("con-animated");
-//     document.getElementById('js-sec-1').style.display = "block";
-// } else {
-//     document.getElementById('js-sec-1').style.display = "none";
-// }
-// });
-
+ScrollOut({
+  targets: 'h2, p'
+});
 
 
 // // Change menu on click--Currently menus are on separate pages
