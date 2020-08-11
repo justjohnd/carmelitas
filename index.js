@@ -56,18 +56,35 @@ function toggleBounce() {
 
 
 // Flatpickr
-// $("#basicDate").flatpickr({
-//     enableTime: true,
-//     dateFormat: "F, d Y H:i",
-// });
-//The above code does not work for modals
-
 const fp = flatpickr("#basicDate", {
     enableTime: true,
     dateFormat: "F, d Y H:i",
     static: true
 });
 
+//Add scroll event for page animation
+// window.addEventListener('scroll', () => {
+//     const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+// const scrolled = window.scrollY;
+// console.log(scrolled);
+// if (Math.ceil(scrolled) === scrollable) {
+//     alert('you\'ve reached the bottom');
+// }
+// });
+
+// window.addEventListener('scroll', () => {
+// const sec1 = document.getElementById('js-sec-1').offsetTop;
+// const scrolled = window.scrollY; 
+
+// if (scrolled > sec1) {
+//     console.log(scrolled);
+//     console.log(sec1);
+//     document.getElementById('js-sec-1').classList.add("con-animated");
+//     document.getElementById('js-sec-1').style.display = "block";
+// } else {
+//     document.getElementById('js-sec-1').style.display = "none";
+// }
+// });
 
 
 
