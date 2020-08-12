@@ -384,30 +384,28 @@ section {
     padding: 0 1rem 5rem 1rem;
 }
 
+.con-animate  {
+    transition: 1.5s;
+    transition-timing-function: ease-in;
+    transform-origin: bottom;
+    opacity: 0;
+    transform: translateY(150px);
+}
+
+.con-animate[data-scroll="in"] {
+    transform: translate(0);
+    opacity: 1;
+}
+
+
 @media screen and (min-width: 768px) {
     .con-default {
         padding: 0 1rem 6rem 1rem;
-        text-align: center;
     }
 }
 
 section .con-default {
     max-width: 80%;
-}
-
-section .con-default h2 {
-    position: relative;
-    margin: 0;
-    padding: 0;
-    display: inline-block;
-    font-size: 2rem;
-    transition: 0.5s;
-    transform-origin: bottom;
-    transform: scaleX(0);
-}
-
-section .con-default h2[data-scroll="in"] {
-    transform: scaleX(1);
 }
 
 @media screen and (min-width: 768px) {
@@ -847,24 +845,4 @@ label {
     color: #fff;
 }
 
-.modal {
-    padding-left: 18.9984px;
-}
 
-@keyframes moveInBottom {
-    0% {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-
-    100% {
-        transform: translate(0);
-        opacity: 1;
-    }
-}
-
-.con-animated {
-    animation: moveInBottom .5s ease-out .75s;
-    animation-fill-mode: backwards;
-    /* Starts animation from keyframes 0% time*/
-}

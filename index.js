@@ -62,13 +62,6 @@ const fp = flatpickr("#basicDate", {
     static: true
 });
 
-//Scrollout
-import ScrollOut from "scroll-out";
-
-ScrollOut({
-  targets: 'h2, p'
-});
-
 
 // // Change menu on click--Currently menus are on separate pages
 // document.getElementById("menu-daily").addEventListener("click", function () {
