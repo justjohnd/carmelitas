@@ -21,7 +21,7 @@ $(".carousel").carousel({
 
 // Initialize and add the map
 function initMap() {
-    // The location of Uluru
+    // The location of Carmelitas
     var myLatLng = {
         lat: 27.819290,
         lng: -82.753480
@@ -43,7 +43,7 @@ function initMap() {
         animation: google.maps.Animation.DROP,
         icon: image
     });
-    marker.addListener('click', toggleBounce);
+    marker.addListener("click", toggleBounce);
 }
 
 function toggleBounce() {
@@ -55,18 +55,17 @@ function toggleBounce() {
 }
 
 
+
+
+
+
+
+
 // Flatpickr
 const fp = flatpickr("#basicDate", {
     enableTime: true,
     dateFormat: "F, d Y H:i",
     static: true
-});
-
-//Scrollout
-import ScrollOut from "scroll-out";
-
-ScrollOut({
-  targets: 'h2, p'
 });
 
 
