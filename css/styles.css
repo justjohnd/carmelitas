@@ -127,9 +127,6 @@ section {
         height: 3px;
         display: block;
         margin-top: 5px;
-        right: 0;
-        background: #5ab200;
-        transition: width .2s;
     }
 }
 
@@ -144,6 +141,15 @@ section {
         width: 100%;
         left: 0;
         background: #5ab200;
+        transition: width .2s;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .dropdown-menu>a:hover:after {
+        width: 100%;
+        background: #5ab200;
+        transition: width 0s;
     }
 }
 
