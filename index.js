@@ -1,3 +1,15 @@
+// Scroll out
+ScrollOut({
+                targets: ".con-animate"
+            });
+
+
+
+
+
+
+
+
 //Off canvas navbar
 $("[data-trigger]").on("click", function () {
     var trigger_id = $(this).attr('data-trigger');
