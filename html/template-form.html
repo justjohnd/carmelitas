@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css"
+        integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@1,700&display=swap" rel="stylesheet"> 
+    This font was used for alternative CTA-->
+
+    <!--  Flatpicker Styles  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/themes/dark.css">
+
+
+    <title>Carmelita's Authentic Mexican Restaurant | Reservations</title>
+</head>
+
+<body>
+    <div class="con-res">
+        <div class="row">
+            <div class="col-md-3 my-auto"><img class="img-res"
+                    src="/images/CARMELITAS menu illustrations textured-01.png">
+            </div>
+            <div class="col-md-6 form-res">
+                <h1 class="h2-default text-white">RESERVATIONS</h1>
+                <form>
+                    <!-- TEXT FIELD GROUPS -->
+                    <div class="form-group">
+                        <label for="name"></label>
+                        <input class="form-control form-control-lg" type="text" id="name" placeholder="Your Name"
+                            required="true">
+                    </div>
+                      <div class="form-group">
+                          <label for="email">Your Email (Optional, for contact purposes only.)</label>
+                          <input class="form-control form-control-lg" type="email" id="email" placeholder="">
+                          <div class="form-check">
+                              <label class="form-check-label mr-2">
+                                  <input type="checkbox" class="form-check-input">Sign me up to receive
+                                  coupons and other discounts!
+                              </label>
+                          </div>
+                    <div class="form-group">
+                        <label for="phone-number"></label>
+                        <input class="form-control form-control-lg" type="email" id="phone-number"
+                            placeholder="Your Phone Number" required="true">
+                        <small class="form-text text-muted">Your personal information will never be shared</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="number-people"></label>
+                        <input class="form-control form-control-lg" type="email" id="number-people"
+                            placeholder="Number of People" required="true">
+                    </div>
+                    <div class="form-group">
+                        <label for="choose-location"></label>
+                        <select class="form-control form-control-lg placeholder-color" id="choose-location"
+                            required="true">
+                            <option selected disabled>Choose a Location</option>
+                            <option>St. Petersburg</option>
+                            <option>Largo</option>
+                            <option>New Port Richey</option>
+                            <option>Pinellas Park</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="date-time"></label>
+                        <div class="fp-block">
+                        <input class="form-control form-control-lg" type="text" id="basicDate"
+                            placeholder="Select Date & Time" data-input placeholder="Select Time & Date"
+                            required="true">
+                            </div>
+                    </div>
+
+                    <button class="btn btn-block btn-light mt-5" type="submit">Submit</button>
+                </form>
+
+            </div>
+            <div class="col-md-3 my-auto"><img class="img-res"
+                    src="/images/CARMELITAS menu illustrations textured-08.png">
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="text-center">
+        <button class="btn btn-primary" data-toggle="modal" data-target="#reservations">Contact Us</button>
+    </div>
+
+
+    <!-- CONTACT MODAL -->
+    <div class="modal fade text-dark" id="reservations">
+        <div class="modal-dialog">
+
+            <div class="con-res modal-content">
+                <div class="modal-header">
+                    <h1 class="h2-default text-white">RESERVATIONS</h1>
+                    <button class="close" data-dismiss="modal">
+                        <span>&times;</span>
+                    </button>
+                </div>
+                <div class="row model-body">
+                    <div class="col-md-3 my-auto"><img class="img-res"
+                            src="/images/CARMELITAS menu illustrations textured-01.png">
+                    </div>
+                    <div class="col-md-6 form-res">
+                        <form>
+                            <!-- TEXT FIELD GROUPS -->
+                            <div class="form-group">
+                                <label for="name"></label>
+                                <input class="form-control form-control-lg" type="text" id="name"
+                                    placeholder="Your Name" required="true">
+                            </div>
+                            <div class="form-group">
+                                <label for="email"></label>
+                                <input class="form-control form-control-lg" type="email" id="email"
+                                    placeholder="Your Email (Optional, for contact purposes only.)">
+                                <small class="form-text text-muted">Your personal information will never be
+                                    shared</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone-number"></label>
+                                <input class="form-control form-control-lg" type="email" id="phone-number"
+                                    placeholder="Your Phone Number" required="true">
+                                <small class="form-text text-muted">Your personal information will never be
+                                    shared</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="number-people"></label>
+                                <input class="form-control form-control-lg" type="email" id="number-people"
+                                    placeholder="Number of People" required="true">
+                            </div>
+                            <div class="form-group">
+                                <label for="choose-location"></label>
+                                <select class="form-control form-control-lg placeholder-color" id="choose-location"
+                                    required="true">
+                                    <option selected disabled>Choose a Location</option>
+                                    <option>St. Petersburg</option>
+                                    <option>Largo</option>
+                                    <option>New Port Richey</option>
+                                    <option>Pinellas Park</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="date-time"></label>
+                                <div class="fp-block">
+                                <input class="form-control form-control-lg fp-block" type="text" id="basicDate"
+                                    placeholder="Select Date & Time" data-input placeholder="Select Time & Date"
+                                    required="true">
+                                    </div>
+                            </div>
+
+                            <button class="btn btn-block btn-light mt-5" type="submit">Submit</button>
+                        </form>
+
+                    </div>
+                    <div class="col-md-3 my-auto"><img class="img-res"
+                            src="/images/CARMELITAS menu illustrations textured-08.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+    </script>
+
+    <!-- Flatpickr  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.js"></script>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
