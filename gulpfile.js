@@ -12,7 +12,6 @@ const rename = require("gulp-rename");
 const concat = require("gulp-concat");
 const imagemin = require("gulp-imagemin");
 const cache = require("gulp-cache");
-const kit = require("gulp-kit");
 const htmlmin = require("gulp-htmlmin");
 const autoprefixer = require("gulp-autoprefixer");
 const babel = require("gulp-babel");
@@ -22,11 +21,33 @@ const plumber = require("gulp-plumber");
 const notifier = require("gulp-notifier");
 
 filesPath = {
+  css: "./src/css/**/*.css",
   sass: "./src/sass/**/*.scss",
   less: "./src/less/styles.less",
   js: "./src/js/**/*.js",
   images: "./src/img/**/*.+(png|jpg|gif|svg)",
-  html: "./html/**/*.kit"
+  html: "./html/**/*.html"
+}
+
+// CSS
+
+function cssTask(done) {
+  gulp
+    .src(filesPath.css)
+    .pipe(plumber({ errorHandler: notifier.error }))
+    .pipe(sourcemaps.init())
+    .pipe(autoprefixer())
+    .pipe(cssnano())
+    .pipe(sourcemaps.write("."))
+    .pipe(
+      rename(function (path) {
+        if (!path.extname.endsWith(".map")) {
+          path.basename += ".min";
+        }
+      })
+    )
+    .pipe(dest("./dist/css"));
+  done();
 }
 
 // Sass
@@ -61,7 +82,6 @@ function lessTask(done) {
   .pipe(less())
   .pipe(cssnano())
   .pipe(sourcemaps.write("."))
-  .pipe(rename("./styles.min.css"))
   .pipe(dest("./dist/css"));
   done();
 }
@@ -70,7 +90,7 @@ function lessTask(done) {
 
 function jsTask(done) {
   gulp
-  .src(["./src/js/alert.js", "./src/js/project.js"])
+  .src(["./src/js/**/*"])
   .pipe(plumber({errorHandler: notifier.error}))
   .pipe(babel({
     presets: ["@babel/env"]
@@ -112,12 +132,11 @@ function htmlminTask(done) {
 
 // Watch task with BrowserSync
 
-function watch() {
+function watch(done) {
   browserSync.init({
     server: {
       baseDir: "./"
-    },
-    browser: "google chrome"
+    }
   });
 
   gulp
@@ -127,11 +146,13 @@ function watch() {
         filesPath.html,
         filesPath.less,
         filesPath.js,
-        filesPath.images
+        filesPath.images,
+        filesPath.css
       ],
-      parallel(sassTask, lessTask, jsTask, imagesTask, kitTask)
+      parallel(cssTask, sassTask, lessTask, jsTask, imagesTask, htmlminTask)
     )
     .on("change", browserSync.reload);
+    done();
 }
 
 // Clear cache
@@ -158,11 +179,12 @@ function clean(done) {
 
 // Gulp individual tasks
 
+exports.cssTask = cssTask;
 exports.sassTask = sassTask;
 exports.lessTask = lessTask;
 exports.jsTask = jsTask;
 exports.imagesTask = imagesTask;
-exports.kitTask = htmlminTask;
+exports.htmlminTask = htmlminTask;
 exports.watch = watch;
 exports.clearCache = clearCache;
 exports.zipTask = zipTask;

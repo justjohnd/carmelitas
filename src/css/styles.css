@@ -411,7 +411,7 @@ section {
 }
 
 /* Container Animation */
-.con-animate {
+/* .con-animate {
     transition: 1.0s;
     transition-timing-function: ease-in;
     transform-origin: bottom;
@@ -422,7 +422,7 @@ section {
 .con-animate[data-scroll="in"] {
     transform: translate(0);
     opacity: 1;
-}
+} */
 
 /* Default Container */
 .con-default {
