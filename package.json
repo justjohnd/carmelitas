@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/justjohnd/carmelitas#readme",
   "dependencies": {
+    "bootstrap": "^4.5.2",
     "scroll-out": "^2.2.11"
   },
   "devDependencies": {
