@@ -1,199 +1,135 @@
-const gulp = require("gulp");
-
-const { series, parallel, dest } = require("gulp");
-
-const sass = require("gulp-sass");
-const sourcemaps = require("gulp-sourcemaps");
-const browserSync = require("browser-sync").create();
-const less = require("gulp-less");
-const cssnano = require("gulp-cssnano");
-const uglify = require("gulp-uglify");
+const plugins = require('gulp-load-plugins');
+const gulp = require('gulp');
+const del = require('delete');
+const webpackStream = require('webpack-stream');
+const webpack2 = require('webpack');
+const yargs = require('yargs');
+const named = require('vinyl-named');
+const browser = require('browser-sync');
+const uncss = require('uncss');
+const autoprefixer = require('autoprefixer');
+var cssnano = require('cssnano');
 const rename = require("gulp-rename");
-const concat = require("gulp-concat");
-const imagemin = require("gulp-imagemin");
-const cache = require("gulp-cache");
+const uglify = require("gulp-uglify");
 const htmlmin = require("gulp-htmlmin");
-const autoprefixer = require("gulp-autoprefixer");
-const babel = require("gulp-babel");
-const zip = require("gulp-zip");
-const del = require("del");
-const plumber = require("gulp-plumber");
-const notifier = require("gulp-notifier");
 
-filesPath = {
-  css: "./src/css/**/*.css",
-  sass: "./src/sass/**/*.scss",
-  less: "./src/less/styles.less",
-  js: "./src/js/**/*.js",
-  images: "./src/img/**/*.+(png|jpg|gif|svg)",
-  html: "./html/**/*.html"
+// Load all Gulp plugins into one variable
+// JD Question: Why use this? Why list some const's at top, but not others (such as sourcemaps)?
+const $ = plugins();
+
+// Check for --production flag
+const PRODUCTION = !!yargs.argv.production;
+
+const PORT = 9999;
+
+const PATHS = {
+    DIST: 'dist',
+    ASSETS: 'dist/assets',
+};
+
+gulp.task('build', gulp.series(clean, gulp.parallel(javascript, sass, htmlTask, copy)));
+
+gulp.task('default', gulp.series('build', server, watch));
+
+// Remove dist folder before building
+function clean(done) {
+    del([PATHS.DIST], done);
 }
 
-// CSS
-
-function cssTask(done) {
-  gulp
-    .src(filesPath.css)
-    .pipe(plumber({ errorHandler: notifier.error }))
-    .pipe(sourcemaps.init())
-    .pipe(autoprefixer())
-    .pipe(cssnano())
-    .pipe(sourcemaps.write("."))
-    .pipe(
-      rename(function (path) {
-        if (!path.extname.endsWith(".map")) {
-          path.basename += ".min";
-        }
-      })
-    )
-    .pipe(dest("./dist/css"));
-  done();
-}
-
-// Sass
-
-function sassTask(done) {
-  gulp
-  .src([filesPath.sass, "!./src/sass/widget.scss"])
-  .pipe(plumber({errorHandler: notifier.error}))
-  .pipe(sourcemaps.init())
-  .pipe(autoprefixer())
-  .pipe(sass())
-  .pipe(cssnano())
-  .pipe(sourcemaps.write("."))
-  .pipe(
-    rename(function(path) {
-      if (!path.extname.endsWith(".map")) {
-        path.basename += ".min";
-      }
-    })
-  )
-  .pipe(dest("./dist/css"));
-  done();
-}
-
-// Less
-
-function lessTask(done) {
-  gulp
-  .src(filesPath.less)
-  .pipe(plumber({errorHandler: notifier.error}))
-  .pipe(sourcemaps.init())
-  .pipe(less())
-  .pipe(cssnano())
-  .pipe(sourcemaps.write("."))
-  .pipe(dest("./dist/css"));
-  done();
-}
-
-// Javascript
-
-function jsTask(done) {
-  gulp
-  .src(["./src/js/**/*"])
-  .pipe(plumber({errorHandler: notifier.error}))
-  .pipe(babel({
-    presets: ["@babel/env"]
-  }))
-  .pipe(concat("project.js"))
-  .pipe(uglify())
-  .pipe(
-    rename({
-      suffix: ".min"
-    })
-  )
-  .pipe(dest("./dist/js"));
-  done();
-}
-
-// Images optimization
-
-function imagesTask(done) {
-  gulp.src(filesPath.images)
-    .pipe(cache(imagemin()))
-    .pipe(dest("./dist/img/"));
-  done();
-}
-
-// HTML minify
-function htmlminTask(done) {
-  gulp
-    .src(filesPath.html)
-    .pipe(plumber({
-      errorHandler: notifier.error
-    }))
-    .pipe(htmlmin({
-      collapseWhitespace: true
-    }))
-    .pipe(dest("./dist/html"));
-  done();
-}
-
-
-// Watch task with BrowserSync
-
-function watch(done) {
-  browserSync.init({
-    server: {
-      baseDir: "./"
-    }
-  });
-
-  gulp
-    .watch(
-      [
-        filesPath.sass,
-        filesPath.html,
-        filesPath.less,
-        filesPath.js,
-        filesPath.images,
-        filesPath.css
-      ],
-      parallel(cssTask, sassTask, lessTask, jsTask, imagesTask, htmlminTask)
-    )
-    .on("change", browserSync.reload);
+// Copy files out of the assets folder
+// This task skips over the "img", "js", and "scss" folders, which are parsed separately
+function copy(done) {
+    // gulp.src('./index.html').pipe(gulp.dest(PATHS.DIST));
+    gulp.src('./src/img/**/*').pipe(gulp.dest(`${PATHS.ASSETS}/img`)); //What does the $ mean in front of the {}?
     done();
 }
 
-// Clear cache
-
-function clearCache(done) {
-  return cache.clearAll(done);
+// HTML minify
+function htmlTask(done) {
+    gulp
+        .src('./index.html')
+        .pipe(htmlmin({
+            collapseWhitespace: true
+        }))
+        .pipe(gulp.dest(PATHS.DIST));
+    done();
 }
 
-// Zip project
+function sass() {
+    const postCssPlugins = [
+        // Autoprefixer
+        autoprefixer(),
 
-function zipTask(done) {
-  gulp.src(["./**/*", "!./node_modules/**/*"])
-  .pipe(zip("project.zip"))
-  .pipe(dest("./"));
-  done();
+        // UnCSS - Uncomment to remove unused styles in production
+        PRODUCTION && uncss.postcssPlugin(UNCSS_OPTIONS),
+        cssnano()
+    ].filter(Boolean);
+
+    return gulp
+        .src('src/sass/styles.scss')
+        .pipe($.sourcemaps.init())
+        .pipe(
+            $.sass({
+                includePaths: '[]', // add paths to any 3rd party styles here
+            }).on('error', $.sass.logError),
+        )
+        .pipe($.postcss(postCssPlugins))
+        .pipe($.if(PRODUCTION, $.cleanCss({
+            compatibility: 'ie9'
+        })))
+        .pipe($.if(!PRODUCTION, $.sourcemaps.write())) //Why doesn't a .map file show in assets?
+        .pipe(gulp.dest(`${PATHS.ASSETS}/css`))
+        .pipe(browser.reload({
+            stream: true
+        }));
 }
 
-// Clean "dist" folder
+let webpackConfig = {
+    mode: PRODUCTION ? 'production' : 'development',
+    module: {
+        rules: [{
+            test: /\.js$/,
+            use: {
+                loader: 'babel-loader',
+                options: {
+                    presets: ['@babel/preset-env'],
+                    compact: false,
+                },
+            },
+        }, ],
+    },
+    devtool: !PRODUCTION && 'source-map',
+};
 
-function clean(done) {
-  del(["./dist/**/*"]);
-  done();
+function javascript() {
+    return gulp
+        .src('src/js/index.js')
+        .pipe(named()) //JD: What does named() do?
+        .pipe($.sourcemaps.init())
+        .pipe(webpackStream(webpackConfig, webpack2))
+        .pipe(
+            $.if(
+                PRODUCTION,
+                $.terser().on('error', (e) => {
+                    console.log(e);
+                }),
+            ),
+        )
+        .pipe($.if(!PRODUCTION, $.sourcemaps.write()))
+        .pipe(gulp.dest(`${PATHS.ASSETS}/js`));
 }
 
-// Gulp individual tasks
+function server(done) {
+    browser.init({
+            server: PATHS.DIST,
+            port: PORT,
+        },
+        done,
+    );
+}
 
-exports.cssTask = cssTask;
-exports.sassTask = sassTask;
-exports.lessTask = lessTask;
-exports.jsTask = jsTask;
-exports.imagesTask = imagesTask;
-exports.htmlminTask = htmlminTask;
-exports.watch = watch;
-exports.clearCache = clearCache;
-exports.zipTask = zipTask;
-exports.clean = clean;
-
-// Gulp serve
-
-exports.build = parallel(sassTask, lessTask, jsTask, imagesTask, htmlminTask);
-
-// Gulp default command
-
-exports.default = series(exports.build, watch);
+function watch() {
+    gulp.watch('./**/*.html').on('all', copy); // Bug: will update the file but need to manually reload
+    gulp.watch('src/**/*.js').on('all', gulp.series(javascript, browser.reload));
+    gulp.watch('src/**/*.scss').on('all', sass);
+}
