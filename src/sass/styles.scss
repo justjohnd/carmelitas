@@ -282,12 +282,12 @@ section {
 
 /* Menu Container */
 .background-guac {
-    background: url(../images/img-guac-500.png) no-repeat center fixed;
+    background: url(..assets/img/img-guac-500.png) no-repeat center fixed;
 }
 
 
 .background-avocado {
-    background: url(../images/test-brightness-500.png) no-repeat center fixed;
+    background: url(..assets/img/test-brightness-500.png) no-repeat center fixed;
 }
 
 .background-img {
@@ -639,7 +639,7 @@ section .con-default {
 .background-hero {
     position: relative;
     height: 80vh;
-    background-image: url("../images/stockJumbo1.jpg");
+    background-image: url("..assets/img/stockJumbo1.jpg");
     background-size: cover;
     background-position-y: center;
     width: 100%;
