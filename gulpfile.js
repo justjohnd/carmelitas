@@ -39,7 +39,6 @@ function clean(done) {
 // Copy files out of the assets folder
 // This task skips over the "img", "js", and "scss" folders, which are parsed separately
 function copy(done) {
-    // gulp.src('./index.html').pipe(gulp.dest(PATHS.DIST));
     gulp.src('./src/img/**/*').pipe(gulp.dest(`${PATHS.ASSETS}/img`)); //What does the $ mean in front of the {}?
     done();
 }
@@ -52,6 +51,13 @@ function htmlTask(done) {
             collapseWhitespace: true
         }))
         .pipe(gulp.dest(PATHS.DIST));
+
+    gulp
+        .src('./src/html/**/*')
+        .pipe(htmlmin({
+            collapseWhitespace: true
+        }))
+        .pipe(gulp.dest(`${PATHS.ASSETS}/html`));
     done();
 }
 
