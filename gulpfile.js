@@ -12,6 +12,8 @@ var cssnano = require('cssnano');
 const rename = require("gulp-rename");
 const uglify = require("gulp-uglify");
 const htmlmin = require("gulp-htmlmin");
+const imagemin = require("gulp-imagemin");
+const cache = require("gulp-cache");
 
 // Load all Gulp plugins into one variable
 // JD Question: Why use this? Why list some const's at top, but not others (such as sourcemaps)?
@@ -36,11 +38,13 @@ function clean(done) {
     del([PATHS.DIST], done);
 }
 
-// Copy files out of the assets folder
-// This task skips over the "img", "js", and "scss" folders, which are parsed separately
+// Optimize image size
 function copy(done) {
-    gulp.src('./src/img/**/*').pipe(gulp.dest(`${PATHS.ASSETS}/img`)); //What does the $ mean in front of the {}?
-    done();
+    gulp
+        .src('./src/img/**/*')
+        .pipe(cache(imagemin()))
+        .pipe(gulp.dest(`${PATHS.ASSETS}/img`)); //What does the $ mean in front of the {}?
+        done();
 }
 
 // HTML minify
@@ -138,4 +142,10 @@ function watch() {
     gulp.watch('./**/*.html').on('all', copy); // Bug: will update the file but need to manually reload
     gulp.watch('src/**/*.js').on('all', gulp.series(javascript, browser.reload));
     gulp.watch('src/**/*.scss').on('all', sass);
+}
+
+// Clear cache
+
+function clearCache(done) {
+    return cache.clearAll(done);
 }
