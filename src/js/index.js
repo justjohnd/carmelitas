@@ -1,10 +1,10 @@
 // Scroll out
-ScrollOut({
-                targets: ".con-animate"
-            });
+  import ScrollOut from 'scroll-out';
 
-
-
+  ScrollOut({
+      threshold: 0.2,
+      once: true,
+  });
 
 
 

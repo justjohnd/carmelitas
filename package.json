@@ -20,7 +20,9 @@
     "url": "https://github.com/justjohnd/carmelitas/issues"
   },
   "homepage": "https://github.com/justjohnd/carmelitas#readme",
-  "dependencies": {},
+  "dependencies": {
+    "scroll-out": "^2.2.11"
+  },
   "devDependencies": {
     "@babel/core": "^7.11.1",
     "@babel/preset-env": "^7.11.0",

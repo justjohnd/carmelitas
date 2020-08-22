@@ -114,7 +114,7 @@ let webpackConfig = {
 function javascript() {
     return gulp
         .src('src/js/index.js')
-        .pipe(named()) //JD: What does named() do?
+        .pipe(named())
         .pipe($.sourcemaps.init())
         .pipe(webpackStream(webpackConfig, webpack2))
         .pipe(
