@@ -21,62 +21,65 @@
 </head>
 
 <body>
-    <!-- Navbar -->
-    <nav class="navbar con-nav navbar-expand-lg navbar-light sticky-top" id="main-nav">
-        <a class="navbar-brand mr-0 ml-n3" href="index.html">
-            <img class="logo" src="images/Carmelitas LOGO-03.png" alt="" loading="lazy"> </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <div class="offcanvas-header mt-3">
-                <button class="btn btn-danger btn-close"> &times CLOSE</button>
+        <!-- Navbar -->
+        <nav class="navbar con-nav navbar-expand-lg navbar-light sticky-top" id="main-nav">
+            <a class="navbar-brand mr-0 ml-n3" href="index.html">
+                <img class="logo" src="assets/img/Carmelitas LOGO-03.png" alt="" loading="lazy"> </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="offcanvas-header mt-3">
+                    <button class="btn btn-danger btn-close"> &times CLOSE</button>
+                </div>
+                <ul
+                    class="ul-default ul-animation navbar-nav text-center d-block mb-0 mr-auto ml-auto font-weight-bold hover-color">
+                    <li class="nav-item list-nav active">
+                        <a class="nav-link a-default pr-50" href="index.html">HOME <span
+                                class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item list-nav">
+                        <a class="nav-link a-default" href="assets/html/menus.html">MENUS</a>
+                    </li>
+                    <li class="nav-item list-nav dropdown">
+                        <a class="nav-link a-default" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            LOCATIONS
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="assets/html/locations-stpete.html">ST. PETERSBURG</a>
+                            <a class="dropdown-item" href="assets/html/locations-largo.html">LARGO</a>
+                            <a class="dropdown-item" href="assets/html/locations-new-port-richey.html">NEW PORT
+                                RICHEY</a>
+                            <a class="dropdown-item" href="assets/html/locations-pinellas-park.html">PINELLAS PARK</a>
+                        </div>
+                    </li>
+                    <li class="nav-item list-nav">
+                        <a class="nav-link a-default" data-toggle="modal" data-target="#reservations">RESERVATIONS</a>
+                    </li>
+                    <li class="nav-item list-nav">
+                        <a class="nav-link a-default" href="assets/html/our-story.html">OUR STORY</a>
+                    </li>
+                    <li class="nav-item list-nav">
+                        <a class="nav-link a-default" href="assets/html/catering.html">CATERING</a>
+                    </li>
+                    <li class="nav-item list-nav">
+                        <a class="nav-link btn btn-default" target="_blank" rel="noopener noreferrer"
+                            href="https://www.chowhound.com/">ORDER TAKEOUT </a>
+                    </li>
+                </ul>
             </div>
-            <ul class="ul-default navbar-nav text-center d-block mb-0 mr-auto ml-auto font-weight-bold hover-color">
-                <li class="nav-item list-nav active">
-                    <a class="nav-link a-default pr-50" href="index.html">HOME <span
-                            class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item list-nav">
-                    <a class="nav-link a-default" href="menus.html">MENUS</a>
-                </li>
-                <li class="nav-item list-nav dropdown">
-                    <a class="nav-link a-default dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        LOCATIONS
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="locations-stpete.html">ST. PETERSBURG</a>
-                        <a class="dropdown-item" href="locations-largo.html">LARGO</a>
-                        <a class="dropdown-item" href="locations-new-port-richey.html">NEW PORT RICHEY</a>
-                        <a class="dropdown-item" href="locations-pinellas-park.html">PINELLAS PARK</a>
-                    </div>
-                </li>
-                <li class="nav-item list-nav">
-                    <a class="nav-link a-default" data-toggle="modal" data-target="#reservations">RESERVATIONS</a>
-                </li>
-                <li class="nav-item list-nav">
-                    <a class="nav-link a-default" href="our-story.html">OUR STORY</a>
-                </li>
-                <li class="nav-item list-nav">
-                    <a class="nav-link a-default" href="catering.html">CATERING</a>
-                </li>
-                <li class="nav-item list-nav">
-                    <a class="nav-link btn btn-default" target="_blank" rel="noopener noreferrer"
-                        href="https://www.chowhound.com/">ORDER TAKEOUT </a>
-                </li>
-            </ul>
-        </div>
 
 
-        <div class="navbar-brand d-none d-lg-block">
-            <i class="fab fa-facebook-f"></i>
-            <i class="fab fa-twitter"></i>
-            <i class="fab fa-instagram"></i>
-        </div>
-    </nav>
-
+            <div class="navbar-brand d-none d-lg-block mr-0">
+                <a href="https://www.facebook.com/CarmelitasMexicanRestSPFLA/?epa=SEARCH_BOX" target="_blank"
+                    rel="noopener noreferrer"><i class=" fab fa-facebook-f
+                pr-3"></i></a>
+                <a href="https://www.instagram.com/explore/locations/941625/carmelitas-mexican-restaurant-sp?hl=en"
+                    target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram pl-3"></i> </a>
+            </div>
+        </nav>
 
 
     <div class="background-guac background-img">
@@ -245,7 +248,7 @@
 
         <!-- Carmelita's image -->
         <div class="con-default d-none d-md-block">
-            <img class="img-girl img-fluid" src="images/CARMELITAS GIRL.png">
+            <img class="img-girl img-fluid" src="assets/img/CARMELITAS GIRL.png">
         </div>
 
 
