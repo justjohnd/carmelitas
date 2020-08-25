@@ -7,3 +7,4 @@ ScrollOut({
     once: true,
 });
 
+import 'bootstrap';

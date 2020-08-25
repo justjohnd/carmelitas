@@ -14,6 +14,7 @@ const uglify = require("gulp-uglify");
 const htmlmin = require("gulp-htmlmin");
 const imagemin = require("gulp-imagemin");
 const cache = require("gulp-cache");
+const concat = require("gulp-concat");
 
 // Load all Gulp plugins into one variable
 // JD Question: Why use this? Why list some const's at top, but not others (such as sourcemaps)?
@@ -113,20 +114,23 @@ let webpackConfig = {
 
 function javascript() {
     return gulp
-        .src('src/js/index.js')
-        .pipe(named())
-        .pipe($.sourcemaps.init())
-        .pipe(webpackStream(webpackConfig, webpack2))
-        .pipe(
-            $.if(
-                PRODUCTION,
-                $.terser().on('error', (e) => {
-                    console.log(e);
-                }),
-            ),
+      .src(
+        "src/js/index.js"
+      )
+      .pipe(named())
+      .pipe($.sourcemaps.init())
+      .pipe(webpackStream(webpackConfig, webpack2))
+      .pipe(
+        $.if(
+          PRODUCTION,
+          $.terser().on("error", (e) => {
+            console.log(e);
+          })
         )
-        .pipe($.if(!PRODUCTION, $.sourcemaps.write()))
-        .pipe(gulp.dest(`${PATHS.ASSETS}/js`));
+      )
+    //   .pipe(concat('final.js'))
+      .pipe($.if(!PRODUCTION, $.sourcemaps.write()))
+      .pipe(gulp.dest(`${PATHS.ASSETS}/js`));
 }
 
 function server(done) {
