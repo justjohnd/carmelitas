@@ -15,6 +15,7 @@ const htmlmin = require("gulp-htmlmin");
 const imagemin = require("gulp-imagemin");
 const cache = require("gulp-cache");
 const concat = require("gulp-concat");
+const panini = require('panini');
 
 // Load all Gulp plugins into one variable
 // JD Question: Why use this? Why list some const's at top, but not others (such as sourcemaps)?
@@ -30,9 +31,27 @@ const PATHS = {
     ASSETS: 'dist/assets',
 };
 
-gulp.task('build', gulp.series(clean, gulp.parallel(javascript, sass, htmlTask, copy)));
+gulp.task('build', gulp.series(clean, gulp.parallel(javascript, sass, htmlTask, paniniTask, copy)));
 
-gulp.task('default', gulp.series('build', server, watch));
+gulp.task('default', gulp.series(paniniTask, 'build', server, paniniTask, watch));
+
+// Panini
+function paniniTask(done) {
+    gulp
+    .src('pages/**/*.html')
+        .pipe(panini({
+            root: 'pages/',
+            layouts: 'layouts/',
+            partials: 'partials/',
+            helpers: 'helpers/',
+            data: 'data/'
+        }))
+        .pipe(gulp.dest('build'));
+        done();
+}
+
+
+
 
 // Remove dist folder before building
 function clean(done) {
@@ -146,6 +165,7 @@ function watch() {
     gulp.watch('./**/*.html').on('all', copy); // Bug: will update the file but need to manually reload
     gulp.watch('src/**/*.js').on('all', gulp.series(javascript, browser.reload));
     gulp.watch('src/**/*.scss').on('all', sass);
+    // gulp.watch(['./src/{layouts,partials,helpers,data}/**/*'], [panini.refresh]);
 }
 
 // Clear cache
