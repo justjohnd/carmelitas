@@ -18,7 +18,6 @@ const concat = require("gulp-concat");
 const panini = require('panini');
 
 // Load all Gulp plugins into one variable
-// JD Question: Why use this? Why list some const's at top, but not others (such as sourcemaps)?
 const $ = plugins();
 
 // Check for --production flag
@@ -31,22 +30,25 @@ const PATHS = {
     ASSETS: 'dist/assets',
 };
 
-gulp.task('build', gulp.series(clean, gulp.parallel(javascript, sass, htmlTask, paniniTask, copy)));
+gulp.task('build', gulp.series(clean, gulp.parallel(javascript, sass, paniniTask, copy)));
 
-gulp.task('default', gulp.series(paniniTask, 'build', server, paniniTask, watch));
+gulp.task('default', gulp.series('build', server, watch));
 
 // Panini
 function paniniTask(done) {
     gulp
-    .src('pages/**/*.html')
+    .src('./src/pages/**/*.html')
         .pipe(panini({
-            root: 'pages/',
-            layouts: 'layouts/',
-            partials: 'partials/',
-            helpers: 'helpers/',
-            data: 'data/'
+            root: './src/pages/',
+            layouts: './src/layouts/',
+            partials: './src/partials/',
+            helpers: './src/helpers/',
+            data: './src/data/'
         }))
-        .pipe(gulp.dest('build'));
+        .pipe(htmlmin({
+            collapseWhitespace: true
+        }))
+        .pipe(gulp.dest(PATHS.DIST));
         done();
 }
 
@@ -67,23 +69,17 @@ function copy(done) {
         done();
 }
 
-// HTML minify
-function htmlTask(done) {
-    gulp
-        .src('./index.html')
-        .pipe(htmlmin({
-            collapseWhitespace: true
-        }))
-        .pipe(gulp.dest(PATHS.DIST));
+// HTML minify. Note: index already setup; will not need when other other pages are added
+// function htmlTask(done) {
 
-    gulp
-        .src('./src/html/**/*')
-        .pipe(htmlmin({
-            collapseWhitespace: true
-        }))
-        .pipe(gulp.dest(`${PATHS.ASSETS}/html`));
-    done();
-}
+//     gulp
+//         .src('./src/html/**/*')
+//         .pipe(htmlmin({
+//             collapseWhitespace: true
+//         }))
+//         .pipe(gulp.dest(`${PATHS.ASSETS}/html`));
+//     done();
+// }
 
 function sass() {
     const postCssPlugins = [
