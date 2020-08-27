@@ -119,9 +119,7 @@ let webpackConfig = {
 
 function javascript() {
     return gulp
-      .src(
-        "src/js/index.js"
-      )
+      .src("src/js/index.js")
       .pipe(named())
       .pipe($.sourcemaps.init())
       .pipe(webpackStream(webpackConfig, webpack2))
@@ -133,7 +131,6 @@ function javascript() {
           })
         )
       )
-    //   .pipe(concat('final.js'))
       .pipe($.if(!PRODUCTION, $.sourcemaps.write()))
       .pipe(gulp.dest(`${PATHS.ASSETS}/js`));
 }
