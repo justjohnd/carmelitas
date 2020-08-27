@@ -1,28 +1,20 @@
 @import "node_modules/bootstrap/scss/bootstrap.scss";
 
-/* Colors
-Universal theme: #eb0f00;
-Universal theme,
-.btn-col2: #5ab200;
-.btn-col2:hover: #b0d887;
-.btn-col1: #f5a02b;
-.btn-col1:hover:#f9c47c;
-button border: #872E8C;
-navbar: #ebd5b4;
-
-Other colors not used:
-#D7D52A;
-#ffd439;
-#07A499;
-#1cb0d4;
-#FF7EA0;
-*/
-
-
 /* Universals */
+*,
+*::after,
+*::before {
+margin: 0;
+padding: 0;
+box-sizing: inherit;
+}
+
+html {
+    font-size: 100%;
+}
+
 body {
-    margin: 0;
-    padding: 0;
+    box-sizing: border-box;
 }
 
 section {
