@@ -4,9 +4,9 @@
 *,
 *::after,
 *::before {
-margin: 0;
-padding: 0;
-box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
 }
 
 html {
@@ -45,6 +45,14 @@ section {
         sans-serif;
     font-weight: 700;
     text-transform: uppercase;
+}
+
+.header-menu {
+    font-size: 4rem;
+    text-shadow: -1px -1px #5ab200,
+        1px -1px 0 #5ab200,
+        -1px 1px 0 #5ab200,
+        1px 1px 0 #5ab200;
 }
 
 @media screen and (min-width: 992px) {
@@ -191,7 +199,13 @@ section {
 
 /* Navbar */
 .logo {
-    width: 200px;
+    width: 10rem;
+}
+
+@media screen and (min-width: 576px) {
+    .logo {
+        width: 15rem;
+    }
 }
 
 .navbar {
@@ -620,7 +634,7 @@ section .con-default {
     height: 80vh;
     background-image: url("/assets/img/stockJumbo1.jpg");
     background-size: cover;
-    background-position-y: center;  
+    background-position-y: center;
     width: 100%;
     z-index: 1;
 }
@@ -709,14 +723,6 @@ section .con-default {
         height: 425px;
         object-fit: cover;
     }
-}
-
-.header-menu {
-    font-size: 4rem;
-    text-shadow: -1px -1px #5ab200,
-        1px -1px 0 #5ab200,
-        -1px 1px 0 #5ab200,
-        1px 1px 0 #5ab200;
 }
 
 .header-default.header-menu {
