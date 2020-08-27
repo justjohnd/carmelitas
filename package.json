@@ -24,8 +24,7 @@
     "@popperjs/core": "^2.4.4",
     "bootstrap": "^4.5.2",
     "jquery": "^3.5.1",
-    "popper.js": "^1.16.1",
-    "scroll-out": "^2.2.11"
+    "popper.js": "^1.16.1"
   },
   "devDependencies": {
     "@babel/core": "^7.11.1",
@@ -58,6 +57,8 @@
     "gulp-uglify": "^3.0.2",
     "gulp-zip": "^5.0.2",
     "node-sass": "^4.14.1",
+    "panini": "^1.7.1",
+    "scroll-out": "^2.2.12",
     "uncss": "^0.17.3",
     "vinyl-named": "^1.1.0",
     "webpack": "^4.44.1",

@@ -1,28 +1,20 @@
 @import "node_modules/bootstrap/scss/bootstrap.scss";
 
-/* Colors
-Universal theme: #eb0f00;
-Universal theme,
-.btn-col2: #5ab200;
-.btn-col2:hover: #b0d887;
-.btn-col1: #f5a02b;
-.btn-col1:hover:#f9c47c;
-button border: #872E8C;
-navbar: #ebd5b4;
-
-Other colors not used:
-#D7D52A;
-#ffd439;
-#07A499;
-#1cb0d4;
-#FF7EA0;
-*/
-
-
 /* Universals */
-body {
+*,
+*::after,
+*::before {
     margin: 0;
     padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 100%;
+}
+
+body {
+    box-sizing: border-box;
 }
 
 section {
@@ -53,6 +45,14 @@ section {
         sans-serif;
     font-weight: 700;
     text-transform: uppercase;
+}
+
+.header-menu {
+    font-size: 4rem;
+    text-shadow: -1px -1px #5ab200,
+        1px -1px 0 #5ab200,
+        -1px 1px 0 #5ab200,
+        1px 1px 0 #5ab200;
 }
 
 @media screen and (min-width: 992px) {
@@ -199,7 +199,13 @@ section {
 
 /* Navbar */
 .logo {
-    width: 200px;
+    width: 10rem;
+}
+
+@media screen and (min-width: 576px) {
+    .logo {
+        width: 15rem;
+    }
 }
 
 .navbar {
@@ -259,6 +265,7 @@ section {
         display: block;
         text-align: right;
         font-size: 16px;
+        
     }
 
     .navbar-collapse {
@@ -283,12 +290,12 @@ section {
 
 /* Menu Container */
 .background-guac {
-    background: url(..assets/img/img-guac-500.png) no-repeat center fixed;
+    background: url("/assets/img/img-guac-500.png") no-repeat center fixed;
 }
 
 
 .background-avocado {
-    background: url(..assets/img/test-brightness-500.png) no-repeat center fixed;
+    background: url("/assets/img/test-brightness-500.png") no-repeat center fixed;
 }
 
 .background-img {
@@ -626,7 +633,7 @@ section .con-default {
 .background-hero {
     position: relative;
     height: 80vh;
-    background-image: url("..assets/img/stockJumbo1.jpg");
+    background-image: url("/assets/img/stockJumbo1.jpg");
     background-size: cover;
     background-position-y: center;
     width: 100%;
@@ -717,14 +724,6 @@ section .con-default {
         height: 425px;
         object-fit: cover;
     }
-}
-
-.header-menu {
-    font-size: 4rem;
-    text-shadow: -1px -1px #5ab200,
-        1px -1px 0 #5ab200,
-        -1px 1px 0 #5ab200,
-        1px 1px 0 #5ab200;
 }
 
 .header-default.header-menu {

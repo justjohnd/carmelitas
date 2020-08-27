@@ -15,9 +15,9 @@ const htmlmin = require("gulp-htmlmin");
 const imagemin = require("gulp-imagemin");
 const cache = require("gulp-cache");
 const concat = require("gulp-concat");
+const panini = require('panini');
 
 // Load all Gulp plugins into one variable
-// JD Question: Why use this? Why list some const's at top, but not others (such as sourcemaps)?
 const $ = plugins();
 
 // Check for --production flag
@@ -30,40 +30,45 @@ const PATHS = {
     ASSETS: 'dist/assets',
 };
 
-gulp.task('build', gulp.series(clean, gulp.parallel(javascript, sass, htmlTask, copy)));
+gulp.task('build', gulp.series(clean, gulp.parallel(javascript, sass, pages, image)));
 
 gulp.task('default', gulp.series('build', server, watch));
 
-// Remove dist folder before building
-function clean(done) {
-    del([PATHS.DIST], done);
-}
-
-// Optimize image size
-function copy(done) {
+// Panini
+function pages(done) {
     gulp
-        .src('./src/img/**/*')
-        .pipe(cache(imagemin()))
-        .pipe(gulp.dest(`${PATHS.ASSETS}/img`)); //What does the $ mean in front of the {}?
-        done();
-}
-
-// HTML minify
-function htmlTask(done) {
-    gulp
-        .src('./index.html')
+    .src('./src/pages/**/*.html')
+        .pipe(panini({
+            root: './src/pages/',
+            layouts: './src/layouts/',
+            partials: './src/partials/',
+            helpers: './src/helpers/',
+            data: './src/data/'
+        }))
         .pipe(htmlmin({
             collapseWhitespace: true
         }))
         .pipe(gulp.dest(PATHS.DIST));
+        done();
+}
 
-    gulp
-        .src('./src/html/**/*')
-        .pipe(htmlmin({
-            collapseWhitespace: true
-        }))
-        .pipe(gulp.dest(`${PATHS.ASSETS}/html`));
+// Load updated HTML templates and partials into Panini
+function resetPages(done) {
+    panini.refresh();
     done();
+}
+
+// Optimize image size
+function image() {
+    return gulp
+        .src('./src/img/**/*')
+        .pipe(cache(imagemin()))
+        .pipe(gulp.dest(`${PATHS.ASSETS}/img`));
+}
+
+// Remove dist folder before building
+function clean(done) {
+    del([PATHS.DIST], done);
 }
 
 function sass() {
@@ -114,9 +119,7 @@ let webpackConfig = {
 
 function javascript() {
     return gulp
-      .src(
-        "src/js/index.js"
-      )
+      .src("src/js/index.js")
       .pipe(named())
       .pipe($.sourcemaps.init())
       .pipe(webpackStream(webpackConfig, webpack2))
@@ -128,7 +131,6 @@ function javascript() {
           })
         )
       )
-    //   .pipe(concat('final.js'))
       .pipe($.if(!PRODUCTION, $.sourcemaps.write()))
       .pipe(gulp.dest(`${PATHS.ASSETS}/js`));
 }
@@ -143,9 +145,13 @@ function server(done) {
 }
 
 function watch() {
-    gulp.watch('./**/*.html').on('all', copy); // Bug: will update the file but need to manually reload
+    gulp.watch('./**/*.img').on('all', image); // Bug: will update the file but need to manually reload
     gulp.watch('src/**/*.js').on('all', gulp.series(javascript, browser.reload));
     gulp.watch('src/**/*.scss').on('all', sass);
+    gulp.watch('src/pages/**/*.html').on('all', gulp.series(pages, browser.reload));
+    gulp.watch('src/{layouts,partials}/**/*.html').on('all', gulp.series(resetPages, pages, browser.reload));
+    gulp.watch('src/data/**/*.{js,json,yml}').on('all', gulp.series(resetPages, pages, browser.reload));
+    gulp.watch('src/helpers/**/*.js').on('all', gulp.series(resetPages, pages, browser.reload));
 }
 
 // Clear cache
