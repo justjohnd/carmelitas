@@ -19,7 +19,7 @@
   "bugs": {
     "url": "https://github.com/justjohnd/carmelitas/issues"
   },
-  "homepage": "https://github.com/justjohnd/carmelitas#readme",
+  "homepage": "https://justjohnd.github.io/carmelitas/",
   "dependencies": {
     "@popperjs/core": "^2.4.4",
     "bootstrap": "^4.5.2",
