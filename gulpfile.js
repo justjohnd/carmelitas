@@ -48,21 +48,7 @@ function pages(done) {
         .pipe(htmlmin({
             collapseWhitespace: true
         }))
-        .pipe(gulp.dest((`${PATHS.DIST}`));
-
-    gulp
-        .src('./src/pages/index.html')
-        .pipe(panini({
-            root: './src/pages/',
-            layouts: './src/layouts/',
-            partials: './src/partials/',
-            helpers: './src/helpers/',
-            data: './src/data/'
-        }))
-        .pipe(htmlmin({
-            collapseWhitespace: true
-        }))
-        .pipe(gulp.dest(`${PATHS./}`)); 
+        .pipe(gulp.dest(`${PATHS.DIST}`));
         done();
         }
 
