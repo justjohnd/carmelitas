@@ -48,7 +48,7 @@ function pages(done) {
         .pipe(htmlmin({
             collapseWhitespace: true
         }))
-        .pipe(gulp.dest(PATHS.DIST));
+        .pipe(gulp.dest((`${PATHS.DIST}`));
 
     gulp
         .src('./src/pages/index.html')
@@ -62,7 +62,7 @@ function pages(done) {
         .pipe(htmlmin({
             collapseWhitespace: true
         }))
-        .pipe(gulp.dest('./')); 
+        .pipe(gulp.dest(`${PATHS./}`)); 
         done();
         }
 
