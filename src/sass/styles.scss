@@ -566,6 +566,14 @@ section .con-default {
 }
 
 /* Component: Hero Carousel */
+.carousel-control-prev {
+    z-index: 3;
+}
+
+.carousel-control-next {
+    z-index: 3;
+}
+
 .overpic {
     opacity: .8;
     position: absolute;
