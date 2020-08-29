@@ -32,28 +32,3 @@
             marker.setAnimation(google.maps.Animation.BOUNCE);
         }
     }
-
-
-
-
-
-
-
-
-    // Flatpickr
-    const fp = flatpickr("#basicDate", {
-        enableTime: true,
-        dateFormat: "F, d Y H:i",
-        static: true
-    });
-
-
-    // // Change menu on click--Currently menus are on separate pages
-    // document.getElementById("menu-daily").addEventListener("click", function () {
-    //     document.getElementById("menu-container").innerHTML = '<div class="row"> <div class = "col-md-6"><div class = "col-content"><h2 class = "menu-sec-header"> DAILY MENU </h2> </div> <div class = "col-content"><p class = "menu-item-heading" > NACHOS CON CARNE </p> <p class = "menu-sec" > Lorem ipsum dolor sit amet consectetur adipisicing elitAspernatur consequatursint </p> <p class = "menu-sec-price" > $11 .49 </p> <p class = "menu-sec-veg" > vegetarian / vegan options available </p> </div></div></div>';
-
-    // });
-
-    // document.getElementById("menu-catering").addEventListener("click", function () {
-    //     document.getElementById("menu-container").innerHTML = '<div class="row"> <div class = "col-md-6"><div class = "col-content"><h2 class = "menu-sec-header"> APPETIZERS </h2> </div> <div class = "col-content"><p class = "menu-item-heading" > NACHOS CON CARNE </p> <p class = "menu-sec" > Lorem ipsum dolor sit amet consectetur adipisicing elitAspernatur consequatursint </p> <p class = "menu-sec-price" > $11 .49 </p> <p class = "menu-sec-veg" > vegetarian / vegan options available </p> </div></div></div>';;
-    // });
