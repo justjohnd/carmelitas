@@ -223,20 +223,26 @@ section {
     color: #eb0f00;
 }
 
+.nav-link.btn {
+    display: inline;
+    padding: 10px;
+    line-height: 4;
+}
+
 /* Off Canvas Mobile Navbar */
-.offcanvas__header {
+.con-nav__offcanvas__header {
     display: none;
 }
 
 @media (max-width: 992px) {
-    .offcanvas__header {
+    .con-nav__offcanvas__header {
         display: block;
         text-align: right;
         font-size: 16px;
 
     }
 
-    .offcanvas.navbar-collapse {
+    .con-nav__offcanvas.navbar-collapse {
         position: fixed;
         top: 0;
         bottom: 0;
@@ -250,38 +256,30 @@ section {
         transition: visibility .2s ease-in-out, -webkit-transform .2s ease-in-out;
     }
 
-    .offcanvas.navbar-collapse.show {
+    .con-nav__offcanvas.navbar-collapse.show {
         visibility: visible;
         transform: translateX(-100%);
     }
 }
 
-
-.navbar-light .navbar-nav .nav-link.a-default {
+.con-nav .con-nav__offcanvas .navbar-nav .nav-link{
     color: #fff;
 }
 
-/* This is used for the mobile navbar color */
-
-.navbar-light .navbar-nav .nav-link.a-default:active {
+.con-nav .con-nav__offcanvas .navbar-nav .nav-link:active {
     color: rgb(209, 209, 209);
 }
 
 @media screen and (min-width: 992px) {
-    .navbar-light .navbar-nav .nav-link.a-default {
+    .con-nav .navbar-nav .nav-link.a-default {
         color: rgba(0, 0, 0, .5);
     }
-}
 
-.navbar-light .navbar-nav .nav-link.btn-default {
-    color: #212529;
+    .con-nav .navbar-nav .nav-link.btn-default {
+        color: #212529;
+    }
 }
-
-.nav-link.btn {
-    display: inline;
-    padding: 10px;
-    line-height: 4;
-}
+//Note that this media query MUST follow the .con-nav .con-nav__offcanvas... selectors above!
 
 /* Menu Container */
 .background-guac {
