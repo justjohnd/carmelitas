@@ -3,8 +3,8 @@ Universal theme: #eb0f00;
 Universal theme,
 .btn-col2: #5ab200;
 .btn-col2:hover: #b0d887;
-.btn-col1: #f5a02b;
-.btn-col1:hover:#f9c47c;
+.btn-default: #f5a02b;
+.btn-default:hover:#f9c47c;
 button border: #872E8C;
 navbar: #ebd5b4;
 
@@ -54,7 +54,7 @@ section {
 }
 
 @media screen and (min-width: 992px) {
-    .header-menu {
+    .con-menu-teaser__header {
         font-size: 7rem;
     }
 }
@@ -393,12 +393,12 @@ section {
     margin-top: .1rem;
 }
 
-.btn-col1,
+.btn-default,
 .btn-hero {
     background-color: #f5a02b;
 }
 
-.btn-col1:hover {
+.btn-default:hover {
     background-color: #f9c47c;
 }
 
@@ -557,7 +557,7 @@ section .con-default {
 }
 
 /* Component: Hero Carousel */
-.overpic {
+.con-carousel__overpic {
     opacity: .8;
     position: absolute;
     top: 0;
@@ -569,7 +569,7 @@ section .con-default {
     width: 100%;
 }
 
-.car-image {
+.con-carousel__image {
     max-height: 50vh;
     object-fit: cover;
     opacity: 1;
@@ -577,14 +577,14 @@ section .con-default {
 }
 
 @media screen and (min-width: 768px) {
-    .car-image {
+    .con-carousel__image {
         max-height: 80vh;
         opacity: .85;
         margin-bottom: 10rem;
     }
 }
 
-.car-story .car-image {
+.car-story .con-carousel__image {
     margin: 0;
 }
 
@@ -653,7 +653,7 @@ section .con-default {
 
 
 /* Component: Home Menus Section*/
-.con-row {
+.con-menu-teaser {
     position: relative;
     height: 600px;
     background-color: #eb0f00;
@@ -666,35 +666,35 @@ section .con-default {
 }
 
 @media screen and (min-width: 768px) {
-    .con-row {
+    .con-menu-teaser {
         height: 600px;
         margin: 0;
     }
 }
 
-.rt-top {
+.con-menu-teaser__rt-top {
     background-color: #fff;
     height: 40%;
 }
 
-.rt-btm {
+.con-menu-teaser__rt-btm {
     height: 100%;
 }
 
 @media screen and (min-width: 992px) {
-    .rt-btm {
+    .con-menu-teaser__rt-btm {
         height: 60%;
     }
 }
 
-.img-home-menus {
+.con-menu-teaser__img {
     object-fit: cover;
     height: 250px;
     width: 100%;
 }
 
 @media screen and (min-width: 768px) {
-    .img-home-menus {
+    .con-menu-teaser__img {
         position: absolute;
         top: 0;
         left: 50%;
@@ -705,7 +705,7 @@ section .con-default {
 }
 
 @media screen and (min-width: 992px) {
-    .img-home-menus {
+    .con-menu-teaser__img {
         position: absolute;
         top: 50%;
         left: 65%;
@@ -717,7 +717,7 @@ section .con-default {
     }
 }
 
-.header-menu {
+.con-menu-teaser__header {
     font-size: 4rem;
     text-shadow: -1px -1px #5ab200,
         1px -1px 0 #5ab200,
@@ -725,11 +725,11 @@ section .con-default {
         1px 1px 0 #5ab200;
 }
 
-.header-default.header-menu {
+.header-default.con-menu-teaser__header {
     line-height: .8;
 }
 
-.con-home-menus {
+.con-menu-teaser__text {
     z-index: 3;
     position: absolute;
     top: 340px;
@@ -738,13 +738,13 @@ section .con-default {
 }
 
 @media screen and (min-width: 768px) {
-    .con-home-menus {
+    .con-menu-teaser__text {
         top: 50%;
     }
 }
 
 @media screen and (min-width: 768px) {
-    .con-home-menus p {
+    .con-menu-teaser__text p {
         max-width: 35%;
     }
 }

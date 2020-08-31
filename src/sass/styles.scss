@@ -47,20 +47,6 @@ section {
     text-transform: uppercase;
 }
 
-.header-menu {
-    font-size: 4rem;
-    text-shadow: -1px -1px #5ab200,
-        1px -1px 0 #5ab200,
-        -1px 1px 0 #5ab200,
-        1px 1px 0 #5ab200;
-}
-
-@media screen and (min-width: 992px) {
-    .header-menu {
-        font-size: 7rem;
-    }
-}
-
 .h1-default {
     font-size: 2rem;
     color: #fff;
@@ -175,6 +161,23 @@ section {
     color: #eb0f00;
 }
 
+// Data-Scroll
+[data-scroll] {
+    opacity: 0;
+    will-change: transform, scale, opacity;
+    -webkit-transform: translateY(6rem) scale(0.93);
+    transform: translateY(6rem) scale(0.93);
+    -webkit-transition: all 1.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 1.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+[data-scroll='in'] {
+    opacity: 1;
+    -webkit-transform: translateY(0) scale(1);
+    transform: translateY(0) scale(1);
+}
+
+
 /* Navbar */
 .con-nav {
     background-color: #ebd5b4;
@@ -278,6 +281,72 @@ section {
     }
 }
 //Note that this media query MUST follow the .con-nav .con-nav__offcanvas... selectors above!
+
+/* Module: Carousel */
+.con-carousel__overpic {
+    opacity: .8;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.con-carousel__image {
+    max-height: 50vh;
+    object-fit: cover;
+    opacity: 1;
+    margin-bottom: 5rem;
+}
+
+@media screen and (min-width: 768px) {
+    .con-carousel__image {
+        max-height: 80vh;
+        opacity: .85;
+        margin-bottom: 10rem;
+    }
+}
+
+.con-carousel .carousel-control-prev {
+    z-index: 3;
+}
+
+.con-carousel .carousel-control-next {
+    z-index: 3;
+}
+
+/* Default Container */
+.con-default {
+    padding: 0 1rem 3rem 1rem;
+    text-align: center;
+}
+
+@media screen and (min-width: 576px) {
+    .con-default {
+        padding: 0 1rem 5rem 1rem;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .con-default {
+        padding: 0 1rem 6rem 1rem;
+    }
+}
+
+section .con-default {
+    max-width: 80%;
+}
+
+@media screen and (min-width: 768px) {
+    section .con-default h2 {
+        font-size: 3rem;
+    }
+}
+
+.con-default .h1-default {
+    color: #000;
+    margin-top: 0;
+    line-height: 1.1;
+}
 
 /* Menu Container */
 .background-guac {
@@ -393,15 +462,6 @@ section {
     margin-top: .1rem;
 }
 
-.btn-col1,
-.btn-hero {
-    background-color: #f5a02b;
-}
-
-.btn-col1:hover {
-    background-color: #f9c47c;
-}
-
 .btn-col2 {
     background-color: #5ab200;
 }
@@ -409,41 +469,6 @@ section {
 .btn-col2:hover {
     background-color: #b0d887;
 }
-
-/* Default Container */
-.con-default {
-    padding: 0 1rem 3rem 1rem;
-    text-align: center;
-}
-
-@media screen and (min-width: 576px) {
-    .con-default {
-        padding: 0 1rem 5rem 1rem;
-    }
-}
-
-@media screen and (min-width: 768px) {
-    .con-default {
-        padding: 0 1rem 6rem 1rem;
-    }
-}
-
-section .con-default {
-    max-width: 80%;
-}
-
-@media screen and (min-width: 768px) {
-    section .con-default h2 {
-        font-size: 3rem;
-    }
-}
-
-.con-default .h1-default {
-    color: #000;
-    margin-top: 0;
-    line-height: 1.1;
-}
-
 
 .con-img {
     padding: 3rem 0;
@@ -544,67 +569,7 @@ section .con-default {
     -webkit-background-clip: text;
 }
 
-/* Component: Hero Carousel */
-.carousel-control-prev {
-    z-index: 3;
-}
-
-.carousel-control-next {
-    z-index: 3;
-}
-
-.overpic {
-    opacity: .8;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 2;
-}
-
-.car-logo {
-    width: 100%;
-}
-
-.car-image {
-    max-height: 50vh;
-    object-fit: cover;
-    opacity: 1;
-    margin-bottom: 5rem;
-}
-
-@media screen and (min-width: 768px) {
-    .car-image {
-        max-height: 80vh;
-        opacity: .85;
-        margin-bottom: 10rem;
-    }
-}
-
-.car-story .car-image {
-    margin: 0;
-}
-
-.car-story {
-    margin-bottom: 7rem;
-}
-
-.overlay-logo {
-    opacity: .7;
-    z-index: 2;
-    top: 50%;
-}
-
-.img-splash-opacity {
-    opacity: 1;
-}
-
-@media screen and (min-width: 768px) {
-    .img-splash-opacity {
-        opacity: .85;
-    }
-}
-
-/* Component: Hero Banner (Not main page carousel) */
+/* Module: Static Hero Banner */
 .con-hero {
     position: relative;
     padding: 1rem;
@@ -648,49 +613,64 @@ section .con-default {
 }
 
 
-/* Component: Home Menus Section*/
-.con-row {
+/* Module: Menu Teaser Section*/
+.con-menu-teaser {
     position: relative;
     height: 600px;
     background-color: #eb0f00;
 }
 
-.col,
-.col-md {
-    margin: 0;
-    padding: 0;
-}
-
 @media screen and (min-width: 768px) {
-    .con-row {
+    .con-menu-teaser {
         height: 600px;
         margin: 0;
     }
 }
 
-.rt-top {
+.con-menu-teaser__header {
+    font-size: 4rem;
+    text-shadow: -1px -1px #5ab200,
+        1px -1px 0 #5ab200,
+        -1px 1px 0 #5ab200,
+        1px 1px 0 #5ab200;
+    line-height: .8;
+}
+
+@media screen and (min-width: 992px) {
+    .con-menu-teaser__header {
+        font-size: 7rem;
+    }
+}
+
+.con-menu-teaser .col,
+.con-menu-teaser .col-md {
+    margin: 0;
+    padding: 0;
+}
+
+.con-menu-teaser__rt-top {
     background-color: #fff;
     height: 40%;
 }
 
-.rt-btm {
+.con-menu-teaser__rt-btm {
     height: 100%;
 }
 
 @media screen and (min-width: 992px) {
-    .rt-btm {
+    .con-menu-teaser__rt-btm {
         height: 60%;
     }
 }
 
-.img-home-menus {
+.con-menu-teaser__img {
     object-fit: cover;
     height: 250px;
     width: 100%;
 }
 
 @media screen and (min-width: 768px) {
-    .img-home-menus {
+    .con-menu-teaser__img {
         position: absolute;
         top: 0;
         left: 50%;
@@ -701,7 +681,7 @@ section .con-default {
 }
 
 @media screen and (min-width: 992px) {
-    .img-home-menus {
+    .con-menu-teaser__img {
         position: absolute;
         top: 50%;
         left: 65%;
@@ -713,11 +693,7 @@ section .con-default {
     }
 }
 
-.header-default.header-menu {
-    line-height: .8;
-}
-
-.con-home-menus {
+.con-menu-teaser__text {
     z-index: 3;
     position: absolute;
     top: 340px;
@@ -726,13 +702,13 @@ section .con-default {
 }
 
 @media screen and (min-width: 768px) {
-    .con-home-menus {
+    .con-menu-teaser__text {
         top: 50%;
     }
 }
 
 @media screen and (min-width: 768px) {
-    .con-home-menus p {
+    .con-menu-teaser__text p {
         max-width: 35%;
     }
 }
@@ -840,19 +816,4 @@ label {
 /* Do I need these?! */
 .hours .p-default {
     padding: 0;
-}
-
-[data-scroll] {
-    opacity: 0;
-    will-change: transform, scale, opacity;
-    -webkit-transform: translateY(6rem) scale(0.93);
-    transform: translateY(6rem) scale(0.93);
-    -webkit-transition: all 1.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-    transition: all 1.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-[data-scroll='in'] {
-    opacity: 1;
-    -webkit-transform: translateY(0) scale(1);
-    transform: translateY(0) scale(1);
 }
