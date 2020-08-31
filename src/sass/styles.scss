@@ -198,35 +198,64 @@ section {
 }
 
 /* Navbar */
-.logo {
+.con-nav {
+    background-color: #ebd5b4;
+    padding: .5rem 2rem;
+}
+
+@media screen and (min-width: 768px) {
+    .con-nav {
+        padding: 1.5rem 3rem;
+    }
+}
+
+.con-nav__logo {
     width: 10rem;
 }
 
 @media screen and (min-width: 576px) {
-    .logo {
+    .con-nav__logo {
         width: 15rem;
     }
 }
 
-.navbar {
-    height: 98px;
-}
-
-@media screen and (min-width: 768px) {
-    .navbar {
-        height: 130px;
-    }
-}
-
-@media screen and (min-width: 992px) {
-    .navbar {
-        height: 143px;
-    }
-}
-
-.navbar-light .navbar-nav.hover-color>li>a:hover {
+.con-nav .navbar-nav.hover-color>li>a:hover {
     color: #eb0f00;
 }
+
+/* Off Canvas Mobile Navbar */
+.offcanvas__header {
+    display: none;
+}
+
+@media (max-width: 992px) {
+    .offcanvas__header {
+        display: block;
+        text-align: right;
+        font-size: 16px;
+
+    }
+
+    .offcanvas.navbar-collapse {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 100%;
+        width: 100%;
+        padding-right: 1rem;
+        padding-left: 1rem;
+        overflow-y: auto;
+        visibility: hidden;
+        background-color: rgba(0, 0, 0, .8);
+        transition: visibility .2s ease-in-out, -webkit-transform .2s ease-in-out;
+    }
+
+    .offcanvas.navbar-collapse.show {
+        visibility: visible;
+        transform: translateX(-100%);
+    }
+}
+
 
 .navbar-light .navbar-nav .nav-link.a-default {
     color: #fff;
@@ -252,40 +281,6 @@ section {
     display: inline;
     padding: 10px;
     line-height: 4;
-}
-
-
-/* Off Canvas Mobile Navbar */
-.offcanvas-header {
-    display: none;
-}
-
-@media (max-width: 992px) {
-    .offcanvas-header {
-        display: block;
-        text-align: right;
-        font-size: 16px;
-        
-    }
-
-    .navbar-collapse {
-        position: fixed;
-        top: 0;
-        bottom: 0;
-        left: 100%;
-        width: 100%;
-        padding-right: 1rem;
-        padding-left: 1rem;
-        overflow-y: auto;
-        visibility: hidden;
-        background-color: rgba(0, 0, 0, .8);
-        transition: visibility .2s ease-in-out, -webkit-transform .2s ease-in-out;
-    }
-
-    .navbar-collapse.show {
-        visibility: visible;
-        transform: translateX(-100%);
-    }
 }
 
 /* Menu Container */
@@ -457,18 +452,6 @@ section .con-default {
 .con-img {
     padding: 3rem 0;
     text-align: center;
-}
-
-
-.con-nav {
-    background-color: #ebd5b4;
-    padding: .5rem 2rem;
-}
-
-@media screen and (min-width: 768px) {
-    .con-nav {
-        padding: 1.5rem 3rem;
-    }
 }
 
 .con-img-splash {
