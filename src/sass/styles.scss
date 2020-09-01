@@ -17,6 +17,13 @@ body {
     box-sizing: border-box;
 }
 
+section {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+//Note: I don't know why but this section is essential for scroll-out to seem to work
+
 /* Font */
 .p-default {
     letter-spacing: 1px;
@@ -312,9 +319,6 @@ body {
     text-align: center;
     position: relative;
     width: 80%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 @media screen and (min-width: 576px) {
