@@ -18,12 +18,11 @@ body {
 }
 
 section {
-    position: relative;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+ display: flex;
+ justify-content: center;
+ align-items: center;
 }
+//Note: I don't know why but this section is essential for scroll-out to seem to work
 
 /* Font */
 .p-default {
@@ -45,20 +44,6 @@ section {
         sans-serif;
     font-weight: 700;
     text-transform: uppercase;
-}
-
-.header-menu {
-    font-size: 4rem;
-    text-shadow: -1px -1px #5ab200,
-        1px -1px 0 #5ab200,
-        -1px 1px 0 #5ab200,
-        1px 1px 0 #5ab200;
-}
-
-@media screen and (min-width: 992px) {
-    .header-menu {
-        font-size: 7rem;
-    }
 }
 
 .h1-default {
@@ -98,30 +83,16 @@ section {
     }
 }
 
-.list-nav {
-    display: block;
-    text-align: right;
-}
-
-@media screen and (min-width: 992px) {
-    .list-nav {
-        display: inline-block;
-        line-height: 2;
-        margin-right: 1rem;
-        text-align: center;
-    }
-}
-
 /* Default ul Animation */
 @media screen and (min-width: 992px) {
-    .ul-animation li {
+    .ul-default--animation li {
         display: inline-block;
         position: relative;
     }
 }
 
 @media screen and (min-width: 992px) {
-    .ul-animation a:after {
+    .ul-default--animation a:after {
         content: '';
         position: absolute;
         width: 0;
@@ -132,25 +103,17 @@ section {
 }
 
 @media screen and (min-width: 992px) {
-    .ul-animation a.btn:after {
+    .ul-default--animation a.btn:after {
         height: 0px;
     }
 }
 
 @media screen and (min-width: 992px) {
-    .ul-animation a:hover:after {
+    .ul-default--animation a:hover:after {
         width: 100%;
         left: 0;
         background: #5ab200;
         transition: width .2s;
-    }
-}
-
-@media screen and (min-width: 992px) {
-    .dropdown-menu>a:hover:after {
-        width: 100%;
-        background: #5ab200;
-        transition: width 0s;
     }
 }
 
@@ -197,78 +160,89 @@ section {
     color: #eb0f00;
 }
 
+// Data-Scroll
+[data-scroll] {
+    opacity: 0;
+    will-change: transform, scale, opacity;
+    -webkit-transform: translateY(6rem) scale(0.93);
+    transform: translateY(6rem) scale(0.93);
+    -webkit-transition: all 1.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 1.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+[data-scroll='in'] {
+    opacity: 1;
+    -webkit-transform: translateY(0) scale(1);
+    transform: translateY(0) scale(1);
+}
+
+
 /* Navbar */
-.logo {
+.con-nav {
+    background-color: #ebd5b4;
+    padding: .5rem 2rem;
+}
+
+@media screen and (min-width: 768px) {
+    .con-nav {
+        padding: 1.5rem 3rem;
+    }
+}
+
+.con-nav__logo {
     width: 10rem;
 }
 
 @media screen and (min-width: 576px) {
-    .logo {
+    .con-nav__logo {
         width: 15rem;
     }
 }
 
-.navbar {
-    height: 98px;
+.con-nav__li {
+    display: block;
+    text-align: right;
 }
 
-@media screen and (min-width: 768px) {
-    .navbar {
-        height: 130px;
+@media screen and (min-width: 992px) {
+    .con-nav__li {
+        display: inline-block;
+        line-height: 2;
+        margin-right: 1rem;
+        text-align: center;
     }
 }
 
 @media screen and (min-width: 992px) {
-    .navbar {
-        height: 143px;
+    .dropdown-menu>a:hover:after {
+        width: 100%;
+        background: #5ab200;
+        transition: width 0s;
     }
 }
-
-.navbar-light .navbar-nav.hover-color>li>a:hover {
+.con-nav .navbar-nav.hover-color>li>a:hover {
     color: #eb0f00;
 }
 
-.navbar-light .navbar-nav .nav-link.a-default {
-    color: #fff;
-}
-
-/* This is used for the mobile navbar color */
-
-.navbar-light .navbar-nav .nav-link.a-default:active {
-    color: rgb(209, 209, 209);
-}
-
-@media screen and (min-width: 992px) {
-    .navbar-light .navbar-nav .nav-link.a-default {
-        color: rgba(0, 0, 0, .5);
-    }
-}
-
-.navbar-light .navbar-nav .nav-link.btn-default {
-    color: #212529;
-}
-
-.nav-link.btn {
+.con-nav .nav-link.btn {
     display: inline;
     padding: 10px;
     line-height: 4;
 }
 
-
 /* Off Canvas Mobile Navbar */
-.offcanvas-header {
+.con-nav__offcanvas__header {
     display: none;
 }
 
 @media (max-width: 992px) {
-    .offcanvas-header {
+    .con-nav__offcanvas__header {
         display: block;
         text-align: right;
         font-size: 16px;
-        
     }
 
-    .navbar-collapse {
+    .con-nav__offcanvas.navbar-collapse {
         position: fixed;
         top: 0;
         bottom: 0;
@@ -282,10 +256,93 @@ section {
         transition: visibility .2s ease-in-out, -webkit-transform .2s ease-in-out;
     }
 
-    .navbar-collapse.show {
+    .con-nav__offcanvas.navbar-collapse.show {
         visibility: visible;
         transform: translateX(-100%);
     }
+}
+
+.con-nav .con-nav__offcanvas .navbar-nav .nav-link{
+    color: #fff;
+}
+
+.con-nav .con-nav__offcanvas .navbar-nav .nav-link:active {
+    color: rgb(209, 209, 209);
+}
+
+@media screen and (min-width: 992px) {
+    .con-nav .navbar-nav .nav-link.a-default {
+        color: rgba(0, 0, 0, .5);
+    }
+
+    .con-nav .navbar-nav .nav-link.btn-default {
+        color: #212529;
+    }
+}
+//Note that this media query MUST follow the .con-nav .con-nav__offcanvas... selectors above!
+
+/* Module: Carousel */
+.con-carousel__overpic {
+    opacity: .8;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.con-carousel__image {
+    max-height: 50vh;
+    object-fit: cover;
+    opacity: 1;
+    margin-bottom: 5rem;
+}
+
+@media screen and (min-width: 768px) {
+    .con-carousel__image {
+        max-height: 80vh;
+        opacity: .85;
+        margin-bottom: 10rem;
+    }
+}
+
+.con-carousel .carousel-control-prev {
+    z-index: 3;
+}
+
+.con-carousel .carousel-control-next {
+    z-index: 3;
+}
+
+/* Default Container */
+.con-default {
+    padding: 0 1rem 3rem 1rem;
+    text-align: center;
+    position: relative;
+    width: 80%;
+}
+
+@media screen and (min-width: 576px) {
+    .con-default {
+        padding: 0 1rem 5rem 1rem;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .con-default {
+        padding: 0 1rem 6rem 1rem;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .con-default .h2-default {
+        font-size: 3rem;
+    }
+}
+
+.con-default .h1-default {
+    color: #000;
+    margin-top: 0;
+    line-height: 1.1;
 }
 
 /* Menu Container */
@@ -402,15 +459,6 @@ section {
     margin-top: .1rem;
 }
 
-.btn-col1,
-.btn-hero {
-    background-color: #f5a02b;
-}
-
-.btn-col1:hover {
-    background-color: #f9c47c;
-}
-
 .btn-col2 {
     background-color: #5ab200;
 }
@@ -419,56 +467,9 @@ section {
     background-color: #b0d887;
 }
 
-/* Default Container */
-.con-default {
-    padding: 0 1rem 3rem 1rem;
-    text-align: center;
-}
-
-@media screen and (min-width: 576px) {
-    .con-default {
-        padding: 0 1rem 5rem 1rem;
-    }
-}
-
-@media screen and (min-width: 768px) {
-    .con-default {
-        padding: 0 1rem 6rem 1rem;
-    }
-}
-
-section .con-default {
-    max-width: 80%;
-}
-
-@media screen and (min-width: 768px) {
-    section .con-default h2 {
-        font-size: 3rem;
-    }
-}
-
-.con-default .h1-default {
-    color: #000;
-    margin-top: 0;
-    line-height: 1.1;
-}
-
-
 .con-img {
     padding: 3rem 0;
     text-align: center;
-}
-
-
-.con-nav {
-    background-color: #ebd5b4;
-    padding: .5rem 2rem;
-}
-
-@media screen and (min-width: 768px) {
-    .con-nav {
-        padding: 1.5rem 3rem;
-    }
 }
 
 .con-img-splash {
@@ -565,67 +566,7 @@ section .con-default {
     -webkit-background-clip: text;
 }
 
-/* Component: Hero Carousel */
-.carousel-control-prev {
-    z-index: 3;
-}
-
-.carousel-control-next {
-    z-index: 3;
-}
-
-.overpic {
-    opacity: .8;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 2;
-}
-
-.car-logo {
-    width: 100%;
-}
-
-.car-image {
-    max-height: 50vh;
-    object-fit: cover;
-    opacity: 1;
-    margin-bottom: 5rem;
-}
-
-@media screen and (min-width: 768px) {
-    .car-image {
-        max-height: 80vh;
-        opacity: .85;
-        margin-bottom: 10rem;
-    }
-}
-
-.car-story .car-image {
-    margin: 0;
-}
-
-.car-story {
-    margin-bottom: 7rem;
-}
-
-.overlay-logo {
-    opacity: .7;
-    z-index: 2;
-    top: 50%;
-}
-
-.img-splash-opacity {
-    opacity: 1;
-}
-
-@media screen and (min-width: 768px) {
-    .img-splash-opacity {
-        opacity: .85;
-    }
-}
-
-/* Component: Hero Banner (Not main page carousel) */
+/* Module: Static Hero Banner */
 .con-hero {
     position: relative;
     padding: 1rem;
@@ -669,49 +610,64 @@ section .con-default {
 }
 
 
-/* Component: Home Menus Section*/
-.con-row {
+/* Module: Menu Teaser Section*/
+.con-menu-teaser {
     position: relative;
     height: 600px;
     background-color: #eb0f00;
 }
 
-.col,
-.col-md {
-    margin: 0;
-    padding: 0;
-}
-
 @media screen and (min-width: 768px) {
-    .con-row {
+    .con-menu-teaser {
         height: 600px;
         margin: 0;
     }
 }
 
-.rt-top {
+.con-menu-teaser__header {
+    font-size: 4rem;
+    text-shadow: -1px -1px #5ab200,
+        1px -1px 0 #5ab200,
+        -1px 1px 0 #5ab200,
+        1px 1px 0 #5ab200;
+    line-height: .8;
+}
+
+@media screen and (min-width: 992px) {
+    .con-menu-teaser__header {
+        font-size: 7rem;
+    }
+}
+
+.con-menu-teaser .col,
+.con-menu-teaser .col-md {
+    margin: 0;
+    padding: 0;
+}
+
+.con-menu-teaser__rt-top {
     background-color: #fff;
     height: 40%;
 }
 
-.rt-btm {
+.con-menu-teaser__rt-btm {
     height: 100%;
 }
 
 @media screen and (min-width: 992px) {
-    .rt-btm {
+    .con-menu-teaser__rt-btm {
         height: 60%;
     }
 }
 
-.img-home-menus {
+.con-menu-teaser__img {
     object-fit: cover;
     height: 250px;
     width: 100%;
 }
 
 @media screen and (min-width: 768px) {
-    .img-home-menus {
+    .con-menu-teaser__img {
         position: absolute;
         top: 0;
         left: 50%;
@@ -722,7 +678,7 @@ section .con-default {
 }
 
 @media screen and (min-width: 992px) {
-    .img-home-menus {
+    .con-menu-teaser__img {
         position: absolute;
         top: 50%;
         left: 65%;
@@ -734,11 +690,7 @@ section .con-default {
     }
 }
 
-.header-default.header-menu {
-    line-height: .8;
-}
-
-.con-home-menus {
+.con-menu-teaser__text {
     z-index: 3;
     position: absolute;
     top: 340px;
@@ -747,13 +699,13 @@ section .con-default {
 }
 
 @media screen and (min-width: 768px) {
-    .con-home-menus {
+    .con-menu-teaser__text {
         top: 50%;
     }
 }
 
 @media screen and (min-width: 768px) {
-    .con-home-menus p {
+    .con-menu-teaser__text p {
         max-width: 35%;
     }
 }
@@ -861,19 +813,4 @@ label {
 /* Do I need these?! */
 .hours .p-default {
     padding: 0;
-}
-
-[data-scroll] {
-    opacity: 0;
-    will-change: transform, scale, opacity;
-    -webkit-transform: translateY(6rem) scale(0.93);
-    transform: translateY(6rem) scale(0.93);
-    -webkit-transition: all 1.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-    transition: all 1.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-[data-scroll='in'] {
-    opacity: 1;
-    -webkit-transform: translateY(0) scale(1);
-    transform: translateY(0) scale(1);
 }
