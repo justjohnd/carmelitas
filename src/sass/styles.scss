@@ -17,14 +17,6 @@ body {
     box-sizing: border-box;
 }
 
-section {
-    position: relative;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 /* Font */
 .p-default {
     letter-spacing: 1px;
@@ -318,6 +310,11 @@ section {
 .con-default {
     padding: 0 1rem 3rem 1rem;
     text-align: center;
+    position: relative;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 @media screen and (min-width: 576px) {
@@ -332,12 +329,8 @@ section {
     }
 }
 
-section .con-default {
-    max-width: 80%;
-}
-
 @media screen and (min-width: 768px) {
-    section .con-default h2 {
+    .con-default .h2-default {
         font-size: 3rem;
     }
 }
