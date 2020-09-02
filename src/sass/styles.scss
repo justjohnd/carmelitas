@@ -1,5 +1,8 @@
 @import "node_modules/bootstrap/scss/bootstrap.scss";
 
+$con-mb: 8rem;
+
+
 /* Universals */
 *,
 *::after,
@@ -17,13 +20,6 @@ body {
     box-sizing: border-box;
 }
 
-section {
- display: flex;
- justify-content: center;
- align-items: center;
-}
-//Note: I don't know why but this section is essential for scroll-out to seem to work
-
 /* Font */
 .p-default {
     letter-spacing: 1px;
@@ -38,13 +34,15 @@ section {
     }
 }
 
-.header-default {
-    line-height: 1.1;
-    font-family: 'Libre Franklin',
-        sans-serif;
-    font-weight: 700;
-    text-transform: uppercase;
-}
+// .header-default {
+//     line-height: 1.1;
+//     font-family: 'Libre Franklin',
+//         sans-serif;
+//     font-weight: 700;
+//     text-transform: uppercase;
+// }
+// Currently not used. Delete after verifying all sections of site are functional
+
 
 .h1-default {
     font-size: 2rem;
@@ -88,32 +86,26 @@ section {
     .ul-default--animation li {
         display: inline-block;
         position: relative;
-    }
-}
 
-@media screen and (min-width: 992px) {
-    .ul-default--animation a:after {
-        content: '';
-        position: absolute;
-        width: 0;
-        height: 3px;
-        display: block;
-        margin-top: 5px;
-    }
-}
+        a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            display: block;
+            margin-top: 5px;
+        }
 
-@media screen and (min-width: 992px) {
-    .ul-default--animation a.btn:after {
-        height: 0px;
-    }
-}
+        a:hover:after {
+            width: 100%;
+            left: 0;
+            background: #5ab200;
+            transition: width .2s;
+        }
 
-@media screen and (min-width: 992px) {
-    .ul-default--animation a:hover:after {
-        width: 100%;
-        left: 0;
-        background: #5ab200;
-        transition: width .2s;
+        a.btn:after {
+            height: 0px;
+        }
     }
 }
 
@@ -137,11 +129,11 @@ section {
 .a-default {
     text-decoration: none;
     color: rgba(0, 0, 0, .5);
-}
 
-.a-default:hover {
-    color: #eb0f00;
-    text-decoration: none;
+    &:hover {
+        color: #eb0f00;
+        text-decoration: none;
+    }
 }
 
 @media screen and (min-width: 992px) {
@@ -154,10 +146,10 @@ section {
 .a-text-link {
     color: #000;
     text-decoration: underline;
-}
 
-.a-text-link:hover {
-    color: #eb0f00;
+    &:hover {
+        color: #eb0f00;
+    }
 }
 
 // Data-Scroll
@@ -178,6 +170,10 @@ section {
 
 
 /* Navbar */
+// #sec-nav {
+//     display: none; //Use just for testing in dev tools for more screen space
+// }
+
 .con-nav {
     background-color: #ebd5b4;
     padding: .5rem 2rem;
@@ -220,6 +216,7 @@ section {
         transition: width 0s;
     }
 }
+
 .con-nav .navbar-nav.hover-color>li>a:hover {
     color: #eb0f00;
 }
@@ -254,31 +251,38 @@ section {
         visibility: hidden;
         background-color: rgba(0, 0, 0, .8);
         transition: visibility .2s ease-in-out, -webkit-transform .2s ease-in-out;
-    }
 
-    .con-nav__offcanvas.navbar-collapse.show {
-        visibility: visible;
-        transform: translateX(-100%);
+        &.show {
+            visibility: visible;
+            transform: translateX(-100%);
+        }
     }
 }
 
-.con-nav .con-nav__offcanvas .navbar-nav .nav-link{
-    color: #fff;
-}
+.con-nav .con-nav__offcanvas .navbar-nav {
 
-.con-nav .con-nav__offcanvas .navbar-nav .nav-link:active {
-    color: rgb(209, 209, 209);
+    .nav-link {
+        color: #fff;
+    }
+
+    .nav-link:active {
+        color: rgb(209, 209, 209);
+    }
 }
 
 @media screen and (min-width: 992px) {
-    .con-nav .navbar-nav .nav-link.a-default {
-        color: rgba(0, 0, 0, .5);
-    }
+    .con-nav .navbar-nav .nav-link {
 
-    .con-nav .navbar-nav .nav-link.btn-default {
-        color: #212529;
+        &.a-default {
+            color: rgba(0, 0, 0, .5);
+        }
+
+        &.btn-default {
+            color: #212529;
+        }
     }
 }
+
 //Note that this media query MUST follow the .con-nav .con-nav__offcanvas... selectors above!
 
 /* Module: Carousel */
@@ -301,16 +305,18 @@ section {
     .con-carousel__image {
         max-height: 80vh;
         opacity: .85;
-        margin-bottom: 10rem;
+        margin-bottom: $con-mb;
     }
 }
 
-.con-carousel .carousel-control-prev {
-    z-index: 3;
-}
+.con-carousel {
+    .carousel-control-prev {
+        z-index: 3;
+    }
 
-.con-carousel .carousel-control-next {
-    z-index: 3;
+    .carousel-control-next {
+        z-index: 3;
+    }
 }
 
 /* Default Container */
@@ -319,6 +325,13 @@ section {
     text-align: center;
     position: relative;
     width: 80%;
+    margin: 0 auto $con-mb auto;
+
+    .h1-default {
+        color: #000;
+        margin-top: 0;
+        line-height: 1.1;
+    }
 }
 
 @media screen and (min-width: 576px) {
@@ -329,7 +342,7 @@ section {
 
 @media screen and (min-width: 768px) {
     .con-default {
-        padding: 0 1rem 6rem 1rem;
+        padding: 0;
     }
 }
 
@@ -339,23 +352,9 @@ section {
     }
 }
 
-.con-default .h1-default {
-    color: #000;
-    margin-top: 0;
-    line-height: 1.1;
-}
 
 /* Menu Container */
-.background-guac {
-    background: url("/assets/img/img-guac-500.png") no-repeat center fixed;
-}
-
-
-.background-avocado {
-    background: url("/assets/img/test-brightness-500.png") no-repeat center fixed;
-}
-
-.background-img {
+.con-menu__background {
     position: relative;
     background-size: 60%;
     background-position-x: 50%;
@@ -363,16 +362,25 @@ section {
 }
 
 @media screen and (min-width: 768px) {
-    .background-img {
+    .con-menu__background {
         background-position-y: 60%;
         background-size: 30%;
     }
 }
 
 @media screen and (min-width: 992px) {
-    .background-img {
+    .con-menu__background {
         background-position-y: 70%;
     }
+}
+
+.con-menu__background--guac {
+    background: url("/assets/img/img-guac-500.png") no-repeat center fixed;
+}
+
+
+.con-menu__background--avo {
+    background: url("/assets/img/test-brightness-500.png") no-repeat center fixed;
 }
 
 .col-content {
@@ -523,9 +531,9 @@ section {
     }
 }
 
-/* Main Image */
+/* Carmelitas Image */
 .img-girl {
-    margin-bottom: -2rem;
+    margin: 0 auto -2rem auto;
 }
 
 @media screen and (min-width: 992px) {
