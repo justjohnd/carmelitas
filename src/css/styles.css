@@ -280,16 +280,16 @@ section {
 }
 
 /* Menu Container */
-.background-guac {
+.con-menu__background--guac {
     background: url(..assets/img/img-guac-500.png) no-repeat center fixed;
 }
 
 
-.background-avocado {
+.con-menu__background--avo {
     background: url(..assets/img/test-brightness-500.png) no-repeat center fixed;
 }
 
-.background-img {
+.con-menu__background {
     position: relative;
     background-size: 60%;
     background-position-x: 50%;
@@ -297,14 +297,14 @@ section {
 }
 
 @media screen and (min-width: 768px) {
-    .background-img {
+    .con-menu__background {
         background-position-y: 60%;
         background-size: 30%;
     }
 }
 
 @media screen and (min-width: 992px) {
-    .background-img {
+    .con-menu__background {
         background-position-y: 70%;
     }
 }

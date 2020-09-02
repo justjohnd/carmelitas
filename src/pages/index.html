@@ -1,51 +1,21 @@
+---
+meta-title: Home
+con-def-header-text: OUR STORY
+btn-1-text: READ OUR STORY
+con-def-p-text: Lorem ipsum dolor sit amet consectetur adipisicing elit. Est incidunt asperiores vero dignissimos? Illo sint odit ipsa asperiores nobis ullam? Ad iusto fugiat provident omnis temporibus sapiente, sint amet minima?
+btn-1: true
+con-def-header: true
+carousel-overpic: true
+---
 
     <!-- carousel -->
-    <div id="slider1" class="con-carousel carousel slide" data-ride="carousel" data-pause="hover" data-interval="3000">
-        <div class="con-carousel__overpic d-none d-md-block"><img class="con-carousel__image w-100"
-                src="assets/img/Carmelitas LOGO-01.png"></img>
-        </div>
-        <ol class="carousel-indicators">
-            <li class="active" data-target="#slider1" data-slide-to="0"></li>
-            <li data-target="#slider1" data-slide-to="1"></li>
-            <li data-target="#slider1" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img class="d-flex align-items-center justify-content-center min-vw-100 con-carousel__image"
-                    src="assets/img/stockJumbo1.jpg" alt="First Slide">
-                </img>
-            </div>
-            <div class="carousel-item">
-                <img class="d-flex align-items-center justify-content-center min-vw-100 con-carousel__image"
-                    src="assets/img/stockJumbo1.jpg" alt="Second Slide">
-            </div>
-            <div class="carousel-item">
-                <img class="d-flex align-items-center justify-content-center min-vw-100 con-carousel__image"
-                    src="assets/img/stockJumbo1.jpg" alt="Third Slide">
-            </div>
-        </div>
-        <!-- Controls, Text, Logo, etc. -->
-        <a href="#slider1" class="carousel-control-prev" data-slide="prev"><span
-                class="carousel-control-prev-icon"></span></a>
-        <a href="#slider1" class="carousel-control-next" data-slide="next"><span
-                class="carousel-control-next-icon"></span></a>
-    </div>
+    {{> carousel}}
 
     <!-- Story -->
-    <section data-scroll>
-        <div class="con-default">
-            <h2 class="h2-default">OUR STORY LEAD LINE</h2>
-            <p class="p-default">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation Lorem ipsum dolor sit amet,
-                consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
-            <a class="btn btn-default" href="assets/our-story.html">READ OUR STORY</a>
-        </div>
-    </section>
+    {{> con-def}}
 
     <!-- Menues -->
-    <div class="data-scroll">
+    <div data-scroll>
     <div class="con-menu-teaser row">
         <div class="con-menu-teaser__text text-white">
             <p class="header-default con-menu-teaser__header">MENUS</p>
