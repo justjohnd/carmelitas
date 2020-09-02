@@ -1,10 +1,12 @@
-<div class="con-menu__background--avo con-menu__background">
-    <div class="con-hero">
-        <div class="background-hero">
-            <div class="overlay-darker"></div>
-            <div class="overlay-text">
-                <h1 class="header-default h1-default">DAILY MENU</h1>
-                {{> hero-2-btn}}
-            </div>
-        </div>
-    </div>
+ <div class="con-hero">
+     <div class="background-hero">
+         <div class="overlay-darker"></div>
+         <div class="overlay-text">
+             <h1 class="header-default h1-default">{{hero-header-text}}</h1>
+             {{#if hero-btn-1}}
+                {{> hero-btn-1}}
+             {{/if}}
+            
+         </div>
+     </div>
+ </div>
