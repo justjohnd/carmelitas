@@ -34,16 +34,6 @@ body {
     }
 }
 
-// .header-default {
-//     line-height: 1.1;
-//     font-family: 'Libre Franklin',
-//         sans-serif;
-//     font-weight: 700;
-//     text-transform: uppercase;
-// }
-// Currently not used. Delete after verifying all sections of site are functional
-
-
 .h1-default {
     font-size: 2rem;
     color: #fff;
@@ -354,7 +344,17 @@ body {
 
 
 /* Menu Container */
-.con-menu__background {
+
+.background-guac {
+    background: url(/assets/img/img-guac-500.png) no-repeat center fixed;
+}
+
+
+.background-avocado {
+    background: url(/assets/img/test-brightness-500.png) no-repeat center fixed;
+}
+
+.background-img {
     position: relative;
     background-size: 60%;
     background-position-x: 50%;
@@ -362,25 +362,16 @@ body {
 }
 
 @media screen and (min-width: 768px) {
-    .con-menu__background {
+    .background-img {
         background-position-y: 60%;
         background-size: 30%;
     }
 }
 
 @media screen and (min-width: 992px) {
-    .con-menu__background {
+    .background-img {
         background-position-y: 70%;
     }
-}
-
-.con-menu__background--guac {
-    background: url("/assets/img/img-guac-500.png") no-repeat center fixed;
-}
-
-
-.con-menu__background--avo {
-    background: url("/assets/img/test-brightness-500.png") no-repeat center fixed;
 }
 
 .col-content {
@@ -533,7 +524,7 @@ body {
 
 /* Carmelitas Image */
 .img-girl {
-    margin: 0 auto -2rem auto;
+    margin-bottom: -2rem;
 }
 
 @media screen and (min-width: 992px) {
@@ -639,6 +630,10 @@ body {
         -1px 1px 0 #5ab200,
         1px 1px 0 #5ab200;
     line-height: .8;
+    font-family: 'Libre Franklin',
+        sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
 }
 
 @media screen and (min-width: 992px) {
