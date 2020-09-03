@@ -342,7 +342,6 @@ body {
     }
 }
 
-
 /* Menu Container */
 
 .background-guac {
@@ -495,11 +494,6 @@ body {
 }
 
 /* Locations Container */
-.con-default.con-locations {
-    padding-left: 3rem;
-    padding-right: 3rem;
-}
-
 .con-locations .col-md-6 {
     padding: 0;
 }
@@ -529,14 +523,7 @@ body {
 
 @media screen and (min-width: 992px) {
     .img-girl {
-        width: 25%;
-        margin-bottom: -1rem;
-    }
-}
-
-@media screen and (min-width: 992px) {
-    .img-girl {
-        margin-bottom: -3rem;
+        width: 50%;
     }
 }
 
