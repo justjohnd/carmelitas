@@ -5,10 +5,21 @@ con-def-p-text: Lorem ipsum dolor sit amet consectetur adipisicing elit. Est inc
 con-def-header: true
 mt-class: mt-5
 pt-class: pt-5
+data-scroll-class: data-scroll
 ---
 
    <!-- Intro -->
-   {{> con-def}}
+       <section>
+           <div class="con-default {{align-class}} {{mt-class}} {{pt-class}} {{data-scroll-class}}">
+               {{#if con-def-header}}
+               {{> con-def-header}}
+               {{/if}}
+               <p class="p-default">{{con-def-p-text}}</p>
+               {{#if btn-1}}
+               {{> btn-1}}
+               {{/if}}
+           </div>
+       </section>
 
    <!-- TEXT FIELD GROUPS -->
    <div class="container mailing-list mt-n5 mr-auto ml-auto w-50">
