@@ -13,30 +13,20 @@
                 center: myLatLng
             });
 
-
-        var image = '/images/taco.png';
+        var image = 'assets/img/taco.png';
 
         // The marker, positioned at litas
-        var marker = new google.maps.Marker({
-            position: myLatLng,
+        marker = new google.maps.Marker({
             map: map,
             animation: google.maps.Animation.DROP,
+            position: myLatLng,
             icon: image
         });
-        marker.addListener("click", toggleBounce);
     }
 
-    function toggleBounce() {
-        if (marker.getAnimation() !== null) {
-            marker.setAnimation(null);
-        } else {
-            marker.setAnimation(google.maps.Animation.BOUNCE);
-        }
-    }
 
     console.log("my" + name);
 </script>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCD37jNrDctzkjHeY7exfT19l7c44F5lN8&callback=initMap">
 </script>
-
