@@ -8,7 +8,17 @@ pt-class: pt-5
 ---
 
    <!-- Intro -->
-   {{> con-def}}
+       <section>
+           <div class="con-default {{align-class}} {{mt-class}} {{pt-class}}">
+               {{#if con-def-header}}
+               {{> con-def-header}}
+               {{/if}}
+               <p class="p-default">{{con-def-p-text}}</p>
+               {{#if btn-1}}
+               {{> btn-1}}
+               {{/if}}
+           </div>
+       </section>
 
    <!-- TEXT FIELD GROUPS -->
    <div class="container mailing-list mt-n5 mr-auto ml-auto w-50">
