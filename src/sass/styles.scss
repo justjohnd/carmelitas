@@ -1,4 +1,7 @@
+
 @import "node_modules/bootstrap/scss/bootstrap.scss";
+// @import "node_modules/flatpickr/dist/flatpickr.css"; This import does not seem to work. Currently using a cdn insdie the default layout
+
 
 $con-mb: 8rem;
 
@@ -566,9 +569,9 @@ body {
 }
 
 .background-hero {
+    background-image: url("https://justjohnd.github.io/carmelitas/assets/img/stockJumbo1.jpg");
     position: relative;
     height: 80vh;
-    background-image: url("https://justjohnd.github.io/carmelitas/assets/img/stockJumbo1.jpg");
     background-size: cover;
     background-position-y: center;
     width: 100%;
@@ -804,3 +807,4 @@ label {
 .hours .p-default {
     padding: 0;
 }
+
