@@ -1,47 +1,59 @@
 ---
-layout: hero-layout
 meta-title: St. Petersburg
 hero-header-text: ST. PETERSBURG
 hero-btn-1-text: ORDER ONLINE
 hero-btn-1: true
 ---
-   
-   <!-- Hrs and Location -->
-   <div class="con-default con-locations">
-       <div class="row">
-           <div class="col-md-6">
-               <h2 class="h1-default">HOURS & LOCATION</h2>
-               <div class="location">
-                   <p class="p-default"><a class="a-text-link" href="#">5211 Park Street North,<br>
-                           St. Petersburg, Florida 33709</a><br>
-                       727-545-2956<br>
-                       <a class="a-text-link" href="#">info@carmelitas.net</a></p>
-               </div>
-               <div class="hours">
-                   <p class="p-default">Sun - Thurs: 11:00 AM - 9:00 PM</p>
-                   <p class="p-default">Fri - Sat: 11:0 AM -10:00 PM</p>
-               </div>
-           </div>
-           <div class="col-md-6">
-               <p class="p-default">Vincent and Carmen Lopez – Founded in 1983, Carmelita’s has established the standard
-                   in quality Mexican
-                   Food that’s been hard to beat for over two decades. Since the restaurant’s inception, founders
-                   Vincent
-                   and Carmen Lopez have used their vast collection of traditional family recipes as the cornerstone of
-                   the
-                   Carmelita’s experience. They, along with their son’s Michael and Ray, continue to work hard to keep
-                   the
-                   traditions of fresh, authentic, Mexican food and great customer service, a reality.</p>
-           </div>
-       </div>
-   </div>
 
-   <!-- Google Map -->
-   <div class="con-default">
-       <div id="map"></div>
-   </div>
+<!-- Hero -->
+<div class="con-hero">
+    <div class="background-hero">
+        <div class="overlay-darker"></div>
+        <div class="overlay-text">
+            <h1 class="header-default h1-default">ST. PETERSBURG</h1>
+            <a class="btn btn-default" target="_blank" rel="noopener noreferrer" href="https://www.chowhound.com/">ORDER
+                ONLINE</a>
+        </div>
+    </div>
+</div>
 
-   <!-- Carmelita's image -->
-   {{> carmelitas-image}}
 
-   {{> google-maps-script}}
+<!-- Hrs and Location -->
+<div class="con-default con-locations" data-scroll>
+    <div class="row">
+        <div class="col-md-6">
+            <h2 class="h1-default">HOURS & LOCATION</h2>
+            <div class="location">
+                <p class="p-default"><a class="a-text-link" href="#">5211 Park Street North,<br>
+                        St. Petersburg, Florida 33709</a><br>
+                    727-545-2956<br>
+                    <a class="a-text-link" href="#">info@carmelitas.net</a></p>
+            </div>
+            <div class="hours">
+                <p class="p-default">Sun - Thurs: 11:00 AM - 9:00 PM</p>
+                <p class="p-default">Fri - Sat: 11:0 AM -10:00 PM</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <p class="p-default">Vincent and Carmen Lopez – Founded in 1983, Carmelita’s has established the standard
+                in quality Mexican
+                Food that’s been hard to beat for over two decades. Since the restaurant’s inception, founders
+                Vincent
+                and Carmen Lopez have used their vast collection of traditional family recipes as the cornerstone of
+                the
+                Carmelita’s experience. They, along with their son’s Michael and Ray, continue to work hard to keep
+                the
+                traditions of fresh, authentic, Mexican food and great customer service, a reality.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Google Map -->
+<div class="con-default">
+    <div id="map"></div>
+</div>
+
+<!-- Carmelita's image -->
+{{> carmelitas-image}}
+
+{{> google-maps-script}}

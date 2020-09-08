@@ -1,12 +1,12 @@
-<!-- RESERVATION MODAL -->
-<div class="modal fade text-dark" id="reservations">
+<!-- CATERING MODAL -->
+<div class="modal fade text-dark" id="catering">
     <div class="modal-dialog">
 
         <div class="con-res modal-content">
             <div class="modal-header">
-                <h1 class="h2-default text-white">RESERVATIONS</h1>
+                <h1 class="h2-default text-white">CATERING INQUIRY</h1>
                 <button class="close" data-dismiss="modal">
-                    <span>&times;</span>
+                    <span class="close-x-size">&times;</span>
                 </button>
             </div>
             <div class="row model-body">
@@ -16,22 +16,19 @@
                 <div class="col-md-6 form-res">
                     <form action="">
                         <!-- TEXT FIELD GROUPS -->
+                        <!-- Name -->
                         <div class="form-group">
                             <label for="name">Your Name</label>
                             <input class="form-control form-control-lg" type="text" name="name" id="name" placeholder=""
                                 required="true">
 
                         </div>
+                        <!-- Email -->
                         <div class="form-group">
-                            <label for="email">Your Email (Optional, for contact purposes only.)</label>
-                            <input class="form-control form-control-lg" type="email" id="email" placeholder="">
-                            <div class="form-check">
-                                <label class="form-check-label mr-2">
-                                    <input type="checkbox" class="form-check-input">Sign me up to receive
-                                    coupons and other discounts!
-                                </label>
-                            </div>
+                            <label for="email">Your Email</label>
+                            <input class="form-control form-control-lg" type="email" id="email" placeholder="" required="true">
                         </div>
+                        <!-- Phone Number -->
                         <div class="form-group">
                             <label for="phone-number">Your Phone Number</label>
                             <input class="form-control form-control-lg" type="tel" id="phone-number" placeholder=""
@@ -39,24 +36,21 @@
                             <small class="form-text text-muted">Your personal information will never be
                                 shared</small>
                         </div>
+                        <!-- number of people-->
                         <div class="form-group">
                             <label for="number-people">Number of People</label>
                             <input class="form-control form-control-lg" type="text" id="number-people" placeholder=""
                                 required="true">
                         </div>
+                        <!-- company name -->
                         <div class="form-group">
-                            <label for="choose-location">Choose a Location</label>
-                            <select class="form-control form-control-lg placeholder-color" type="text"
-                                id="choose-location" required="true">
-                                <option selected disabled></option>
-                                <option>St. Petersburg</option>
-                                <option>Largo</option>
-                                <option>New Port Richey</option>
-                                <option>Pinellas Park</option>
-                            </select>
+                            <label for="choose-location">Company Name</label>
+                            <input class="form-control form-control-lg placeholder-color" type="text"
+                                id="company-name">
                         </div>
+                        <!-- date and time -->
                         <div class="form-group">
-                            <label for="date-time">Select Date & Time</label>
+                            <label for="date-time">Event Date & Time</label>
                             <div class="fp-block">
                                 <input class="form-control form-control-lg fp-block" type="text" id="basicDate"
                                     placeholder="" data-input placeholder="Select Time & Date" required="true">

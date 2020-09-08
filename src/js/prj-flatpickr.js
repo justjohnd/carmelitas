@@ -6,5 +6,5 @@
         position: "above",
         enableTime: true,
         dateFormat: "F, d Y H:i",
-        static: true
+        static: false
     });
