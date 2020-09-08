@@ -1,5 +1,4 @@
 ---
-layout: hero-layout
 meta-title: Our Story
 hero-header-text: OUR STORY
 con-def-header-text: IT ALL STARTED IN 1983
@@ -7,15 +6,17 @@ con-def-p-text: Lorem ipsum dolor sit amet consectetur adipisicing elit. Est inc
 con-def-header: true
 con-def-btn-d-class: d-none
 ---
+<!-- Hero -->
+{{> hero}}
 
-    <!-- intro -->
-    {{> con-def}}
+<!-- intro -->
+{{> con-def}}
 
-    <!-- carousel -->
-    {{> carousel}}
+<!-- carousel -->
+{{> carousel}}
 
-    <!-- the lopezes -->
-<div class="con-default con-locations mb-5">
+<!-- the lopezes -->
+<div class="con-default mb-5" data-scroll>
     <div class="row">
         <div class="col-md-6">
             <h2 class="h1-default">THE LOPEZ FAMILY</h2>
@@ -25,13 +26,13 @@ con-def-btn-d-class: d-none
                 and Carmen Lopez have used their vast collection of traditional family recipes as the cornerstone of the
                 Carmelita’s experience. They, along with their son’s Michael and Ray, continue to work hard to keep the
                 traditions of fresh, authentic, Mexican food and great customer service, a reality.</p>
-                </div>
+        </div>
         <div class="col-md-6">
             <img src="assets/img/stockJumbo1.jpg" href="#" alt="" class="img-fluid img-lopez">
         </div>
-        </div>
+    </div>
 </div>
 
 
-    <!-- Carmelita's image -->
-    {{> carmelitas-image}}
+<!-- Carmelita's image -->
+{{> carmelitas-image}}

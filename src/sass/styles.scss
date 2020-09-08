@@ -3,7 +3,7 @@
 // @import "node_modules/flatpickr/dist/flatpickr.css"; This import does not seem to work. Currently using a cdn insdie the default layout
 
 
-$con-mb: 8rem;
+$con-mb: 5rem;
 
 
 /* Universals */
@@ -26,7 +26,6 @@ body {
 /* Font */
 .p-default {
     letter-spacing: 1px;
-    padding: 1rem 0;
     line-height: 1.5;
     font-size: 1rem;
 }
@@ -291,7 +290,7 @@ body {
     max-height: 50vh;
     object-fit: cover;
     opacity: 1;
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
 }
 
 @media screen and (min-width: 768px) {
@@ -314,11 +313,11 @@ body {
 
 /* Default Container */
 .con-default {
-    padding: 0 1rem 3rem 1rem;
+    padding: 0 1rem;
     text-align: center;
     position: relative;
-    width: 80%;
-    margin: 0 auto $con-mb auto;
+    width: 100%;
+    margin: 0 auto 3rem auto;
 
     .h1-default {
         color: #000;
@@ -330,6 +329,7 @@ body {
 @media screen and (min-width: 576px) {
     .con-default {
         padding: 0 1rem 5rem 1rem;
+        argin: 0 auto $con-mb auto;
     }
 }
 
@@ -380,7 +380,7 @@ body {
     min-height: 60px;
     border-left: 1px solid #000;
     padding-left: 1rem;
-    padding-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
 }
 
 .col-header {
@@ -388,13 +388,6 @@ body {
     border-left: 1px solid #000;
     padding-left: 1rem;
     padding-bottom: 0;
-}
-
-.menu-sec-header {
-    font-size: 2.1rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 1px;
 }
 
 .menu-item {
@@ -414,6 +407,17 @@ body {
     margin: 0;
 }
 
+p.menu-sec {
+    margin-bottom: 0;
+}
+
+.menu-sec-header {
+    font-size: 2.1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
 .menu-sec-content {
     margin: 0;
     line-height: 1.1;
@@ -423,7 +427,6 @@ body {
     font-size: 1.1rem;
     font-weight: 500;
     margin-bottom: .25rem;
-    margin-top: 1rem;
 }
 
 .menu-sec-veg {
@@ -497,10 +500,6 @@ body {
 }
 
 /* Locations Container */
-.con-locations .col-md-6 {
-    padding: 0;
-}
-
 @media screen and (min-width: 576px) {
     .con-locations .col-md-6 {
         padding: 0 30px;
@@ -510,7 +509,7 @@ body {
 /* Google Map */
 #map {
     width: 100%;
-    height: 400px;
+    height: 40vh;
 }
 
 @media screen and (min-width: 768px) {
@@ -521,12 +520,13 @@ body {
 
 /* Carmelitas Image */
 .img-girl {
-    margin-bottom: -2rem;
+    margin-bottom: 2rem;
 }
 
 @media screen and (min-width: 992px) {
     .img-girl {
         width: 50%;
+        margin-bottom: -2rem;
     }
 }
 
@@ -559,7 +559,7 @@ body {
 .con-hero {
     position: relative;
     padding: 1rem;
-    margin-bottom: 5rem;
+    margin-bottom: 2rem;
 }
 
 @media screen and (min-width: 768px) {
@@ -807,8 +807,11 @@ label {
     color: #fff;
 }
 
-/* Do I need these?! */
+.hours {
+    margin-bottom: 2rem;
+}
+
 .hours .p-default {
-    padding: 0;
+    margin-bottom: 0;
 }
 
