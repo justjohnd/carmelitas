@@ -297,7 +297,7 @@ body {
     .con-carousel__image {
         max-height: 80vh;
         opacity: .85;
-        margin-bottom: $con-mb;
+        margin-bottom: 7rem;
     }
 }
 
@@ -329,13 +329,14 @@ body {
 @media screen and (min-width: 576px) {
     .con-default {
         padding: 0 1rem 5rem 1rem;
-        argin: 0 auto $con-mb auto;
+        margin: 0 auto $con-mb auto;
     }
 }
 
 @media screen and (min-width: 768px) {
     .con-default {
         padding: 0;
+        width: 80%;
     }
 }
 
@@ -348,19 +349,21 @@ body {
 /* Menu Container */
 
 .background-guac {
-    background: url("https://justjohnd.github.io/carmelitas/assets/img/img-guac-500.png") no-repeat center fixed;
+    background: url("https://justjohnd.github.io/carmelitas/assets/img/img-guac-500.png") no-repeat center;
+    background-attachment: fixed;
 }
 
 
 .background-avocado {
-    background: url("https://justjohnd.github.io/carmelitas/assets/img/test-brightness-500.png") no-repeat center fixed;
+    background: url("https://justjohnd.github.io/carmelitas/assets/img/test-brightness-500.png") no-repeat center;
+    background-attachment: fixed;
 }
 
 .background-img {
     position: relative;
     background-size: 60%;
-    background-position-x: 50%;
-    background-position-y: 60%;
+    // background-position-x: 50%;
+    // background-position-y: 60%;
 }
 
 @media screen and (min-width: 768px) {
@@ -525,8 +528,8 @@ p.menu-sec {
 
 @media screen and (min-width: 992px) {
     .img-girl {
-        width: 50%;
-        margin-bottom: -2rem;
+        width: 36%;
+        margin-bottom: -3rem;
     }
 }
 
@@ -748,14 +751,15 @@ p.menu-sec {
 
 .form-res {
     background-color: rgba(16, 24, 32, 0.8);
-    margin: 3rem 1rem;
-    padding: 3rem 2rem;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
     text-align: start;
 }
 
 @media screen and (min-width: 992px) {
     .form-res {
         margin: 3rem 0;
+        padding: 3rem 2rem;
     }
 }
 
@@ -815,3 +819,6 @@ label {
     margin-bottom: 0;
 }
 
+.close-x-size {
+    font-size: 2rem;
+}
