@@ -1,0 +1,125 @@
+<div class="con-default mb-0">
+    <h2 class="h2-default mb-4">VISIT ONE OF OUR FOUR BAY AREA LOCATIONS</h2>
+    <div class="con-map">
+        <div id="map"></div>
+        <div class="map-overlay"></div>
+    </div>
+    <div class="row mt-5 text-center">
+        <div class="col-md-6">
+            <h3><a class="a-default" href="#"><span></span>ST. PETERSBURG</a></h3>
+            <p class="p-default"><a class="a-text-link" href="#">5211 Park Street North,<br>
+                    St. Petersburg, Florida 33709</a><br>
+                727-545-2956<br>
+            </p>
+        </div>
+        <div class="col-md-6">
+            <h3><a class="a-default" href="#">PINELLAS PARK</a></h3>
+            <p class="p-default"><a class="a-text-link" href="#">6218 66th Street,<br>
+                    Pinellas Park, Florida 33781</a><br>
+                727-545-8226<br>
+            </p>
+        </div>
+    </div>
+    <div class="row mt-5 text-center mb-3">
+        <div class="col-md-6">
+            <h3><a class="a-default" href="#">LARGO</a></h3>
+            <p class="p-default"><a class="a-text-link" href="#">7705 Ulmerton Road,<br>
+                    Largo, Florida 33771</a><br>
+                727-533-8555<br>
+            </p>
+        </div>
+        <div class="col-md-6">
+            <h3><a class="a-default" href="#">NEW PORT RICHEY</a></h3>
+            <p class="p-default"><a class="a-text-link" href="#">8526 Old County Road 54,<br>
+                    St. Petersburg, Florida 34655</a><br>
+                727-376-4800<br>
+            </p>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.0/jquery.waypoints.js"></script>
+
+<!-- Script -->
+<script>
+    // Initialize and add the map
+    function initMap() {
+        // The location of Carmelitas
+        var LatLngStPete = {
+            lat: 27.819290,
+            lng: -82.753480
+        };
+
+        var LatLngPinellas = {
+            lat: 27.828946,
+            lng: -82.729040
+        }
+
+        var LatLngLargo = {
+            lat: 27.895137,
+            lng: -82.744223
+        }
+
+        var LatLngNewport = {
+            lat: 28.019995,
+            lng: -82.772450
+
+        }
+
+        // The map, centered at litas
+        var map = new google.maps.Map(
+            document.getElementById('map'), {
+                zoom: 11,
+                center: LatLngLargo
+            });
+
+        var image = 'assets/img/taco.png';
+
+    // Use Waypoints plugin to initialize the markers on scroll
+    var waypoint = new Waypoint({
+    element: document.getElementById('taco-drop'),
+    handler: function (direction) {
+    if (direction === 'down') {
+         // The marker, positioned at litas
+         markerStPete = new google.maps.Marker({
+         map: map,
+         animation: google.maps.Animation.DROP,
+         position: LatLngStPete,
+         icon: image
+         });
+
+         markerPinellas = new google.maps.Marker({
+         map: map,
+         animation: google.maps.Animation.DROP,
+         position: LatLngPinellas,
+         icon: image
+         });
+
+         markerLargo = new google.maps.Marker({
+         map: map,
+         animation: google.maps.Animation.DROP,
+         position: LatLngLargo,
+         icon: image
+         });
+
+         markerNewport = new google.maps.Marker({
+         map: map,
+         animation: google.maps.Animation.DROP,
+         position: LatLngNewport,
+         icon: image
+         });
+    }
+    }
+    });
+
+       
+
+    }
+
+    console.log("my" + name);
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCD37jNrDctzkjHeY7exfT19l7c44F5lN8&callback=initMap">
+</script>

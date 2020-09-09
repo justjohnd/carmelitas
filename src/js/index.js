@@ -15,6 +15,7 @@ import 'bootstrap';
 import PrjScrollOut from './prj-scroll-out';
 import PrjFlatpickr from './prj-flatpickr';
 
+
 // Get current year for copyright
 $('#year').text(new Date().getFullYear());
 

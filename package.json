@@ -25,7 +25,8 @@
     "bootstrap": "^4.5.2",
     "flatpickr": "^4.6.6",
     "jquery": "^3.5.1",
-    "popper.js": "^1.16.1"
+    "popper.js": "^1.16.1",
+    "waypoints": "^4.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.11.1",

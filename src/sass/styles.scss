@@ -1,9 +1,19 @@
-
 @import "node_modules/bootstrap/scss/bootstrap.scss";
 // @import "node_modules/flatpickr/dist/flatpickr.css"; This import does not seem to work. Currently using a cdn insdie the default layout
 
 
-$con-mb: 5rem;
+$con-mb: 7rem;
+$color-red: #eb0f00;
+$color-green: #5ab200;
+$color-purple: #872E8C;
+$color-black: #101820;
+$color-white: #fff;
+$color-active: #d1d1d1;
+$color-secondary: #ebd5b4;
+$color-tertiary: #f5a02b;
+$color-tertiary-light:#f9c47c;
+
+// .menu-item background-color: #CEBFFF;
 
 
 /* Universals */
@@ -23,6 +33,17 @@ body {
     box-sizing: border-box;
 }
 
+h1,
+h2,
+h3 {
+    color: $color-black;
+}
+
+.row {
+    margin-right: 0;
+    margin-left: 0;
+}
+
 /* Font */
 .p-default {
     letter-spacing: 1px;
@@ -38,7 +59,7 @@ body {
 
 .h1-default {
     font-size: 2rem;
-    color: #fff;
+    color: $color-white;
     margin: 1rem 0;
     text-align: center;
 }
@@ -51,6 +72,7 @@ body {
 
 .h2-default {
     font-size: 2rem;
+    font-weight: 900;
 }
 
 @media screen and (min-width: 576px) {
@@ -91,7 +113,7 @@ body {
         a:hover:after {
             width: 100%;
             left: 0;
-            background: #5ab200;
+            background: $color-green;
             transition: width .2s;
         }
 
@@ -123,7 +145,7 @@ body {
     color: rgba(0, 0, 0, .5);
 
     &:hover {
-        color: #eb0f00;
+        color: $color-red;
         text-decoration: none;
     }
 }
@@ -136,11 +158,11 @@ body {
 
 /* Text Link Anchor */
 .a-text-link {
-    color: #000;
+    color: $color-black;
     text-decoration: underline;
 
     &:hover {
-        color: #eb0f00;
+        color: $color-red;
     }
 }
 
@@ -167,7 +189,7 @@ body {
 // }
 
 .con-nav {
-    background-color: #ebd5b4;
+    background-color: $color-secondary;
     padding: .5rem 2rem;
 }
 
@@ -204,13 +226,13 @@ body {
 @media screen and (min-width: 992px) {
     .dropdown-menu>a:hover:after {
         width: 100%;
-        background: #5ab200;
+        background: $color-green;
         transition: width 0s;
     }
 }
 
 .con-nav .navbar-nav.hover-color>li>a:hover {
-    color: #eb0f00;
+    color: $color-red;
 }
 
 .con-nav .nav-link.btn {
@@ -254,11 +276,11 @@ body {
 .con-nav .con-nav__offcanvas .navbar-nav {
 
     .nav-link {
-        color: #fff;
+        color: $color-white;
     }
 
     .nav-link:active {
-        color: rgb(209, 209, 209);
+        color: $color-active;
     }
 }
 
@@ -270,7 +292,7 @@ body {
         }
 
         &.btn-default {
-            color: #212529;
+            color: $color-black;
         }
     }
 }
@@ -297,6 +319,12 @@ body {
     .con-carousel__image {
         max-height: 80vh;
         opacity: .85;
+        margin-bottom: 0;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .con-carousel {
         margin-bottom: 7rem;
     }
 }
@@ -320,7 +348,7 @@ body {
     margin: 0 auto 3rem auto;
 
     .h1-default {
-        color: #000;
+        color: $color-black;
         margin-top: 0;
         line-height: 1.1;
     }
@@ -442,19 +470,19 @@ p.menu-sec {
 /* Buttons */
 .btn-default {
     font-weight: 600;
-    border: 1px solid #872E8C;
+    border: 1px solid $color-purple;
     margin-top: .5rem;
     margin-bottom: 1rem;
-    background-color: #f5a02b;
+    background-color: $color-tertiary;
 
 }
 
 .btn-default:hover {
-    background-color: #f9c47c;
+    background-color: $color-tertiary-light;
 }
 
 .btn-default:focus {
-    background-color: #f5a02b;
+    background-color: $color-tertiary;
 }
 
 .btn-full-width {
@@ -467,7 +495,7 @@ p.menu-sec {
 }
 
 .btn-col2 {
-    background-color: #5ab200;
+    background-color: $color-green;
 }
 
 .btn-col2:hover {
@@ -510,9 +538,16 @@ p.menu-sec {
 }
 
 /* Google Map */
+.con-map {
+    position: relative;
+    display: block;
+}
+
 #map {
     width: 100%;
     height: 40vh;
+    position: relative;
+
 }
 
 @media screen and (min-width: 768px) {
@@ -521,9 +556,19 @@ p.menu-sec {
     }
 }
 
+.map-overlay {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    // opacity: .2;
+    // background-color: $purple; overaly looks like shit
+}
+
 /* Carmelitas Image */
 .img-girl {
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
 }
 
 @media screen and (min-width: 992px) {
@@ -587,7 +632,7 @@ p.menu-sec {
     left: 0;
     background: rgba(0, 0, 0, .4);
     z-index: 5;
-    height: 80vh;
+    height: 100%;
     width: 100%;
 }
 
@@ -606,22 +651,23 @@ p.menu-sec {
 .con-menu-teaser {
     position: relative;
     height: 600px;
-    background-color: #eb0f00;
+    background-color: $color-red;
 }
 
 @media screen and (min-width: 768px) {
     .con-menu-teaser {
         height: 600px;
         margin: 0;
+        margin-bottom: $con-mb + 3;
     }
 }
 
 .con-menu-teaser__header {
     font-size: 4rem;
-    text-shadow: -1px -1px #5ab200,
-        1px -1px 0 #5ab200,
-        -1px 1px 0 #5ab200,
-        1px 1px 0 #5ab200;
+    text-shadow: -1px -1px $color-green,
+        1px -1px 0 $color-green,
+        -1px 1px 0 $color-green,
+        1px 1px 0 $color-green;
     line-height: .8;
     font-family: 'Libre Franklin',
         sans-serif;
@@ -642,7 +688,7 @@ p.menu-sec {
 }
 
 .con-menu-teaser__rt-top {
-    background-color: #fff;
+    background-color: $color-white;
     height: 40%;
 }
 
@@ -725,7 +771,7 @@ p.menu-sec {
 
 /* Reservations */
 .con-res {
-    background-image: linear-gradient(#eb0f00, #5ab200);
+    background-image: linear-gradient($color-red, $color-green);
     width: 100%;
 }
 
@@ -808,7 +854,7 @@ p.menu-sec {
 }
 
 label {
-    color: #fff;
+    color: $color-white;
 }
 
 .hours {
@@ -822,3 +868,10 @@ label {
 .close-x-size {
     font-size: 2rem;
 }
+
+// .text-image {
+//     position: absolute;
+//     top: 0;
+//     left: 50px;
+//     height: 40px;
+// }
