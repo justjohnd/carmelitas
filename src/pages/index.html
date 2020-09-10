@@ -2,7 +2,6 @@
 meta-title: Home
 con-def-header-text: OUR STORY
 btn-1-text: READ OUR STORY
-con-def-p-text: Carmelita’s was founded in 1983 by Carmen and Vincent Lopez, with the opening of the Park Street location in St. Petersburg, FL. After 35 years, what started off as just 9 booths has now grown to 5 locations in and around Pinellas County.
 btn-1: true
 con-def-header: true
 carousel-overpic: true
@@ -13,7 +12,17 @@ carousel-overpic: true
     {{> carousel}}
 
     <!-- Story -->
-    {{> con-def}}
+       <section>
+           <div class="con-default" data-scroll>
+               {{#if con-def-header}}
+               {{> con-def-header}}
+               {{/if}}
+               <p class="p-default">Carmelita’s was founded in 1983 by Carmen and Vincent Lopez, with the opening of the
+                   Park Street location in St. Petersburg, FL. After 35 years, what started off as just 9 booths has now
+                   grown to 5 locations in and around Pinellas County.</p>
+               <a class="btn btn-default {{con-def-btn-d-class}}" href="{{root}}/our-story.html">{{btn-1-text}}</a>
+           </div>
+       </section>
 
     <!-- Menues -->
     <div data-scroll>
@@ -28,7 +37,7 @@ carousel-overpic: true
         </div>
         <div class="no-padding col-md">
             <div class="con-menu-teaser__rt-top col d-none d-lg-block"></div>
-            <div class="con-menu-teaser__rt-btm col"></div>
+            <div id="taco-drop" class="con-menu-teaser__rt-btm col"></div>
         </div>
     </div>
     </div>

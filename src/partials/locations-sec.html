@@ -77,44 +77,44 @@
 
         var image = 'assets/img/taco.png';
 
-        // Use Waypoints plugin to initialize the markers on scroll
-        var waypoint = new Waypoint({
-            element: document.getElementById('taco-drop'),
-            handler: function (direction) {
-                if (direction === 'down') {
-                    // The marker, positioned at litas
-                    markerStPete = new google.maps.Marker({
-                        map: map,
-                        animation: google.maps.Animation.DROP,
-                        position: LatLngStPete,
-                        icon: image
-                    });
+    // Use Waypoints plugin to initialize the markers on scroll
+    var waypoint = new Waypoint({
+    element: document.getElementById('taco-drop'),
+    handler: function (direction) {
+    if (direction === 'down') {
+         // The marker, positioned at litas
+         markerStPete = new google.maps.Marker({
+         map: map,
+         animation: google.maps.Animation.DROP,
+         position: LatLngStPete,
+         icon: image
+         });
 
-                    markerPinellas = new google.maps.Marker({
-                        map: map,
-                        animation: google.maps.Animation.DROP,
-                        position: LatLngPinellas,
-                        icon: image
-                    });
+         markerPinellas = new google.maps.Marker({
+         map: map,
+         animation: google.maps.Animation.DROP,
+         position: LatLngPinellas,
+         icon: image
+         });
 
-                    markerLargo = new google.maps.Marker({
-                        map: map,
-                        animation: google.maps.Animation.DROP,
-                        position: LatLngLargo,
-                        icon: image
-                    });
+         markerLargo = new google.maps.Marker({
+         map: map,
+         animation: google.maps.Animation.DROP,
+         position: LatLngLargo,
+         icon: image
+         });
 
-                    markerNewport = new google.maps.Marker({
-                        map: map,
-                        animation: google.maps.Animation.DROP,
-                        position: LatLngNewport,
-                        icon: image
-                    });
-                }
-            }
-        });
+         markerNewport = new google.maps.Marker({
+         map: map,
+         animation: google.maps.Animation.DROP,
+         position: LatLngNewport,
+         icon: image
+         });
+    }
+    }
+    });
 
-
+       
 
     }
 
