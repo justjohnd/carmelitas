@@ -236,6 +236,12 @@ h3 {
     }
 }
 
+
+.con-nav__li-sm {
+    padding-top: 0;
+}
+
+
 @media screen and (min-width: 992px) {
     .dropdown-menu>a:hover:after {
         width: 100%;
@@ -503,6 +509,12 @@ p.menu-sec {
 
 
 /* Buttons */
+.btn-close {
+    font-size: 40px;
+    line-height: 1;
+    padding: .25rem;
+}
+
 .btn-default {
     font-weight: 600;
     border: 1px solid $color-purple;
