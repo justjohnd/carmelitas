@@ -188,10 +188,10 @@ h3 {
 //     display: none; //Use just for testing in dev tools for more screen space
 // }
 
-.con-nav {
-    background-color: transparent;
+.con-nav { //Sets the background for all pages
+    background-color: $color-secondary;
+    position: sticky;
     padding: .5rem 2rem;
-    position: fixed;
     right: 0;
     left: 0;
     z-index: 1030;
@@ -200,12 +200,17 @@ h3 {
 
 @media screen and (min-width: 768px) {
     .con-nav {
-        padding: 1.5rem 3rem;
+        padding: .5rem 3rem;
         position: sticky;
         top: 0;
         z-index: 1020;
         background-color: $color-secondary;
     }
+}
+
+.con-nav.add-background { //in nav partial variables allow for addition of .add-background class, overriding the above
+    background-color: transparent;
+    position: fixed;
 }
 
 .con-nav__logo {
