@@ -31,3 +31,18 @@ $(".btn-close").click(function (e) {
     $(".navbar-collapse").removeClass("show");
     $("body").removeClass("offcanvas-active");
 });
+
+// Use Waypoints  to make mobile navbar appear
+// Use Waypoints plugin to initialize the markers on scroll
+var navbarWaypoint = new Waypoint({
+    element: document.getElementById('js-navbar'),
+    handler: function () {
+        var elements = document.getElementsByClassName('con-nav'); // get all elements
+        for (var i = 0; i < elements.length; i++) {
+            elements[i].style.backgroundColor = "#ebd5b4";
+        }
+        
+        var logo = document.getElementById("js-logo");
+        logo.classList.remove("js-logo-d-none");
+    }
+});

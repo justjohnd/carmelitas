@@ -189,13 +189,22 @@ h3 {
 // }
 
 .con-nav {
-    background-color: $color-secondary;
+    background-color: transparent;
     padding: .5rem 2rem;
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    transition: background-color 0.5s ease;
 }
 
 @media screen and (min-width: 768px) {
     .con-nav {
         padding: 1.5rem 3rem;
+        position: sticky;
+        top: 0;
+        z-index: 1020;
+        background-color: $color-secondary;
     }
 }
 
@@ -207,6 +216,10 @@ h3 {
     .con-nav__logo {
         width: 15rem;
     }
+}
+
+.js-logo-d-none {
+    display: none;
 }
 
 .con-nav__li {
@@ -222,6 +235,12 @@ h3 {
         text-align: center;
     }
 }
+
+
+.con-nav__li-sm {
+    padding-top: 0;
+}
+
 
 @media screen and (min-width: 992px) {
     .dropdown-menu>a:hover:after {
@@ -239,6 +258,10 @@ h3 {
     display: inline;
     padding: 10px;
     line-height: 4;
+}
+
+.navbar-light .navbar-toggler {
+    background: $color-secondary;  // This it to show contrast against mobile navbar background: transparent
 }
 
 /* Off Canvas Mobile Navbar */
@@ -301,15 +324,27 @@ h3 {
 
 /* Module: Carousel */
 .con-carousel__overpic {
-    opacity: .8;
+    opacity: .9;
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 30%;
+    left: 5%;
     z-index: 2;
+    width: 90%;
+}
+
+@media screen and (min-width: 576px) {
+    .con-carousel__overpic {
+        opacity: .8;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        width: 100%
+    }
 }
 
 .con-carousel__image {
-    max-height: 50vh;
+    max-height: 90vh;
     object-fit: cover;
     opacity: 1;
     margin-bottom: 3rem;
@@ -318,7 +353,7 @@ h3 {
 @media screen and (min-width: 768px) {
     .con-carousel__image {
         max-height: 80vh;
-        opacity: .85;
+        opacity: .9;
         margin-bottom: 0;
     }
 }
@@ -332,11 +367,17 @@ h3 {
 .con-carousel {
     .carousel-control-prev {
         z-index: 3;
+        opacity: .9;
     }
 
     .carousel-control-next {
         z-index: 3;
+        opacity: .9;
     }
+}
+
+.carousel-indicators {
+    bottom: 15%;
 }
 
 /* Default Container */
@@ -468,6 +509,12 @@ p.menu-sec {
 
 
 /* Buttons */
+.btn-close {
+    font-size: 40px;
+    line-height: 1;
+    padding: .25rem;
+}
+
 .btn-default {
     font-weight: 600;
     border: 1px solid $color-purple;
