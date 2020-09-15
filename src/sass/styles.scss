@@ -160,6 +160,7 @@ h3 {
 .a-text-link {
     color: $color-black;
     text-decoration: underline;
+    font-size: 1rem;
 
     &:hover {
         color: $color-red;
@@ -189,9 +190,10 @@ h3 {
 // }
 
 .con-nav {
-    background-color: transparent;
+    //Sets the background for all pages
+    background-color: $color-secondary;
+    position: sticky;
     padding: .5rem 2rem;
-    position: fixed;
     right: 0;
     left: 0;
     z-index: 1030;
@@ -200,11 +202,24 @@ h3 {
 
 @media screen and (min-width: 768px) {
     .con-nav {
-        padding: 1.5rem 3rem;
+        padding: .5rem 3rem;
         position: sticky;
         top: 0;
         z-index: 1020;
         background-color: $color-secondary;
+    }
+}
+
+.con-nav.add-background {
+    //in nav partial variables allow for addition of .add-background class, overriding the above
+    background-color: transparent;
+    position: fixed;
+}
+
+@media screen and (min-width: 576px) {
+    .con-nav.add-background {
+        background-color: $color-secondary;
+        position: sticky;
     }
 }
 
@@ -261,7 +276,7 @@ h3 {
 }
 
 .navbar-light .navbar-toggler {
-    background: $color-secondary;  // This it to show contrast against mobile navbar background: transparent
+    background: $color-secondary; // This it to show contrast against mobile navbar background: transparent
 }
 
 /* Off Canvas Mobile Navbar */
@@ -709,6 +724,18 @@ p.menu-sec {
     }
 }
 
+.green-font-outline {
+    text-shadow: -1px -1px $color-green,
+        1px -1px 0 $color-green,
+        -1px 1px 0 $color-green,
+        1px 1px 0 $color-green;
+    font-family: 'Libre Franklin',
+        sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $color-white;
+}
+
 .con-menu-teaser__header {
     font-size: 4rem;
     text-shadow: -1px -1px $color-green,
@@ -916,9 +943,43 @@ label {
     font-size: 2rem;
 }
 
-// .text-image {
-//     position: absolute;
-//     top: 0;
-//     left: 50px;
-//     height: 40px;
-// }
+// Icons for locations section
+.icon {
+    height: 4rem;
+    filter: saturate(5);
+}
+
+.locations-sec .a-default {
+    color: $color-black;
+}
+
+.locations-sec .p-default {
+    line-height: 1;
+}
+
+#testimonial-carousel {
+    background-color: $color-green;
+}
+
+
+#testimonial-carousel .carousel-inner {
+    margin: 0 auto;
+    width: 60%;
+    text-align: center;
+}
+
+#testimonial-carousel .p-default {
+    font-size: 1.5rem;
+}
+
+.gallery-img {
+    object-fit: cover;
+    height: 250px;
+    width: 100%;
+}
+
+.col-md-4 {
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: 2px;
+}

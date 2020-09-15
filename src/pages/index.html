@@ -6,6 +6,8 @@ btn-1: true
 con-def-header: true
 carousel-overpic: true
 {{button-path}}: our-story.html
+js-logo-d-none-class: js-logo-d-none
+add-background-class: add-background
 ---
 
     <!-- carousel -->
@@ -41,6 +43,48 @@ carousel-overpic: true
         </div>
     </div>
     </div>
+
+
 {{> locations-sec}}
+
+<!-- Testimonials -->
+
+<section id="testimonials">
+    <h2 class="h2-default text-center mt-4 mt-lg-0 mb-2 mb-lg-4">WHAT OUR CUSTOMERS ARE SAYING</h2>
+    <div id="testimonial-carousel" class="carousel slide py-5" data-ride="false">
+        <div class="carousel-inner">
+            <div class="carousel-item active container-fluid">
+                <p class="p-default">I no longer have to sniff other dogs for love. I've found the hottest Corgi
+                    on TinDog. Woof.</p>
+                <em>Pebbles, New York</em>
+            </div>
+            <div class="carousel-item container-fluid">
+                <p class="p-default">I no longer have to sniff other dogs for love. I've found the hottest Corgi
+                    on TinDog. Woof.</p>
+                <em>Pebbles, New York</em>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#testimonial-carousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#testimonial-carousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+    </div>
+</section>
+
+<section id="gallery">
+    <div class="mt-1 row">
+        <div class="col-md-4">
+            <img class="gallery-img image-fluid" src="assets/img/index-car-1.jpg">
+        </div>
+        <div class="col-md-4">
+            <img class="gallery-img image-fluid" src="assets/img/index-car-2.jpg">
+        </div>
+        <div class="col-md-4">
+            <img class="gallery-img image-fluid" src="assets/img/index-car-3.jpg">
+        </div>
+    </div>
+</section>
 
 {{> carmelitas-image}}
