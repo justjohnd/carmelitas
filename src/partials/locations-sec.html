@@ -1,4 +1,4 @@
-<div class="con-default locations-sec">
+<div class="con-default locations-sec" data-scroll>
     <h2 class="h2-default mt-4 mt-lg-0 mb-2 mb-lg-4">VISIT ONE OF OUR FOUR BAY AREA LOCATIONS</h2>
     <div class="con-map">
         <div id="map"></div>
@@ -6,34 +6,44 @@
     </div>
     <div class="row mt-5 text-center">
         <div class="col-md-6">
-            <div><img class="icon mt-4"src="assets/img/peppers-sm.png"></div>
-            <h3><a class="a-default" href="#"><span></span>ST. PETERSBURG</a></h3>
-            <p class="p-default"><a class="a-text-link" href="#">5211 Park Street North,<br>
+            <div><img class="icon mt-4" src="assets/img/peppers-sm.png"></div>
+            <h3><a class="a-default" href="/locations-stpete.html">
+                    <span></span>ST. PETERSBURG</a></h3>
+            <p class="p-default"><a class="a-text-link" target="_blank" rel="noopener noreferrer"
+                    href="https://goo.gl/maps/rNfw6H5WaqeEzVbL7">5211 Park Street
+                    North,<br>
                     St. Petersburg, Florida 33709</a></p>
-                    <p>727-545-2956</p>
+            <p>727-545-2956</p>
         </div>
         <div class="col-md-6">
             <div><img class="icon mt-4" src="assets/img/lime-sm.png"></div>
-            <h3><a class="a-default" href="#">PINELLAS PARK</a></h3>
-            <p class="p-default"><a class="a-text-link" href="#">6218 66th Street,<br>
+            <h3><a class="a-default" href="/locations-pinellas.html">PINELLAS PARK</a></h3>
+            <p class="p-default"><a class="a-text-link" target="_blank" rel="noopener noreferrer"
+                    href="https://goo.gl/maps/CAxe5Q2TznB1Amom7">6218 66th
+                    Street,<br>
                     Pinellas Park, Florida 33781</a></p>
-                    <p>727-545-8226</p>
+            <p>727-545-8226</p>
         </div>
         <div class="col-md-6">
             <div><img class="icon mt-4" src="assets/img/maracas-sm.png"></div>
-            <h3><a class="a-default" href="#">LARGO</a></h3>
-            <p class="p-default"><a class="a-text-link" href="#">7705 Ulmerton Road,<br>
+            <h3><a class="a-default" href="/locations-largo.html">LARGO</a>
+            </h3>
+            <p class="p-default"><a class="a-text-link" target="_blank" rel="noopener noreferrer"
+                    href="https://goo.gl/maps/tf5MswP32EoG2Pzv7">7705 Ulmerton
+                    Road,<br>
                     Largo, Florida 33771</a></p>
-                    <p>727-533-8555</p>
+            <p>727-533-8555</p>
         </div>
         <div class="col-md-6">
             <div><img class="icon mt-4" src="assets/img/agave-sm.png"></div>
-            <h3><a class="a-default" href="#">NEW PORT RICHEY</a></h3>
-            <p class="p-default"><a class="a-text-link" href="#">8526 Old County Road 54,<br>
+            <h3><a class="a-default" href="/locations-new-port-richey.html">NEW PORT RICHEY</a></h3>
+            <p class="p-default"><a class="a-text-link" target="_blank" rel="noopener noreferrer"
+                    href="https://goo.gl/maps/vzbEHko1i5GJmm2C9">8526 Old
+                    County Road 54,<br>
                     St. Petersburg, Florida 34655</a></p>
-                    <p>727-376-4800</p>
+            <p>727-376-4800</p>
         </div>
-    </div>     
+    </div>
 </div>
 
 
@@ -75,44 +85,44 @@
 
         var image = 'assets/img/taco.png';
 
-    // Use Waypoints plugin to initialize the markers on scroll
-    var waypoint = new Waypoint({
-    element: document.getElementById('taco-drop'),
-    handler: function (direction) {
-    if (direction === 'down') {
-         // The marker, positioned at litas
-         markerStPete = new google.maps.Marker({
-         map: map,
-         animation: google.maps.Animation.DROP,
-         position: LatLngStPete,
-         icon: image
-         });
+        // Use Waypoints plugin to initialize the markers on scroll
+        var waypoint = new Waypoint({
+            element: document.getElementById('taco-drop'),
+            handler: function (direction) {
+                if (direction === 'down') {
+                    // The marker, positioned at litas
+                    markerStPete = new google.maps.Marker({
+                        map: map,
+                        animation: google.maps.Animation.DROP,
+                        position: LatLngStPete,
+                        icon: image
+                    });
 
-         markerPinellas = new google.maps.Marker({
-         map: map,
-         animation: google.maps.Animation.DROP,
-         position: LatLngPinellas,
-         icon: image
-         });
+                    markerPinellas = new google.maps.Marker({
+                        map: map,
+                        animation: google.maps.Animation.DROP,
+                        position: LatLngPinellas,
+                        icon: image
+                    });
 
-         markerLargo = new google.maps.Marker({
-         map: map,
-         animation: google.maps.Animation.DROP,
-         position: LatLngLargo,
-         icon: image
-         });
+                    markerLargo = new google.maps.Marker({
+                        map: map,
+                        animation: google.maps.Animation.DROP,
+                        position: LatLngLargo,
+                        icon: image
+                    });
 
-         markerNewport = new google.maps.Marker({
-         map: map,
-         animation: google.maps.Animation.DROP,
-         position: LatLngNewport,
-         icon: image
-         });
-    }
-    }
-    });
+                    markerNewport = new google.maps.Marker({
+                        map: map,
+                        animation: google.maps.Animation.DROP,
+                        position: LatLngNewport,
+                        icon: image
+                    });
+                }
+            }
+        });
 
-       
+
 
     }
 

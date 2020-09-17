@@ -202,7 +202,7 @@ h3 {
 
 @media screen and (min-width: 768px) {
     .con-nav {
-        padding: .5rem 3rem;
+        padding: 1rem 3rem;
         position: sticky;
         top: 0;
         z-index: 1020;
@@ -393,6 +393,12 @@ h3 {
 
 .carousel-indicators {
     bottom: 15%;
+}
+
+@media screen and (min-width: 768px) {
+    .carousel-indicators {
+        bottom: 0;
+    }
 }
 
 /* Default Container */
@@ -630,12 +636,18 @@ p.menu-sec {
 
 /* Carmelitas Image */
 .img-girl {
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
+}
+
+@media screen and (min-width: 776px) {
+    .img-girl {
+        width: 36%;
+        margin-bottom: -2rem;
+    }
 }
 
 @media screen and (min-width: 992px) {
     .img-girl {
-        width: 36%;
         margin-bottom: -3rem;
     }
 }
@@ -953,12 +965,20 @@ label {
     color: $color-black;
 }
 
+.locations-sec .a-default:hover {
+    color: $color-red;
+}
+
 .locations-sec .p-default {
     line-height: 1;
 }
 
 #testimonial-carousel {
     background-color: $color-green;
+}
+
+#testimonial-carousel.con-carousel {
+    margin-bottom: 0;
 }
 
 
@@ -968,8 +988,10 @@ label {
     text-align: center;
 }
 
+@media screen and (min-width: 576px) {
 #testimonial-carousel .p-default {
     font-size: 1.5rem;
+}
 }
 
 .gallery-img {
