@@ -185,15 +185,15 @@ h3 {
 
 
 /* Navbar */
-// #sec-nav {
-//     display: none; //Use just for testing in dev tools for more screen space
-// }
+#sec-nav {
+    display: none; //Use just for testing in dev tools for more screen space
+}
 
 .con-nav {
     //Sets the background for all pages
     background-color: $color-secondary;
     position: sticky;
-    padding: 1rem 2rem;
+    padding: .5rem 2rem;
     right: 0;
     left: 0;
     z-index: 1030;
@@ -202,7 +202,7 @@ h3 {
 
 @media screen and (min-width: 768px) {
     .con-nav {
-        padding: .5rem 3rem;
+        padding: 1rem 3rem;
         position: sticky;
         top: 0;
         z-index: 1020;
@@ -957,6 +957,10 @@ label {
 
 .locations-sec .a-default {
     color: $color-black;
+}
+
+.locations-sec .a-default:hover {
+    color: $color-red;
 }
 
 .locations-sec .p-default {
