@@ -52,35 +52,38 @@
 
 <!-- Script -->
 <script>
+    // The location of Carmelitas
+    var LatLng0 = { // St. Pete
+        lat: 27.819290,
+        lng: -82.753480
+    };
+
+    var LatLng1 = { // Pinellas
+        lat: 27.828946,
+        lng: -82.729040
+    }
+
+    var LatLng2 = { // Largo
+        lat: 27.895137,
+        lng: -82.744223
+    }
+
+    var LatLng3 = { // Nw Port Richey
+        lat: 28.019995,
+        lng: -82.772450
+
+    }
+
+
     // Initialize and add the map
     function initMap() {
-        // The location of Carmelitas
-        var LatLngStPete = {
-            lat: 27.819290,
-            lng: -82.753480
-        };
-
-        var LatLngPinellas = {
-            lat: 27.828946,
-            lng: -82.729040
-        }
-
-        var LatLngLargo = {
-            lat: 27.895137,
-            lng: -82.744223
-        }
-
-        var LatLngNewport = {
-            lat: 28.019995,
-            lng: -82.772450
-
-        }
-
-        // The map, centered at litas
         var map = new google.maps.Map(
             document.getElementById('map'), {
                 zoom: 11,
-                center: LatLngLargo
+                center: {
+                    lat: 27.94,
+                    lng: -82.757689
+                }
             });
 
         var image = 'assets/img/taco.png';
@@ -90,43 +93,47 @@
             element: document.getElementById('taco-drop'),
             handler: function (direction) {
                 if (direction === 'down') {
+
                     // The marker, positioned at litas
-                    markerStPete = new google.maps.Marker({
-                        map: map,
-                        animation: google.maps.Animation.DROP,
-                        position: LatLngStPete,
-                        icon: image
-                    });
+                    setTimeout(function () {
+                        markerStPete = new google.maps.Marker({
+                            map: map,
+                            animation: google.maps.Animation.DROP,
+                            position: LatLng0,
+                            icon: image
+                        });
+                    }, 1500);
 
                     markerPinellas = new google.maps.Marker({
                         map: map,
                         animation: google.maps.Animation.DROP,
-                        position: LatLngPinellas,
+                        position: LatLng1,
                         icon: image
                     });
 
-                    markerLargo = new google.maps.Marker({
-                        map: map,
-                        animation: google.maps.Animation.DROP,
-                        position: LatLngLargo,
-                        icon: image
-                    });
+                    setTimeout(function () {
+                        markerLargo = new google.maps.Marker({
+                            map: map,
+                            animation: google.maps.Animation.DROP,
+                            position: LatLng2,
+                            icon: image
+                        });
+                    }, 1000);
 
-                    markerNewport = new google.maps.Marker({
-                        map: map,
-                        animation: google.maps.Animation.DROP,
-                        position: LatLngNewport,
-                        icon: image
-                    });
+                    setTimeout(function () {
+                        markerNewport = new google.maps.Marker({
+                            map: map,
+                            animation: google.maps.Animation.DROP,
+                            position: LatLng3,
+                            icon: image
+                        });
+                    }, 2000);
+
+                    this.destroy();
                 }
             }
         });
-
-
-
     }
-
-    console.log("my" + name);
 </script>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap">
