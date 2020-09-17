@@ -982,8 +982,10 @@ label {
     text-align: center;
 }
 
+@media screen and (min-width: 576px) {
 #testimonial-carousel .p-default {
     font-size: 1.5rem;
+}
 }
 
 .gallery-img {
