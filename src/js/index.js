@@ -46,3 +46,6 @@ var navbarWaypoint = new Waypoint({
         logo.classList.remove("js-logo-d-none");
     }
 });
+
+//Anchor autocomplete to form fiedl in modal
+// $(".js-autocomplete").autocomplete("option", "appendTo", ".eventInsForm");
