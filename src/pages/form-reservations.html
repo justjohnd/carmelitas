@@ -1,34 +1,27 @@
-<!-- RESERVATION MODAL -->
-<div class="modal fade text-dark" id="reservations">
-    <div class="modal-dialog">
-
-        <div class="con-res modal-content">
-            <div class="modal-header">
+<!-- RESERVATION -->
+        <div class="con-res">
+            <div class="">
                 <h1 class="h2-default text-white">RESERVATIONS</h1>
-                <button class="close" data-dismiss="modal">
-                    <span class="close-x-size">&times;</span>
-                </button>
             </div>
-            <div class="row modal-body">
+            <div class="row">
                 <div class="col-md-3 my-auto d-none d-lg-block"><img class="img-res"
                         src="assets/img/CARMELITAS menu illustrations textured-01.png">
                 </div>
                 <div class="col-md-6 form-res">
-                    <form method="post" action="/form">
+                    <form autocomplete="off" method="post" action="/form">
                         <!-- TEXT FIELD GROUPS -->
                         <div class="form-group">
                             <label for="name">Your Name</label>
-                            <input class="form-control form-control-lg" type="text" name="name" id="name" placeholder=""
-                                required="true">
+                            <input autocomplete="off" class="form-control form-control-lg" type="text" name="" id="name"
+                                placeholder="" required="true">
 
                         </div>
                         <div class="form-group">
                             <label for="email">Your Email (Optional, for contact purposes only.)</label>
-                            <input class="form-control form-control-lg" type="email" id="email"
-                                placeholder="">
+                            <input class="form-control form-control-lg" type="email" id="email" placeholder="">
                             <div class="form-check">
                                 <label class="form-check-label mr-2">
-                                    <input  type="checkbox" class="form-check-input">Sign me up to
+                                    <input type="checkbox" class="form-check-input">Sign me up to
                                     receive
                                     coupons and other discounts!
                                 </label>
@@ -36,16 +29,14 @@
                         </div>
                         <!-- <div class="form-group">
                             <label for="phone-number">Your Phone Number</label>
-                            <input class="form-control form-control-lg" type="tel" id="phone-number"
-                                placeholder=""
+                            <input class="form-control form-control-lg" type="tel" id="phone-number" placeholder=""
                                 required="true">
                             <small class="form-text text-muted">Your personal information will never be
                                 shared</small>
                         </div>
                         <div class="form-group">
                             <label for="number-people">Number of People</label>
-                            <input class="form-control form-control-lg" type="text"
-                                id="number-people" placeholder=""
+                            <input class="form-control form-control-lg" type="text" id="number-people" placeholder=""
                                 required="true">
                         </div>
                         <div class="form-group">
@@ -62,8 +53,7 @@
                         <div class="form-group">
                             <label for="date-time">Select Date & Time</label>
                             <div class="fp-block">
-                                <input  class="form-control form-control-lg fp-block" type="text"
-                                    id="basicDate"
+                                <input class="form-control form-control-lg fp-block" type="text" id="basicDate"
                                     placeholder="" data-input placeholder="Select Time & Date" required="true">
                             </div>
                         </div> -->
@@ -76,5 +66,3 @@
                 </div>
             </div>
         </div>
-    </div>
-</div>
