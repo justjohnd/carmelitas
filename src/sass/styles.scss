@@ -193,7 +193,7 @@ h3 {
     //Sets the background for all pages
     background-color: $color-secondary;
     position: sticky;
-    padding: .5rem 2rem;
+    padding: 1rem 2rem;
     right: 0;
     left: 0;
     z-index: 1030;
@@ -393,6 +393,12 @@ h3 {
 
 .carousel-indicators {
     bottom: 15%;
+}
+
+@media screen and (min-width: 768px) {
+    .carousel-indicators {
+        bottom: 0;
+    }
 }
 
 /* Default Container */
