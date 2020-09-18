@@ -1,0 +1,87 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.0/jquery.waypoints.js"></script>
+
+<!-- Script -->
+<script>
+    // Initialize and add the map
+    function initMap() {
+        // The location of Carmelitas
+        var LatLngStPete = {
+            lat: 27.819290,
+            lng: -82.753480
+        };
+
+        var LatLngPinellas = {
+            lat: 27.828946,
+            lng: -82.729040
+        }
+
+        var LatLngLargo = {
+            lat: 27.895137,
+            lng: -82.744223
+        }
+
+        var LatLngNewport = {
+            lat: 28.019995,
+            lng: -82.772450
+
+        }
+
+        // The map, centered at litas
+        var mapAll = new google.maps.Map(
+            document.getElementById('map-all'), {
+                zoom: 11,
+                center: LatLngLargo
+            });
+
+        var image = 'assets/img/taco.png';
+
+        // Use Waypoints plugin to initialize the markers on scroll
+        var waypoint = new Waypoint({
+            element: document.getElementById('taco-drop'),
+            handler: function (direction) {
+                if (direction === 'down') {
+                    // The marker, positioned at litas
+                    setTimeout(function () {
+                    markerStPete = new google.maps.Marker({
+                        map: mapAll,
+                        animation: google.maps.Animation.DROP,
+                        position: LatLngStPete,
+                        icon: image
+                    });
+                    }, 1000);
+
+                    setTimeout(function () {
+                    markerPinellas = new google.maps.Marker({
+                        map: mapAll,
+                        animation: google.maps.Animation.DROP,
+                        position: LatLngPinellas,
+                        icon: image
+                    });
+                    }, 1500);
+
+                    setTimeout(function () {
+                    markerLargo = new google.maps.Marker({
+                        map: mapAll,
+                        animation: google.maps.Animation.DROP,
+                        position: LatLngLargo,
+                        icon: image
+                    });
+                    }, 2000);
+
+                    markerNewport = new google.maps.Marker({
+                        map: mapAll,
+                        animation: google.maps.Animation.DROP,
+                        position: LatLngNewport,
+                        icon: image
+                    });
+
+                    this.destroy();
+                }
+            }
+        });
+    }
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap">
+</script>
+
