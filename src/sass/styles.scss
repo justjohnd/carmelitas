@@ -612,7 +612,7 @@ p.menu-sec {
     display: block;
 }
 
-#map {
+#map, #map-all {
     width: 100%;
     height: 40vh;
     position: relative;
@@ -620,7 +620,7 @@ p.menu-sec {
 }
 
 @media screen and (min-width: 768px) {
-    #map {
+    #map, #map-all {
         height: 80vh;
     }
 }

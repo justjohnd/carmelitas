@@ -1,7 +1,7 @@
 <div class="con-default locations-sec" data-scroll>
     <h2 class="h2-default mt-4 mt-lg-0 mb-2 mb-lg-4">VISIT ONE OF OUR FOUR BAY AREA LOCATIONS</h2>
-    <div class="con-map">
-        <div id="map"></div>
+    <div id="map-all">
+        <div id="map-all"></div>
         <div class="map-overlay"></div>
     </div>
     <div class="row mt-5 text-center">
@@ -46,88 +46,4 @@
     </div>
 </div>
 
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.0/jquery.waypoints.js"></script>
-
-<!-- Script -->
-<script>
-    // Initialize and add the map
-    function initMap() {
-        // The location of Carmelitas
-        var LatLngStPete = {
-            lat: 27.819290,
-            lng: -82.753480
-        };
-
-        var LatLngPinellas = {
-            lat: 27.828946,
-            lng: -82.729040
-        }
-
-        var LatLngLargo = {
-            lat: 27.895137,
-            lng: -82.744223
-        }
-
-        var LatLngNewport = {
-            lat: 28.019995,
-            lng: -82.772450
-
-        }
-
-        // The map, centered at litas
-        var map = new google.maps.Map(
-            document.getElementById('map'), {
-                zoom: 11,
-                center: LatLngLargo
-            });
-
-        var image = 'assets/img/taco.png';
-
-        // Use Waypoints plugin to initialize the markers on scroll
-        var waypoint = new Waypoint({
-            element: document.getElementById('taco-drop'),
-            handler: function (direction) {
-                if (direction === 'down') {
-                    // The marker, positioned at litas
-                    markerStPete = new google.maps.Marker({
-                        map: map,
-                        animation: google.maps.Animation.DROP,
-                        position: LatLngStPete,
-                        icon: image
-                    });
-
-                    markerPinellas = new google.maps.Marker({
-                        map: map,
-                        animation: google.maps.Animation.DROP,
-                        position: LatLngPinellas,
-                        icon: image
-                    });
-
-                    markerLargo = new google.maps.Marker({
-                        map: map,
-                        animation: google.maps.Animation.DROP,
-                        position: LatLngLargo,
-                        icon: image
-                    });
-
-                    markerNewport = new google.maps.Marker({
-                        map: map,
-                        animation: google.maps.Animation.DROP,
-                        position: LatLngNewport,
-                        icon: image
-                    });
-                }
-            }
-        });
-
-
-
-    }
-
-    console.log("my" + name);
-</script>
-
-<script src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap">
-</script>
+{{> google-maps-all-script}}

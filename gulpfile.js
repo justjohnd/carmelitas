@@ -16,6 +16,9 @@ const imagemin = require("gulp-imagemin");
 const cache = require("gulp-cache");
 const concat = require("gulp-concat");
 const panini = require('panini');
+// const env = require('dotenv').config(); Currently not using
+// const Dotenv = require('dotenv-webpack');
+
 
 // Load all Gulp plugins into one variable
 const $ = plugins();
@@ -103,6 +106,11 @@ function pages(done) {
     let webpackConfig = {
         mode: PRODUCTION ? 'production' : 'development',
         module: {
+            // exports: {
+            //     plugins: [
+            //             new Dotenv()
+            //         ]
+            // },
             rules: [{
                 test: /\.js$/,
                 use: {
@@ -114,7 +122,7 @@ function pages(done) {
                 },
             }, ],
         },
-        devtool: !PRODUCTION && 'source-map',
+        devtool: !PRODUCTION && 'source-map'
     };
 
     function javascript() {
