@@ -15,6 +15,8 @@ import 'bootstrap';
 import PrjScrollOut from './prj-scroll-out';
 import PrjFlatpickr from './prj-flatpickr';
 
+// const api_Key = process.env.API_KEY;  Currently not using. env file not set up
+// console.log(process.env);
 
 // Get current year for copyright
 $('#year').text(new Date().getFullYear());

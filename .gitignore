@@ -1,3 +1,5 @@
 ignore/
 node_modules/
 dist/
+.env
+/src/data/config/google_map_api_key.yml
