@@ -1010,9 +1010,16 @@ label {
 
 #testimonial-carousel .carousel-inner {
     margin: 0 auto;
-    width: 60%;
+    width: 80%;
     text-align: center;
 }
+
+@media screen and (min-width: 992px) {
+    #testimonial-carousel .carousel-inner {
+        width: 60%;
+    }
+}
+
 
 @media screen and (min-width: 576px) {
     #testimonial-carousel .p-default {
@@ -1030,4 +1037,14 @@ label {
     padding-left: 0;
     padding-right: 0;
     margin-bottom: 2px;
+}
+
+.modal-header h1.h2-default {
+    line-height: none;
+    font-size: 1.5rem;
+    margin-bottom: 0;
+}
+
+.modal-header .close {
+    line-height: .7;
 }

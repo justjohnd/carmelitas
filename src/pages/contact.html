@@ -3,13 +3,12 @@ meta-title: Contact
 con-def-header-text: CONTACT
 con-def-p-text: Lorem ipsum dolor sit amet consectetur adipisicing elit. Est incidunt asperiores 
 con-def-header: true
-mt-class: mt-5
 pt-class: pt-5
 ---
 
    <!-- Intro -->
        <section>
-           <div class="con-default {{align-class}} {{mt-class}} {{pt-class}}">
+           <div class="con-default {{align-class}} mt-lg-5 {{pt-class}}">
                {{#if con-def-header}}
                {{> con-def-header}}
                {{/if}}
@@ -21,7 +20,7 @@ pt-class: pt-5
        </section>
 
    <!-- TEXT FIELD GROUPS -->
-   <div class="container mailing-list mt-n5 mr-auto ml-auto w-50">
+   <div class="container mailing-list mt-lg-n5 mr-auto ml-auto w-lg-50">
        <div class="form-group">
            <label for="firstname">First Name</label>
            <input class="form-control form-control-lg" type="text" name="first-name" id="first-name" placeholder=""
@@ -58,5 +57,4 @@ pt-class: pt-5
        </div>
        <button class="btn btn-block btn-light mt-5" type="submit">Submit</button>
        </form>
-
    </div>
