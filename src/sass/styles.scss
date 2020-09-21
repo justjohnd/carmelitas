@@ -459,7 +459,7 @@ h3 {
     position: relative;
     overflow: hidden;
 
-    &::before {
+    &::after {
         background-repeat: no-repeat;
         background-position: center top;
         background-size: 60%;
