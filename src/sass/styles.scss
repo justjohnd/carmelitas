@@ -459,17 +459,21 @@ h3 {
     position: relative;
     overflow: hidden;
 
-    &::after {
-        background-repeat: no-repeat;
-        background-position: center top;
-        background-size: 60%;
+    &::before {
         content: '';
+        display: block;
+        background-size: 60%;
         height: 100%;
+        width: 100%;
+        margin: auto;
+        background-position: center top;
         left: 0;
         position: fixed;
         top: 30%;
         width: 100%;
+        background-repeat: no-repeat;
         will-change: transform;
+        pointer-events: none;
         z-index: -1;
     }
 }
