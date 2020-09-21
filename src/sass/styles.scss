@@ -447,11 +447,11 @@ h3 {
 }
 
 /* Menu Container */
-.con-fixbck--avo::before {
+.con-fixbck--avo::after {
     background-image: $img-avo;
 }
 
-.con-fixbck--guac::before {
+.con-fixbck--guac::after {
     background-image: $img-guac;
 }
 
@@ -459,7 +459,7 @@ h3 {
     position: relative;
     overflow: hidden;
 
-    &::before {
+    &::after {
         content: '';
         display: block;
         background-size: 60%;
@@ -478,7 +478,7 @@ h3 {
 }
 
 @media screen and (min-width: 768px) {
-    .con-fixbck::before {
+    .con-fixbck::after {
         background-position-y: 30%;
         background-size: 30%;
 
@@ -486,7 +486,7 @@ h3 {
 }
 
 @media screen and (min-width: 992px) {
-    .con-fixbck::before {
+    .con-fixbck::after {
         background-position-y: 20%;
 
     }
@@ -1010,9 +1010,16 @@ label {
 
 #testimonial-carousel .carousel-inner {
     margin: 0 auto;
-    width: 60%;
+    width: 80%;
     text-align: center;
 }
+
+@media screen and (min-width: 992px) {
+    #testimonial-carousel .carousel-inner {
+        width: 60%;
+    }
+}
+
 
 @media screen and (min-width: 576px) {
     #testimonial-carousel .p-default {
@@ -1030,4 +1037,14 @@ label {
     padding-left: 0;
     padding-right: 0;
     margin-bottom: 2px;
+}
+
+.modal-header h1.h2-default {
+    line-height: none;
+    font-size: 1.5rem;
+    margin-bottom: 0;
+}
+
+.modal-header .close {
+    line-height: .7;
 }
