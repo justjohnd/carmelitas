@@ -360,10 +360,10 @@ h3 {
 }
 
 .con-carousel__image {
-    max-height: 90vh;
+    height: 90vh; //Note: Using width and height will work for carousel; using min-vw and max-height broke the carousel
     object-fit: cover;
     opacity: 1;
-    margin-bottom: 3rem;
+    display: block;
 }
 
 @media screen and (min-width: 768px) {
