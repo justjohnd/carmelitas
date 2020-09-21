@@ -447,11 +447,11 @@ h3 {
 }
 
 /* Menu Container */
-.con-fixbck--avo::before {
+.con-fixbck--avo::after {
     background-image: $img-avo;
 }
 
-.con-fixbck--guac::before {
+.con-fixbck--guac::after {
     background-image: $img-guac;
 }
 
@@ -467,7 +467,7 @@ h3 {
         height: 100%;
         left: 0;
         position: fixed;
-        top: 20%;
+        top: 30%;
         width: 100%;
         will-change: transform;
         z-index: -1;
@@ -475,7 +475,7 @@ h3 {
 }
 
 @media screen and (min-width: 768px) {
-    .con-fixbck::before {
+    .con-fixbck::after {
         background-position-y: 30%;
         background-size: 30%;
 
@@ -483,7 +483,8 @@ h3 {
 }
 
 @media screen and (min-width: 992px) {
-    .con-fixbck::before {
+    .con-fixbck::after {
+        top: 20%;
         background-position-y: 20%;
 
     }
