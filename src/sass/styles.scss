@@ -359,6 +359,13 @@ h3 {
     }
 }
 
+.con-carousel__overpic--image {
+    max-height: 90vh;
+    object-fit: cover;
+    opacity: 1;
+    display: block;
+}
+
 .con-carousel__image {
     height: 90vh; //Note: Using width and height will work for carousel; using min-vw and max-height broke the carousel
     object-fit: cover;
