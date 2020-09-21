@@ -15,6 +15,8 @@ $color-tertiary-light:#f9c47c;
 
 // .menu-item background-color: #CEBFFF;
 
+$img-avo: url("https://justjohnd.github.io/carmelitas/assets/img/test-brightness-500.png");
+$img-guac: url("https://justjohnd.github.io/carmelitas/assets/img/img-guac-500.png");
 
 /* Universals */
 *,
@@ -359,11 +361,18 @@ h3 {
     }
 }
 
-.con-carousel__image {
+.con-carousel__overpic--image {
     max-height: 90vh;
     object-fit: cover;
     opacity: 1;
-    margin-bottom: 3rem;
+    display: block;
+}
+
+.con-carousel__image {
+    height: 90vh; //Note: Using width and height will work for carousel; using min-vw and max-height broke the carousel
+    object-fit: cover;
+    opacity: 1;
+    display: block;
 }
 
 @media screen and (min-width: 768px) {
@@ -438,35 +447,45 @@ h3 {
 }
 
 /* Menu Container */
-
-.background-guac {
-    background: url("https://justjohnd.github.io/carmelitas/assets/img/img-guac-500.png") no-repeat center;
-    background-attachment: fixed;
+.con-fixbck--avo::before {
+    background-image: $img-avo;
 }
 
-
-.background-avocado {
-    background: url("https://justjohnd.github.io/carmelitas/assets/img/test-brightness-500.png") no-repeat center;
-    background-attachment: fixed;
+.con-fixbck--guac::before {
+    background-image: $img-guac;
 }
 
-.background-img {
+.con-fixbck {
     position: relative;
-    background-size: 60%;
-    // background-position-x: 50%;
-    // background-position-y: 60%;
+    overflow: hidden;
+
+    &::before {
+        background-repeat: no-repeat;
+        background-position: center top;
+        background-size: 60%;
+        content: '';
+        height: 100%;
+        left: 0;
+        position: fixed;
+        top: 20%;
+        width: 100%;
+        will-change: transform;
+        z-index: -1;
+    }
 }
 
 @media screen and (min-width: 768px) {
-    .background-img {
-        background-position-y: 60%;
+    .con-fixbck::before {
+        background-position-y: 30%;
         background-size: 30%;
+
     }
 }
 
 @media screen and (min-width: 992px) {
-    .background-img {
-        background-position-y: 70%;
+    .con-fixbck::before {
+        background-position-y: 20%;
+
     }
 }
 
@@ -612,7 +631,8 @@ p.menu-sec {
     display: block;
 }
 
-#map, #map-all {
+#map,
+#map-all {
     width: 100%;
     height: 40vh;
     position: relative;
@@ -620,7 +640,9 @@ p.menu-sec {
 }
 
 @media screen and (min-width: 768px) {
-    #map, #map-all {
+
+    #map,
+    #map-all {
         height: 80vh;
     }
 }
@@ -990,9 +1012,9 @@ label {
 }
 
 @media screen and (min-width: 576px) {
-#testimonial-carousel .p-default {
-    font-size: 1.5rem;
-}
+    #testimonial-carousel .p-default {
+        font-size: 1.5rem;
+    }
 }
 
 .gallery-img {
@@ -1006,4 +1028,3 @@ label {
     padding-right: 0;
     margin-bottom: 2px;
 }
-
