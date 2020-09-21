@@ -1,3 +1,52 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.0/jquery.waypoints.js"></script>
+
+<!-- Script -->
+<script>
+    // Initialize and add the map
+    function initMap() {
+        // The location of Carmelitas
+        var myLatLng = {
+            lat: 27.819290,
+            lng: -82.753480
+        };
+
+        // The map, centered at litas
+        var map = new google.maps.Map(
+            document.getElementById('map'), {
+                zoom: 18,
+                center: myLatLng
+            });
+
+        var image = 'assets/img/taco.png';
+
+        // Use Waypoints plugin to initialize the markers on scroll
+        var waypoint = new Waypoint({
+            element: document.getElementById('taco'),
+            handler: function (direction) {
+                if (direction === 'down') {
+                    // The marker, positioned at litas
+                    marker = new google.maps.Marker({
+                        map: map,
+                        animation: google.maps.Animation.DROP,
+                        position: myLatLng,
+                        icon: image
+                    });
+
+                    this.destroy();
+                }
+            }
+        });
+    }
+</script>
+
+
+
+
+
+<!-- 
+
+
+
 <script>
     // Initialize and add the map
     function initMap() {
@@ -23,7 +72,7 @@
             icon: image
         });
     }
-</script>
+</script> -->
 
-<script src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap">
+<script src="https://maps.googleapis.com/maps/api/js?key={{ google_map_api_key.value }}&callback=initMap">
 </script>
