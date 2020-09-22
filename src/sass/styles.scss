@@ -28,10 +28,18 @@ $img-guac: url("https://justjohnd.github.io/carmelitas/assets/img/img-guac-500.p
 
 html {
     font-size: 100%;
+    overflow: hidden;
 }
 
 body {
     box-sizing: border-box;
+      height: 100%;
+      width: 100%;
+      position: fixed;
+      /* prevent overscroll bounce*/
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      /* iOS velocity scrolling */
 }
 
 /* Font Style*/
