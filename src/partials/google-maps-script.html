@@ -39,40 +39,5 @@
     }
 </script>
 
-
-
-
-
-<!-- 
-
-
-
-<script>
-    // Initialize and add the map
-    function initMap() {
-        // The location of Carmelitas
-        var myLatLng = {
-            lat: 27.819290,
-            lng: -82.753480
-        };
-        // The map, centered at litas
-        var map = new google.maps.Map(
-            document.getElementById('map'), {
-                zoom: 18,
-                center: myLatLng
-            });
-
-        var image = 'assets/img/taco.png';
-
-        // The marker, positioned at litas
-        marker = new google.maps.Marker({
-            map: map,
-            animation: google.maps.Animation.DROP,
-            position: myLatLng,
-            icon: image
-        });
-    }
-</script> -->
-
 <script src="https://maps.googleapis.com/maps/api/js?key={{ google_map_api_key.value }}&callback=initMap">
 </script>
