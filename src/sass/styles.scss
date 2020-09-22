@@ -34,9 +34,10 @@ html {
 body {
     box-sizing: border-box;
       height: 100%;
+      width: 100%;
       position: fixed;
       /* prevent overscroll bounce*/
-      overflow-y: scroll;
+      overflow-y: auto;
       -webkit-overflow-scrolling: touch;
       /* iOS velocity scrolling */
 }
