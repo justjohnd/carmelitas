@@ -3,8 +3,8 @@ Universal theme: #eb0f00;
 Universal theme,
 .btn-col2: #5ab200;
 .btn-col2:hover: #b0d887;
-.btn-default: #f5a02b;
-.btn-default:hover:#f9c47c;
+.btn-df: #f5a02b;
+.btn-df:hover:#f9c47c;
 button border: #872E8C;
 navbar: #ebd5b4;
 
@@ -32,7 +32,7 @@ section {
 }
 
 /* Font */
-.p-default {
+.p-df {
     letter-spacing: 1px;
     padding: 1rem 0;
     line-height: 1.5;
@@ -40,7 +40,7 @@ section {
 }
 
 @media screen and (min-width: 576px) {
-    .p-default {
+    .p-df {
         font-size: 1.25rem;
     }
 }
@@ -59,7 +59,7 @@ section {
     }
 }
 
-.h1-default {
+.h1-df {
     font-size: 2rem;
     color: #fff;
     margin: 1rem 0;
@@ -67,23 +67,23 @@ section {
 }
 
 @media screen and (min-width: 992px) {
-    .h1-default {
+    .h1-df {
         font-size: 5rem;
     }
 }
 
-.h2-default {
+.h2-df {
     font-size: 2rem;
 }
 
 @media screen and (min-width: 576px) {
-    .h2-default {
+    .h2-df {
         font-size: 3rem;
     }
 }
 
 /* Default Unordered List */
-.ul-default {
+.ul-df {
     padding-left: 0;
     list-style: none;
     letter-spacing: 3px;
@@ -91,7 +91,7 @@ section {
 }
 
 @media screen and (min-width: 992px) {
-    .ul-default {
+    .ul-df {
         width: 70%;
     }
 }
@@ -169,18 +169,18 @@ section {
 }
 
 /* Default Anchor */
-.a-default {
+.a-df {
     text-decoration: none;
     color: rgba(0, 0, 0, .5);
 }
 
-.a-default:hover {
+.a-df:hover {
     color: #eb0f00;
     text-decoration: none;
 }
 
 @media screen and (min-width: 992px) {
-    .a-default {
+    .a-df {
         background: none;
     }
 }
@@ -220,23 +220,23 @@ section {
     color: #eb0f00;
 }
 
-.navbar-light .navbar-nav .nav-link.a-default {
+.navbar-light .navbar-nav .nav-link.a-df {
     color: #fff;
 }
 
 /* This is used for the mobile navbar color */
 
-.navbar-light .navbar-nav .nav-link.a-default:active {
+.navbar-light .navbar-nav .nav-link.a-df:active {
     color: rgb(209, 209, 209);
 }
 
 @media screen and (min-width: 992px) {
-    .navbar-light .navbar-nav .nav-link.a-default {
+    .navbar-light .navbar-nav .nav-link.a-df {
         color: rgba(0, 0, 0, .5);
     }
 }
 
-.navbar-light .navbar-nav .nav-link.btn-default {
+.navbar-light .navbar-nav .nav-link.btn-df {
     color: #212529;
 }
 
@@ -367,7 +367,7 @@ section {
 
 
 /* Buttons */
-.btn-default {
+.btn-df {
     font-weight: 600;
     border: 1px solid #872E8C;
     margin-top: .5rem;
@@ -376,11 +376,11 @@ section {
 
 }
 
-.btn-default:hover {
+.btn-df:hover {
     background-color: #f9c47c;
 }
 
-.btn-default:focus {
+.btn-df:focus {
     background-color: #f5a02b;
 }
 
@@ -393,12 +393,12 @@ section {
     margin-top: .1rem;
 }
 
-.btn-default,
+.btn-df,
 .btn-hero {
     background-color: #f5a02b;
 }
 
-.btn-default:hover {
+.btn-df:hover {
     background-color: #f9c47c;
 }
 
@@ -438,7 +438,7 @@ section .con-default {
     }
 }
 
-.con-default .h1-default {
+.con-default .h1-df {
     color: #000;
     margin-top: 0;
     line-height: 1.1;
@@ -762,7 +762,7 @@ section .con-default {
     z-index: 4;
 }
 
-.footer-mobile .btn-default {
+.footer-mobile .btn-df {
     margin-bottom: 0;
 }
 
@@ -850,7 +850,7 @@ label {
 }
 
 /* Do I need these?! */
-.hours .p-default {
+.hours .p-df {
     padding: 0;
 }
 

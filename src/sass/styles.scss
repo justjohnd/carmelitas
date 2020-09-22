@@ -1,10 +1,10 @@
 @import "node_modules/bootstrap/scss/bootstrap.scss";
 // @import "node_modules/flatpickr/dist/flatpickr.css"; This import does not seem to work. Currently using a cdn insdie the default layout
 
-
 $con-mb: 7rem;
 $color-red: #eb0f00;
 $color-green: #5ab200;
+$color-green-light: #b0d887;
 $color-purple: #872E8C;
 $color-black: #101820;
 $color-white: #fff;
@@ -12,8 +12,7 @@ $color-active: #d1d1d1;
 $color-secondary: #ebd5b4;
 $color-tertiary: #f5a02b;
 $color-tertiary-light:#f9c47c;
-
-// .menu-item background-color: #CEBFFF;
+$color-menu-on-click: #Cebfff;
 
 $img-avo: url("https://justjohnd.github.io/carmelitas/assets/img/test-brightness-500.png");
 $img-guac: url("https://justjohnd.github.io/carmelitas/assets/img/img-guac-500.png");
@@ -35,31 +34,20 @@ body {
     box-sizing: border-box;
 }
 
-h1,
-h2,
-h3 {
-    color: $color-black;
-}
-
-.row {
-    margin-right: 0;
-    margin-left: 0;
-}
-
-/* Font */
-.p-default {
+/* Font Style*/
+.p-df {
     letter-spacing: 1px;
     line-height: 1.5;
     font-size: 1rem;
 }
 
 @media screen and (min-width: 576px) {
-    .p-default {
+    .p-df {
         font-size: 1.25rem;
     }
 }
 
-.h1-default {
+.h1-df {
     font-size: 2rem;
     color: $color-white;
     margin: 1rem 0;
@@ -67,24 +55,24 @@ h3 {
 }
 
 @media screen and (min-width: 576px) {
-    .h1-default {
+    .h1-df {
         font-size: 5rem;
     }
 }
 
-.h2-default {
+.h2-df {
     font-size: 2rem;
     font-weight: 900;
 }
 
 @media screen and (min-width: 576px) {
-    .h2-default {
+    .h2-df {
         font-size: 3rem;
     }
 }
 
 /* Default Unordered List */
-.ul-default {
+.ul-df {
     padding-left: 0;
     list-style: none;
     letter-spacing: 3px;
@@ -92,14 +80,23 @@ h3 {
 }
 
 @media screen and (min-width: 992px) {
-    .ul-default {
+    .ul-df {
         width: 70%;
     }
 }
 
-/* Default ul Animation */
+/* Two Column Unordered List */
+.ul-grid-2col {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, auto);
+    align-items: start;
+    grid-auto-flow: column;
+}
+
+/* Default ul Animation--Creates menu animated underlines */
 @media screen and (min-width: 992px) {
-    .ul-default--animation li {
+    .ul-df--animation li {
         display: inline-block;
         position: relative;
 
@@ -125,24 +122,8 @@ h3 {
     }
 }
 
-/* Two Column Unordered List */
-.ul-grid-2col {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(5, auto);
-    align-items: start;
-    grid-auto-flow: column;
-}
-
-/* Footer List */
-.list-footer {
-    line-height: 1;
-    padding-right: 2rem;
-    text-align: center;
-}
-
 /* Default Anchor */
-.a-default {
+.a-df {
     text-decoration: none;
     color: rgba(0, 0, 0, .5);
 
@@ -153,7 +134,7 @@ h3 {
 }
 
 @media screen and (min-width: 992px) {
-    .a-default {
+    .a-df {
         background: none;
     }
 }
@@ -169,30 +150,13 @@ h3 {
     }
 }
 
-// Data-Scroll
-[data-scroll] {
-    opacity: 0;
-    will-change: transform, scale, opacity;
-    -webkit-transform: translateY(6rem) scale(0.93);
-    transform: translateY(6rem) scale(0.93);
-    -webkit-transition: all 1.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-    transition: all 1.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-[data-scroll='in'] {
-    opacity: 1;
-    -webkit-transform: translateY(0) scale(1);
-    transform: translateY(0) scale(1);
-}
-
-
 /* Navbar */
 // #sec-nav {
 //     display: none; //Use just for testing in dev tools for more screen space
 // }
 
 .con-nav {
-    //Sets the background for all pages
+    //Sets the solid background coor for all pages
     background-color: $color-secondary;
     position: sticky;
     padding: .5rem 2rem;
@@ -201,6 +165,16 @@ h3 {
     left: 0;
     z-index: 1030;
     transition: background-color 0.5s ease;
+
+    .nav-link.btn {
+        display: inline;
+        padding: 10px;
+        line-height: 4;
+    }
+
+    .navbar-nav.hover-color>li>a:hover {
+        color: $color-red;
+    }
 }
 
 @media screen and (min-width: 768px) {
@@ -213,19 +187,6 @@ h3 {
     }
 }
 
-.con-nav.add-background {
-    //in nav partial variables allow for addition of .add-background class, overriding the above
-    background-color: transparent;
-    position: fixed;
-}
-
-@media screen and (min-width: 576px) {
-    .con-nav.add-background {
-        background-color: $color-secondary;
-        position: sticky;
-    }
-}
-
 .con-nav__logo {
     width: 10rem;
 }
@@ -234,10 +195,6 @@ h3 {
     .con-nav__logo {
         width: 15rem;
     }
-}
-
-.js-logo-d-none {
-    display: none;
 }
 
 .con-nav__li {
@@ -254,11 +211,9 @@ h3 {
     }
 }
 
-
 .con-nav__li-sm {
     padding-top: 0;
 }
-
 
 @media screen and (min-width: 992px) {
     .dropdown-menu>a:hover:after {
@@ -268,18 +223,26 @@ h3 {
     }
 }
 
-.con-nav .navbar-nav.hover-color>li>a:hover {
-    color: $color-red;
-}
-
-.con-nav .nav-link.btn {
-    display: inline;
-    padding: 10px;
-    line-height: 4;
-}
-
 .navbar-light .navbar-toggler {
     background: $color-secondary; // This it to show contrast against mobile navbar background: transparent
+}
+
+// Index page menu to appear on scroll
+.con-nav.add-background {
+    //in nav partial variables allow for addition of .add-background class, overriding the above
+    background-color: transparent;
+    position: fixed;
+}
+
+@media screen and (min-width: 576px) {
+    .con-nav.add-background {
+        background-color: $color-secondary;
+        position: sticky;
+    }
+}
+
+.js-logo-d-none {
+    display: none;
 }
 
 /* Off Canvas Mobile Navbar */
@@ -328,11 +291,11 @@ h3 {
 @media screen and (min-width: 992px) {
     .con-nav .navbar-nav .nav-link {
 
-        &.a-default {
+        &.a-df {
             color: rgba(0, 0, 0, .5);
         }
 
-        &.btn-default {
+        &.btn-df {
             color: $color-black;
         }
     }
@@ -390,19 +353,15 @@ h3 {
 }
 
 .con-carousel {
-    .carousel-control-prev {
-        z-index: 3;
-        opacity: .9;
-    }
-
+    .carousel-control-prev,
     .carousel-control-next {
         z-index: 3;
         opacity: .9;
     }
-}
 
-.carousel-indicators {
-    bottom: 15%;
+    .carousel-indicators {
+        bottom: 15%;
+    }
 }
 
 @media screen and (min-width: 768px) {
@@ -419,7 +378,7 @@ h3 {
     width: 100%;
     margin: 0 auto 3rem auto;
 
-    .h1-default {
+    .h1-df {
         color: $color-black;
         margin-top: 0;
         line-height: 1.1;
@@ -437,12 +396,10 @@ h3 {
     .con-default {
         padding: 0;
         width: 80%;
-    }
-}
 
-@media screen and (min-width: 768px) {
-    .con-default .h2-default {
-        font-size: 3rem;
+        .h2-df {
+            font-size: 3rem;
+        }
     }
 }
 
@@ -481,14 +438,12 @@ h3 {
     .con-fixbck::before {
         background-position-y: 30%;
         background-size: 30%;
-
     }
 }
 
 @media screen and (min-width: 992px) {
     .con-fixbck::before {
         background-position-y: 20%;
-
     }
 }
 
@@ -506,15 +461,6 @@ h3 {
     padding-bottom: 0;
 }
 
-.menu-item {
-    border-left: 1px solid #000;
-    padding: 0 2rem 2.5rem 1rem;
-    width: calc(50% - 30px);
-    min-height: 60px;
-    margin: 15px;
-    background-color: #CEBFFF;
-}
-
 .menu-item-heading {
     font-size: 1.25rem;
     font-weight: 500;
@@ -523,7 +469,7 @@ h3 {
     margin: 0;
 }
 
-p.menu-sec {
+.menu-sec {
     margin-bottom: 0;
 }
 
@@ -532,11 +478,6 @@ p.menu-sec {
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1px;
-}
-
-.menu-sec-content {
-    margin: 0;
-    line-height: 1.1;
 }
 
 .menu-sec-price {
@@ -550,8 +491,6 @@ p.menu-sec {
     font-weight: normal;
 }
 
-
-
 /* Buttons */
 .btn-close {
     font-size: 40px;
@@ -559,7 +498,7 @@ p.menu-sec {
     padding: .25rem;
 }
 
-.btn-default {
+.btn-df {
     font-weight: 600;
     border: 1px solid $color-purple;
     margin-top: .5rem;
@@ -568,11 +507,11 @@ p.menu-sec {
 
 }
 
-.btn-default:hover {
+.btn-df:hover {
     background-color: $color-tertiary-light;
 }
 
-.btn-default:focus {
+.btn-df:focus {
     background-color: $color-tertiary;
 }
 
@@ -581,44 +520,8 @@ p.menu-sec {
     padding: .25rem;
 }
 
-#bs-margin-override {
-    margin-top: .1rem;
-}
-
-.btn-col2 {
-    background-color: $color-green;
-}
-
 .btn-col2:hover {
-    background-color: #b0d887;
-}
-
-.con-img {
-    padding: 3rem 0;
-    text-align: center;
-}
-
-.con-img-splash {
-    height: 80vh;
-    width: 100%;
-    object-fit: cover;
-    margin: 98px 0 0 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    /* z-index: 5; */
-}
-
-@media screen and (min-width: 768px) {
-    .con-img-splash {
-        margin: 130px 0 0 0;
-    }
-}
-
-@media screen and (min-width: 992px) {
-    .con-img-splash {
-        margin: 143px 0 0 0;
-    }
+    background-color: $color-green-light;
 }
 
 /* Locations Container */
@@ -639,11 +542,9 @@ p.menu-sec {
     width: 100%;
     height: 40vh;
     position: relative;
-
 }
 
 @media screen and (min-width: 768px) {
-
     #map,
     #map-all {
         height: 80vh;
@@ -656,8 +557,6 @@ p.menu-sec {
     position: absolute;
     top: 0;
     left: 0;
-    // opacity: .2;
-    // background-color: $purple; overaly looks like shit
 }
 
 /* Carmelitas Image */
@@ -752,6 +651,12 @@ p.menu-sec {
     position: relative;
     height: 600px;
     background-color: $color-red;
+
+    .col,
+    .col-md {
+        margin: 0;
+        padding: 0;
+    }
 }
 
 @media screen and (min-width: 768px) {
@@ -760,18 +665,6 @@ p.menu-sec {
         margin: 0;
         margin-bottom: $con-mb + 3;
     }
-}
-
-.green-font-outline {
-    text-shadow: -1px -1px $color-green,
-        1px -1px 0 $color-green,
-        -1px 1px 0 $color-green,
-        1px 1px 0 $color-green;
-    font-family: 'Libre Franklin',
-        sans-serif;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: $color-white;
 }
 
 .con-menu-teaser__header {
@@ -791,12 +684,6 @@ p.menu-sec {
     .con-menu-teaser__header {
         font-size: 7rem;
     }
-}
-
-.con-menu-teaser .col,
-.con-menu-teaser .col-md {
-    margin: 0;
-    padding: 0;
 }
 
 .con-menu-teaser__rt-top {
@@ -875,18 +762,27 @@ p.menu-sec {
     bottom: 0;
     width: 100%;
     z-index: 4;
+
+    .btn-col2 {
+        background-color: $color-green;
+        margin-top: .1rem;
+    }
+
+    .btn-df {
+        margin-bottom: 0;
+    }
 }
 
-.footer-mobile .btn-default {
-    margin-bottom: 0;
+.list-footer {
+    line-height: 1;
+    padding-right: 2rem;
+    text-align: center;
 }
-
 /* Reservations */
 .con-res {
     background-image: linear-gradient($color-red, $color-green);
     width: 100%;
 }
-
 
 .con-res .row {
     justify-content: space-around;
@@ -973,7 +869,7 @@ label {
     margin-bottom: 2rem;
 }
 
-.hours .p-default {
+.hours .p-df {
     margin-bottom: 0;
 }
 
@@ -987,15 +883,15 @@ label {
     filter: saturate(5);
 }
 
-.locations-sec .a-default {
+.locations-sec .a-df {
     color: $color-black;
 }
 
-.locations-sec .a-default:hover {
+.locations-sec .a-df:hover {
     color: $color-red;
 }
 
-.locations-sec .p-default {
+.locations-sec .p-df {
     line-height: 1;
 }
 
@@ -1015,7 +911,7 @@ label {
 }
 
 @media screen and (min-width: 576px) {
-    #testimonial-carousel .p-default {
+    #testimonial-carousel .p-df {
         font-size: 1.5rem;
     }
 }
@@ -1030,4 +926,20 @@ label {
     padding-left: 0;
     padding-right: 0;
     margin-bottom: 2px;
+}
+
+// Data-Scroll
+[data-scroll] {
+    opacity: 0;
+    will-change: transform, scale, opacity;
+    -webkit-transform: translateY(6rem) scale(0.93);
+    transform: translateY(6rem) scale(0.93);
+    -webkit-transition: all 1.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 1.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+[data-scroll='in'] {
+    opacity: 1;
+    -webkit-transform: translateY(0) scale(1);
+    transform: translateY(0) scale(1);
 }
