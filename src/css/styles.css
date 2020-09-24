@@ -45,7 +45,7 @@ section {
     }
 }
 
-.header-default {
+. {
     line-height: 1.1;
     font-family: 'Libre Franklin',
         sans-serif;
@@ -725,7 +725,7 @@ section .con-default {
         1px 1px 0 #5ab200;
 }
 
-.header-default.con-menu-teaser__header {
+..con-menu-teaser__header {
     line-height: .8;
 }
 
