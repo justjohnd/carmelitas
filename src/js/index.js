@@ -1,22 +1,33 @@
 import $ from 'jquery';
 import 'bootstrap';
 
-// check for jquery
-// window.onload = function () {
-//     if (window.jQuery) {
-//         // jQuery is loaded  
-//         alert("Yeah!");
-//     } else {
-//         // jQuery is not loaded
-//         alert("Doesn't Work");
-//     }
-// }
-
 import PrjScrollOut from './prj-scroll-out';
 import PrjFlatpickr from './prj-flatpickr';
 
 // const api_Key = process.env.API_KEY;  Currently not using. env file not set up
 // console.log(process.env);
+
+//Multilanguage Menu
+const url = new URL(window.location.href);
+
+let urlPathname = url.pathname;
+let path = urlPathname.split("/");
+let langDir = path[path.length - 2];
+let finalDir = path[path.length - 1];
+
+let buttons = document.getElementsByClassName("btn-lang");
+
+for (var i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener("click", function () {
+        let btnId = this.id;
+        if (btnId != langDir) {
+            let urlReroute = url.host + "/carmelitas/" + btnId + "/" + finalDir;
+            console.log(urlReroute);
+            window.location.href = urlReroute;
+        }
+    });
+}
+
 
 // Get current year for copyright
 $('#year').text(new Date().getFullYear());
