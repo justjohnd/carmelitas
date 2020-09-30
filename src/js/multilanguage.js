@@ -12,7 +12,7 @@ for (var i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener("click", function () {
         let btnId = this.id;
         if (btnId != langDir) {
-            let urlReroute = "https://justjohnd.github.io/carmelitas/" + btnId + "/" + finalDir;
+            let urlReroute = "https://heuristic-poincare-aaffc1.netlify.app/" + btnId + "/" + finalDir;
             console.log(urlReroute);
             window.location.replace(urlReroute);
         }
