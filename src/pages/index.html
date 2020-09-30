@@ -1,9 +1,5 @@
 ---
 meta-title: Home
-con-def-header-text: OUR STORY
-btn-1-text: READ OUR STORY
-btn-1: true
-con-def-header: true
 carousel-overpic: true
 {{button-path}}: our-story.html
 js-logo-d-none-class: js-logo-d-none
@@ -15,17 +11,10 @@ add-background-class: add-background
     <!-- Story -->
        <section>
            <div id="js-navbar" class="con-default" data-scroll>
-               {{#if con-def-header}}
-               {{> con-def-header}}
-               {{/if}}
-               <p class="p-df">{${ index.text }$}</p>
-
-<!-- Carmelita’s was founded in 1983 by Carmen and Vincent Lopez, with the opening of the
-                   Park Street location in St. Petersburg, FL. After 35 years, what started off as just 9 booths has now
-                   grown to 5 locations in and around Pinellas County. -->
-
+               <h2 class="h2-df">{${ index.story-h }$}</h2>
+               <p class="p-df">{${ index.story-p }$}</p>
                <a class="btn btn-df {{con-def-btn-d-class}}"
-                   href="./our-story.html">{{btn-1-text}}</a>
+                   href="./our-story.html">{${ index.story-b }$}</a>
            </div>
        </section>
 
@@ -33,9 +22,9 @@ add-background-class: add-background
     <div data-scroll>
     <div class="row mx-0 con-menu-teaser">
         <div class="con-menu-teaser__text text-white">
-            <p class=" con-menu-teaser__header">MENUS</p>
-            <p class="p-df p-0">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi enim suscipit tempora pariatur, quaerat quibusdam culpa quod quos quo fuga.</p>
-            <a class="btn btn-df btn-df" href="./menus.html">SEE FULL MENU</a>
+            <p class=" con-menu-teaser__header">{${ index.menus-h }$}</p>
+            <p class="p-df p-0">{${ index.menus-p }$}</p>
+            <a class="btn btn-df btn-df" href="./menus.html">{${ index.menus-b }$}</a>
         </div>
         <img class="con-menu-teaser__img img-fluid" src="{${ default.path }$}assets/img/stockJumbo1.jpg"></img>
         <div class=" no-padding col-md">
@@ -52,18 +41,16 @@ add-background-class: add-background
 
 <!-- Testimonials -->
 <section id="testimonials" data-scroll>
-    <h2 class="h2-df text-center mt-4 mt-lg-0 mb-2 mb-lg-4">WHAT OUR CUSTOMERS ARE SAYING</h2>
+    <h2 class="h2-df text-center mt-4 mt-lg-0 mb-2 mb-lg-4">{${ index.testimonials-h }$}</h2>
     <div id="testimonial-carousel" class="con-carousel carousel slide py-5" data-ride="carousel" data-pause="hover" data-interval="3000">
         <div class="carousel-inner">
             <div class="carousel-item active container-fluid">
-                <p class="p-df">I no longer have to sniff other dogs for love. I've found the hottest Corgi
-                    on TinDog. Woof.</p>
-                <em>Pebbles, New York</em>
+                <p class="p-df">{${ index.testimonials-p }$}</p>
+                <em>{${ index.testimonials-em }$}</em>
             </div>
             <div class="carousel-item container-fluid">
-                <p class="p-df">I no longer have to sniff other dogs for love. I've found the hottest Corgi
-                    on TinDog. Woof.</p>
-                <em>Pebbles, New York</em>
+                <p class="p-df">{${ index.testimonials-p }$}</p>
+                <em>{${ index.testimonials-em }$}</em>
             </div>
         </div>
         <a class="carousel-control-prev" href="#testimonial-carousel" role="button" data-slide="prev">
