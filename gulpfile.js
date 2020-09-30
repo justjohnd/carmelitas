@@ -41,16 +41,16 @@ gulp.task('default', gulp.series('build', server, watch));
 // Panini
 function pages(done) {
     gulp
-        .src('./src/pages/**/*.html')
+        .src('src/pages/**/*.html')
         .pipe(panini({
-            root: './src/pages/',
-            layouts: './src/layouts/',
-            partials: './src/partials/',
-            helpers: './src/helpers/',
-            data: './src/data/'
+            root: 'src/pages/',
+            layouts: 'src/layouts/',
+            partials: 'src/partials/',
+            helpers: 'src/helpers/',
+            data: 'src/data/'
         }))
         .pipe(i18n({
-                langDir: "./src/lang",
+                langDir: "src/lang",
                 delimiters: ['{${', '}$}'],
                 createLangDirs: true,
                 trace: true,
@@ -72,7 +72,7 @@ function resetPages(done) {
 // Optimize image size
 function image() {
     return gulp
-        .src('./src/img/**/*')
+        .src('src/img/**/*')
         .pipe(cache(imagemin()))
         .pipe(gulp.dest(`${PATHS.ASSETS}/img`));
 }

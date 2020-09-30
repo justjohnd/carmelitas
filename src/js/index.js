@@ -21,13 +21,12 @@ for (var i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener("click", function () {
         let btnId = this.id;
         if (btnId != langDir) {
-            let urlReroute = url.host + "/carmelitas/" + btnId + "/" + finalDir;
+            let urlReroute = "https://justjohnd.github.io/carmelitas/" + btnId + "/" + finalDir;
             console.log(urlReroute);
-            window.location.href = urlReroute;
+            window.location.replace(urlReroute);
         }
     });
 }
-
 
 // Get current year for copyright
 $('#year').text(new Date().getFullYear());
