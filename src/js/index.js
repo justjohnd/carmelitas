@@ -15,6 +15,10 @@ let path = urlPathname.split("/");
 let langDir = path[path.length - 2];
 let finalDir = path[path.length - 1];
 
+console.log(url);
+console.log(langDir);
+console.log(finalDir);
+
 let buttons = document.getElementsByClassName("btn-lang");
 
 for (var i = 0; i < buttons.length; i++) {
