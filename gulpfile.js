@@ -135,7 +135,7 @@ let webpackConfig = {
 
 function javascript() {
     return gulp
-        .src("src/js/index.js")
+        .src("src/js/**/*")
         .pipe(named())
         .pipe($.sourcemaps.init())
         .pipe(webpackStream(webpackConfig, webpack2))
