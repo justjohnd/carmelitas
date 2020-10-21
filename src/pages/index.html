@@ -5,21 +5,20 @@ carousel-overpic: true
 js-logo-d-none-class: js-logo-d-none
 add-background-class: add-background
 ---
-    <!-- carousel -->
-    {{> carousel}}
+<!-- carousel -->
+{{> carousel}}
 
-    <!-- Story -->
-       <section>
-           <div id="js-navbar" class="con-default" data-scroll>
-               <h2 class="h2-df">{${ index.story-h }$}</h2>
-               <p class="p-df">{${ index.story-p }$}</p>
-               <a class="btn btn-df {{con-def-btn-d-class}}"
-                   href="./our-story.html">{${ index.story-b }$}</a>
-           </div>
-       </section>
+<!-- Story -->
+<section>
+    <div id="js-navbar" class="con-default" data-scroll>
+        <h2 class="h2-df">{${ index.story-h }$}</h2>
+        <p class="p-df">{${ index.story-p }$}</p>
+        <a class="btn btn-df {{con-def-btn-d-class}}" href="./our-story.html">{${ index.story-b }$}</a>
+    </div>
+</section>
 
-    <!-- Menues -->
-    <div data-scroll>
+<!-- Menues -->
+<div data-scroll>
     <div class="row mx-0 con-menu-teaser">
         <div class="con-menu-teaser__text text-white">
             <p class=" con-menu-teaser__header">{${ index.menus-h }$}</p>
@@ -34,7 +33,7 @@ add-background-class: add-background
             <div id="taco-drop" class="con-menu-teaser__rt-btm col"></div>
         </div>
     </div>
-    </div>
+</div>
 
 <!-- Locations -->
 {{> locations-sec}}
@@ -42,7 +41,8 @@ add-background-class: add-background
 <!-- Testimonials -->
 <section id="testimonials" data-scroll>
     <h2 class="h2-df text-center mt-4 mt-lg-0 mb-2 mb-lg-4">{${ index.testimonials-h }$}</h2>
-    <div id="testimonial-carousel" class="con-carousel carousel slide py-5" data-ride="carousel" data-pause="hover" data-interval="3000">
+    <div id="testimonial-carousel" class="con-carousel carousel slide py-5" data-ride="carousel" data-pause="hover"
+        data-interval="3000">
         <div class="carousel-inner">
             <div class="carousel-item active container-fluid">
                 <p class="p-df">{${ index.testimonials-p }$}</p>
@@ -78,3 +78,10 @@ add-background-class: add-background
 
 {{> carmelitas-image}}
 
+<script id="mcjs">
+    ! function (c, h, i, m, p) {
+        m = c.createElement(h), p = c.getElementsByTagName(h)[0], m.async = 1, m.src = i, p.parentNode.insertBefore(m,
+            p)
+    }(document, "script",
+        "https://chimpstatic.com/mcjs-connected/js/users/2136725836a0a3f712b623662/7b66c12214d6ae8c15abcff29.js");
+</script>
